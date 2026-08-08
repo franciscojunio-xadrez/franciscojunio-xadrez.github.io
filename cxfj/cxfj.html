@@ -1,1183 +1,1237 @@
-```html
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CXFJ | Clube de Xadrez Francisco Junio</title>
+<title>CXFJ | Clube de Xadrez Francisco Junio</title>
 
-    <style>
+<style>
 
-        /* ==============================
-           FRANCISCO JUNIO
-           CXFJ — IDENTIDADE VISUAL
-           ============================== */
+    /* ==============================
+       FRANCISCO JUNIO
+       CXFJ — IDENTIDADE VISUAL
+       ============================== */
 
-        :root {
-            --azul-profundo: #101827;
-            --azul: #18243a;
-            --dourado: #c9a45c;
-            --dourado-claro: #e3c681;
-            --creme: #f4efe4;
-            --branco: #ffffff;
-            --cinza: #b8b8b8;
-        }
+    :root {
+        --azul-profundo: #101827;
+        --azul: #18243a;
+        --dourado: #c9a45c;
+        --dourado-claro: #e3c681;
+        --creme: #f4efe4;
+        --branco: #ffffff;
+        --cinza: #b8b8b8;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: var(--azul-profundo);
-            color: var(--creme);
-            line-height: 1.6;
-        }
+    body {
+        font-family: Georgia, "Times New Roman", serif;
+        background: var(--azul-profundo);
+        color: var(--creme);
+        line-height: 1.6;
+    }
 
 
-        /* ==============================
-           MENU
-           ============================== */
+    /* ==============================
+       MENU
+       ============================== */
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
 
-            background: rgba(16, 24, 39, 0.94);
-            border-bottom: 1px solid rgba(201, 164, 92, 0.35);
+        background: rgba(16, 24, 39, 0.94);
+        border-bottom: 1px solid rgba(201, 164, 92, 0.35);
 
-            backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 18px 30px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-text {
+        color: var(--branco);
+        text-decoration: none;
+
+        font-size: 1.25rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+
+    .logo-text span {
+        color: var(--dourado);
+    }
+
+    .menu {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+    }
+
+    .menu a {
+        color: var(--creme);
+        text-decoration: none;
+
+        font-size: 0.95rem;
+
+        transition: 0.3s;
+    }
+
+    .menu a:hover {
+        color: var(--dourado-claro);
+    }
+
+
+    /* ==============================
+       HERO
+       ============================== */
+
+    .hero {
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 120px 25px 80px;
+
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(201, 164, 92, 0.12),
+                transparent 45%
+            ),
+            var(--azul-profundo);
+    }
+
+    .hero-content {
+        max-width: 900px;
+    }
+
+    .hero-symbol {
+        font-size: 4rem;
+        color: var(--dourado);
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 8vw, 6.5rem);
+
+        letter-spacing: 5px;
+        font-weight: 500;
+
+        color: var(--branco);
+
+        line-height: 1;
+    }
+
+    .hero-line {
+        width: 100px;
+        height: 2px;
+
+        background: var(--dourado);
+
+        margin: 30px auto;
+    }
+
+    .hero h2 {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+
+        font-weight: normal;
+
+        color: var(--dourado-claro);
+
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        margin: 25px auto 35px;
+
+        max-width: 650px;
+
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
+    }
+
+    .button {
+        display: inline-block;
+
+        padding: 13px 28px;
+
+        border: 1px solid var(--dourado);
+
+        color: var(--dourado-claro);
+
+        text-decoration: none;
+
+        letter-spacing: 1px;
+
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        background: var(--dourado);
+
+        color: var(--azul-profundo);
+    }
+
+
+    /* ==============================
+       SEÇÕES
+       ============================== */
+
+    section {
+        padding: 100px 25px;
+    }
+
+    .section-container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .section-title {
+        text-align: center;
+
+        margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+
+        font-weight: normal;
+
+        color: var(--branco);
+    }
+
+    .section-title span {
+        display: block;
+
+        width: 60px;
+        height: 2px;
+
+        background: var(--dourado);
+
+        margin: 18px auto;
+    }
+
+    .section-title p {
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
+    }
+
+
+    /* ==============================
+       APRESENTAÇÃO
+       ============================== */
+
+    .about {
+        background: var(--creme);
+
+        color: var(--azul-profundo);
+    }
+
+    .about .section-title h2 {
+        color: var(--azul-profundo);
+    }
+
+    .about .section-title p {
+        color: #555;
+    }
+
+    .about-content {
+        max-width: 800px;
+
+        margin: auto;
+
+        text-align: center;
+
+        font-size: 1.1rem;
+    }
+
+
+    /* ==============================
+       TORNEIOS
+       ============================== */
+
+    .tournaments {
+        background: var(--azul);
+    }
+
+    .cards {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+    .card {
+        overflow: hidden;
+
+        border: 1px solid rgba(201, 164, 92, 0.35);
+
+        background: rgba(16, 24, 39, 0.55);
+
+        transition:
+            transform 0.3s,
+            border-color 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-7px);
+
+        border-color: var(--dourado);
+    }
+
+    .card-image {
+        width: 100%;
+
+        aspect-ratio: 4 / 5;
+
+        object-fit: cover;
+
+        display: block;
+    }
+
+    .card-content {
+        padding: 28px;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+
+        margin-bottom: 8px;
+
+        color: var(--branco);
+    }
+
+    .card-date {
+        color: var(--dourado-claro);
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.9rem;
+
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.95rem;
+
+        margin-bottom: 22px;
+    }
+
+    .card-links {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .card-link {
+        display: inline-block;
+
+        padding: 9px 14px;
+
+        border: 1px solid rgba(201, 164, 92, 0.6);
+
+        color: var(--dourado-claro);
+
+        text-decoration: none;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.8rem;
+
+        transition: 0.3s;
+    }
+
+    .card-link:hover {
+        background: var(--dourado);
+
+        color: var(--azul-profundo);
+    }
+
+
+    /* ==============================
+       EVENTOS
+       ============================== */
+
+    .events {
+        background: var(--creme);
+
+        color: var(--azul-profundo);
+    }
+
+    .events .section-title h2 {
+        color: var(--azul-profundo);
+    }
+
+    .events .section-title p {
+        color: #555;
+    }
+
+    .event-box {
+        max-width: 850px;
+
+        margin: auto;
+
+        padding: 35px;
+
+        border: 1px solid rgba(16, 24, 39, 0.2);
+
+        text-align: center;
+
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    .event-box h3 {
+        font-size: 1.6rem;
+
+        margin-bottom: 12px;
+    }
+
+    .event-box p {
+        font-family: Arial, sans-serif;
+
+        color: #555;
+
+        margin-bottom: 20px;
+    }
+
+    .event-button {
+        display: inline-block;
+
+        padding: 11px 22px;
+
+        border: 1px solid var(--dourado);
+
+        color: var(--azul-profundo);
+
+        text-decoration: none;
+
+        font-family: Arial, sans-serif;
+
+        transition: 0.3s;
+    }
+
+    .event-button:hover {
+        background: var(--dourado);
+
+        color: var(--azul-profundo);
+    }
+
+
+    /* ==============================
+       FOTOS
+       ============================== */
+
+    .photos {
+        background: var(--azul-profundo);
+    }
+
+    .photo-intro {
+        max-width: 750px;
+
+        margin: 0 auto 45px;
+
+        text-align: center;
+
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
+    }
+
+    .photo-links {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+
+        max-width: 850px;
+
+        margin: auto;
+    }
+
+    .photo-link {
+        display: block;
+
+        padding: 25px;
+
+        border: 1px solid rgba(201, 164, 92, 0.35);
+
+        color: var(--creme);
+
+        text-decoration: none;
+
+        background: rgba(24, 36, 58, 0.65);
+
+        transition: 0.3s;
+    }
+
+    .photo-link:hover {
+        border-color: var(--dourado);
+
+        transform: translateY(-4px);
+    }
+
+    .photo-link strong {
+        display: block;
+
+        color: var(--dourado-claro);
+
+        margin-bottom: 5px;
+    }
+
+    .photo-link span {
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.85rem;
+    }
+
+
+    /* ==============================
+       CONTATO
+       ============================== */
+
+    .contact {
+        background: var(--azul);
+    }
+
+    .contact-box {
+        text-align: center;
+
+        max-width: 700px;
+
+        margin: auto;
+    }
+
+    .contact-box p {
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* ==============================
+       RODAPÉ
+       ============================== */
+
+    footer {
+        text-align: center;
+
+        padding: 35px 20px;
+
+        background: #0b111d;
+
+        border-top: 1px solid rgba(201, 164, 92, 0.3);
+    }
+
+    footer strong {
+        color: var(--dourado);
+
+        letter-spacing: 2px;
+    }
+
+    footer p {
+        margin-top: 8px;
+
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.85rem;
+    }
+
+
+    /* ==============================
+       CELULAR
+       ============================== */
+
+    @media (max-width: 800px) {
+
+        .menu {
+            display: none;
         }
 
         nav {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 30px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-text {
-            color: var(--branco);
-            text-decoration: none;
-
-            font-size: 1.25rem;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        .logo-text span {
-            color: var(--dourado);
-        }
-
-        .menu {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .menu a {
-            color: var(--creme);
-            text-decoration: none;
-
-            font-size: 0.95rem;
-
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: var(--dourado-claro);
-        }
-
-
-        /* ==============================
-           HERO
-           ============================== */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
             justify-content: center;
-
-            text-align: center;
-
-            padding: 120px 25px 80px;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(201, 164, 92, 0.12),
-                    transparent 45%
-                ),
-                var(--azul-profundo);
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .hero-symbol {
-            font-size: 4rem;
-            color: var(--dourado);
-
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6.5rem);
-
-            letter-spacing: 5px;
-            font-weight: 500;
-
-            color: var(--branco);
-
-            line-height: 1;
-        }
-
-        .hero-line {
-            width: 100px;
-            height: 2px;
-
-            background: var(--dourado);
-
-            margin: 30px auto;
-        }
-
-        .hero h2 {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-
-            font-weight: normal;
-
-            color: var(--dourado-claro);
-
-            letter-spacing: 2px;
-        }
-
-        .hero p {
-            margin: 25px auto 35px;
-
-            max-width: 650px;
-
-            color: var(--cinza);
-
-            font-family: Arial, sans-serif;
-        }
-
-        .button {
-            display: inline-block;
-
-            padding: 13px 28px;
-
-            border: 1px solid var(--dourado);
-
-            color: var(--dourado-claro);
-
-            text-decoration: none;
-
-            letter-spacing: 1px;
-
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: var(--dourado);
-
-            color: var(--azul-profundo);
-        }
-
-
-        /* ==============================
-           SEÇÕES
-           ============================== */
-
-        section {
-            padding: 100px 25px;
-        }
-
-        .section-container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-
-            margin-bottom: 55px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-
-            font-weight: normal;
-
-            color: var(--branco);
-        }
-
-        .section-title span {
-            display: block;
-
-            width: 60px;
-            height: 2px;
-
-            background: var(--dourado);
-
-            margin: 18px auto;
-        }
-
-        .section-title p {
-            color: var(--cinza);
-
-            font-family: Arial, sans-serif;
-        }
-
-
-        /* ==============================
-           APRESENTAÇÃO
-           ============================== */
-
-        .about {
-            background: var(--creme);
-
-            color: var(--azul-profundo);
-        }
-
-        .about .section-title h2 {
-            color: var(--azul-profundo);
-        }
-
-        .about .section-title p {
-            color: #555;
-        }
-
-        .about-content {
-            max-width: 800px;
-
-            margin: auto;
-
-            text-align: center;
-
-            font-size: 1.1rem;
-        }
-
-
-        /* ==============================
-           TORNEIOS
-           ============================== */
-
-        .tournaments {
-            background: var(--azul);
         }
 
         .cards {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 25px;
-        }
-
-        .card {
-            overflow: hidden;
-
-            border: 1px solid rgba(201, 164, 92, 0.35);
-
-            background: rgba(16, 24, 39, 0.55);
-
-            transition:
-                transform 0.3s,
-                border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-
-            border-color: var(--dourado);
-        }
-
-        .card-image {
-            width: 100%;
-
-            aspect-ratio: 4 / 5;
-
-            object-fit: cover;
-
-            display: block;
-        }
-
-        .card-content {
-            padding: 28px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-
-            margin-bottom: 8px;
-
-            color: var(--branco);
-        }
-
-        .card-date {
-            color: var(--dourado-claro);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 0.9rem;
-
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: var(--cinza);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 0.95rem;
-
-            margin-bottom: 22px;
-        }
-
-        .card-links {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-        }
-
-        .card-link {
-            display: inline-block;
-
-            padding: 9px 14px;
-
-            border: 1px solid rgba(201, 164, 92, 0.6);
-
-            color: var(--dourado-claro);
-
-            text-decoration: none;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 0.8rem;
-
-            transition: 0.3s;
-        }
-
-        .card-link:hover {
-            background: var(--dourado);
-
-            color: var(--azul-profundo);
-        }
-
-
-        /* ==============================
-           EVENTOS
-           ============================== */
-
-        .events {
-            background: var(--creme);
-
-            color: var(--azul-profundo);
-        }
-
-        .events .section-title h2 {
-            color: var(--azul-profundo);
-        }
-
-        .events .section-title p {
-            color: #555;
-        }
-
-        .event-box {
-            max-width: 850px;
-
-            margin: auto;
-
-            padding: 35px;
-
-            border: 1px solid rgba(16, 24, 39, 0.2);
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.35);
-        }
-
-        .event-box h3 {
-            font-size: 1.6rem;
-
-            margin-bottom: 12px;
-        }
-
-        .event-box p {
-            font-family: Arial, sans-serif;
-
-            color: #555;
-
-            margin-bottom: 20px;
-        }
-
-        .event-button {
-            display: inline-block;
-
-            padding: 11px 22px;
-
-            border: 1px solid var(--dourado);
-
-            color: var(--azul-profundo);
-
-            text-decoration: none;
-
-            font-family: Arial, sans-serif;
-
-            transition: 0.3s;
-        }
-
-        .event-button:hover {
-            background: var(--dourado);
-
-            color: var(--azul-profundo);
-        }
-
-
-        /* ==============================
-           FOTOS
-           ============================== */
-
-        .photos {
-            background: var(--azul-profundo);
-        }
-
-        .photo-intro {
-            max-width: 750px;
-
-            margin: 0 auto 45px;
-
-            text-align: center;
-
-            color: var(--cinza);
-
-            font-family: Arial, sans-serif;
+            grid-template-columns: 1fr;
         }
 
         .photo-links {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 20px;
-
-            max-width: 850px;
-
-            margin: auto;
+            grid-template-columns: 1fr;
         }
 
-        .photo-link {
-            display: block;
-
-            padding: 25px;
-
-            border: 1px solid rgba(201, 164, 92, 0.35);
-
-            color: var(--creme);
-
-            text-decoration: none;
-
-            background: rgba(24, 36, 58, 0.65);
-
-            transition: 0.3s;
+        .hero h1 {
+            letter-spacing: 3px;
         }
 
-        .photo-link:hover {
-            border-color: var(--dourado);
-
-            transform: translateY(-4px);
+        section {
+            padding: 75px 20px;
         }
 
-        .photo-link strong {
-            display: block;
+    }
 
-            color: var(--dourado-claro);
-
-            margin-bottom: 5px;
-        }
-
-        .photo-link span {
-            color: var(--cinza);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 0.85rem;
-        }
-
-
-        /* ==============================
-           CONTATO
-           ============================== */
-
-        .contact {
-            background: var(--azul);
-        }
-
-        .contact-box {
-            text-align: center;
-
-            max-width: 700px;
-
-            margin: auto;
-        }
-
-        .contact-box p {
-            color: var(--cinza);
-
-            font-family: Arial, sans-serif;
-
-            margin-bottom: 25px;
-        }
-
-
-        /* ==============================
-           RODAPÉ
-           ============================== */
-
-        footer {
-            text-align: center;
-
-            padding: 35px 20px;
-
-            background: #0b111d;
-
-            border-top: 1px solid rgba(201, 164, 92, 0.3);
-        }
-
-        footer strong {
-            color: var(--dourado);
-
-            letter-spacing: 2px;
-        }
-
-        footer p {
-            margin-top: 8px;
-
-            color: var(--cinza);
-
-            font-family: Arial, sans-serif;
-
-            font-size: 0.85rem;
-        }
-
-
-        /* ==============================
-           CELULAR
-           ============================== */
-
-        @media (max-width: 800px) {
-
-            .menu {
-                display: none;
-            }
-
-            nav {
-                justify-content: center;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .photo-links {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                letter-spacing: 3px;
-            }
-
-            section {
-                padding: 75px 20px;
-            }
-
-        }
-
-    </style>
+</style>
+```
 
 </head>
 
-
 <body>
+
+```
+<!-- ==============================
+     MENU
+     ============================== -->
+
+<header>
+
+    <nav>
+
+        <a href="../index.html" class="logo-text">
+            FRANCISCO <span>JUNIO</span>
+        </a>
+
+        <ul class="menu">
+
+            <li>
+                <a href="../index.html">Início</a>
+            </li>
+
+            <li>
+                <a href="#sobre">O CXFJ</a>
+            </li>
+
+            <li>
+                <a href="#torneios">Torneios</a>
+            </li>
+
+            <li>
+                <a href="#eventos">Eventos</a>
+            </li>
+
+            <li>
+                <a href="#fotos">Fotos</a>
+            </li>
+
+            <li>
+                <a href="#contato">Contato</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
 
 
     <!-- ==============================
-         MENU
+         HERO
          ============================== -->
 
-    <header>
+    <section class="hero" id="inicio">
 
-        <nav>
+        <div class="hero-content">
 
-            <a href="../index.html" class="logo-text">
-                FRANCISCO <span>JUNIO</span>
+            <div class="hero-symbol">♞</div>
+
+            <h1>CXFJ</h1>
+
+            <div class="hero-line"></div>
+
+            <h2>Clube de Xadrez Francisco Junio</h2>
+
+            <p>
+                Nosso mundo é aqui.
+            </p>
+
+            <a href="#torneios" class="button">
+                CONHEÇA OS TORNEIOS
             </a>
 
-            <ul class="menu">
+        </div>
 
-                <li>
-                    <a href="../index.html">Início</a>
-                </li>
-
-                <li>
-                    <a href="#sobre">O CXFJ</a>
-                </li>
-
-                <li>
-                    <a href="#torneios">Torneios</a>
-                </li>
-
-                <li>
-                    <a href="#eventos">Eventos</a>
-                </li>
-
-                <li>
-                    <a href="#fotos">Fotos</a>
-                </li>
-
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
+    </section>
 
 
-    <main>
+    <!-- ==============================
+         SOBRE O CXFJ
+         ============================== -->
 
+    <section class="about" id="sobre">
 
-        <!-- ==============================
-             HERO
-             ============================== -->
+        <div class="section-container">
 
-        <section class="hero" id="inicio">
-
-            <div class="hero-content">
-
-                <div class="hero-symbol">♞</div>
-
-                <h1>CXFJ</h1>
-
-                <div class="hero-line"></div>
+            <div class="section-title">
 
                 <h2>Clube de Xadrez Francisco Junio</h2>
+
+                <span></span>
 
                 <p>
                     Nosso mundo é aqui.
                 </p>
 
-                <a href="#torneios" class="button">
-                    CONHEÇA OS TORNEIOS
+            </div>
+
+
+            <div class="about-content">
+
+                <p>
+                    O Clube de Xadrez Francisco Junio nasceu de uma
+                    ideia simples: criar, aqui, experiências de xadrez
+                    que muitas vezes parecem existir apenas longe daqui.
+                </p>
+
+                <br>
+
+                <p>
+                    O CXFJ busca oferecer aos jogadores um ambiente
+                    cada vez mais profissional, com seus torneios
+                    trazendo equipamentos escolhidos com cuidado.
+                </p>
+
+                <br>
+
+                <p>
+                    Ainda estamos construindo esse mundo. Cada evento,
+                    cada projeto e cada novo equipamento é parte desse caminho.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         TORNEIOS
+         ============================== -->
+
+    <section class="tournaments" id="torneios">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Torneios</h2>
+
+                <span></span>
+
+                <p>
+                    Competições para reunir pessoas e praticar xadrez.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <!-- CAÍSSA -->
+
+                <article class="card">
+
+                    <img
+                        src="../imagens/caissa.png"
+                        alt="Caíssa"
+                        class="card-image"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>Caíssa</h3>
+
+                        <div class="card-date">
+                            20 de junho de 2026
+                        </div>
+
+                        <p>
+                            Um dos primeiros torneios da história do
+                            Clube de Xadrez Francisco Junio, marcando
+                            o início de uma nova etapa para o CXFJ.
+                        </p>
+
+                        <div class="card-links">
+
+                            <a
+                                href="../torneios/caissa.html"
+                                class="card-link"
+                            >
+                                CONHECER O CAÍSSA
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MANDACARU -->
+
+                <article class="card">
+
+                    <img
+                        src="../imagens/mandacaru.png"
+                        alt="Mandacaru Xadrez"
+                        class="card-image"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>Mandacaru Xadrez</h3>
+
+                        <div class="card-date">
+                            15 de agosto de 2026
+                        </div>
+
+                        <p>
+                            Torneio do Clube de Xadrez Francisco Junio.
+                            Uma nova edição da história dos eventos do CXFJ.
+                        </p>
+
+                        <div class="card-links">
+
+                            <a
+                                href="https://chess-ratings.com/torneio.php?id=1534"
+                                target="_blank"
+                                class="card-link"
+                            >
+                                REGULAMENTO / INSCRIÇÃO
+                            </a>
+
+                            <a
+                                href="https://chess-ratings.com/torneio_inscritos.php?id=1534&return=torneios.php%3Fpage%3D1"
+                                target="_blank"
+                                class="card-link"
+                            >
+                                VER INSCRITOS
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DAMAS DO CARIRI -->
+
+                <article class="card">
+
+                    <img
+                        src="../imagens/damas-do-cariri.png"
+                        alt="Damas do Cariri"
+                        class="card-image"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>Damas do Cariri</h3>
+
+                        <div class="card-date">
+                            19 de setembro de 2026
+                        </div>
+
+                        <p>
+                            Um torneio dedicado às jogadoras e à
+                            valorização da presença feminina no xadrez.
+                        </p>
+
+                        <div class="card-links">
+
+                            <a
+                                href="https://chess-ratings.com/torneio.php?id=1557"
+                                target="_blank"
+                                class="card-link"
+                            >
+                                REGULAMENTO / INSCRIÇÃO
+                            </a>
+
+                            <a
+                                href="https://chess-ratings.com/torneio_inscritos.php?id=1557&return=torneios.php%3Fpage%3D2"
+                                target="_blank"
+                                class="card-link"
+                            >
+                                VER INSCRITOS
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- III FESTIVAL CPP -->
+
+                <article class="card">
+
+                    <img
+                        src="../imagens/iiifestivalcpp.png"
+                        alt="III Festival do Colégio Pequeno Príncipe"
+                        class="card-image"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>III Festival do Colégio Pequeno Príncipe</h3>
+
+                        <div class="card-date">
+                            19 de setembro de 2026 — manhã
+                        </div>
+
+                        <p>
+                            Evento realizado em parceria com o Colégio
+                            Pequeno Príncipe, levando o xadrez para novos
+                            espaços e novos jogadores.
+                        </p>
+
+                        <div class="card-links">
+
+                            <a
+                                href="https://chess-ratings.com/torneio.php?id=1591"
+                                target="_blank"
+                                class="card-link"
+                            >
+                                REGULAMENTO / INSCRIÇÃO
+                            </a>
+
+                            <a
+                                href="https://chess-ratings.com/torneio_inscritos.php?id=1591&return=torneios.php%3Fpage%3D2"
+                                target="_blank"
+                                class="card-link"
+                            >
+                                VER INSCRITOS
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LIGA CXFJ -->
+
+                <article class="card">
+
+                    <img
+                        src="../imagens/liga-cxfj-feminino.png"
+                        alt="Liga CXFJ de Xadrez Feminino"
+                        class="card-image"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>Liga CXFJ - Cearense Feminino por Equipes</h3>
+
+                        <div class="card-date">
+                            3 de outubro de 2026
+                        </div>
+
+                        <p>
+                            Liga feminina online organizada pelo CXFJ,
+                            criada para reunir jogadoras e fortalecer
+                            a prática do xadrez feminino.
+                        </p>
+
+                        <div class="card-links">
+
+                            <a
+                                href="#contato"
+                                class="card-link"
+                            >
+                                EM BREVE
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         EVENTOS
+         ============================== -->
+
+    <section class="events" id="eventos">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Eventos</h2>
+
+                <span></span>
+
+                <p>
+                    O xadrez também pode ocupar novos espaços.
+                </p>
+
+            </div>
+
+
+            <div class="event-box">
+
+                <h3>Eventos do CXFJ</h3>
+
+                <p>
+                    Além dos torneios, o Clube de Xadrez Francisco Junio
+                    pode receber diferentes formatos de eventos,
+                    presenciais e online, sempre com o objetivo de
+                    reunir pessoas para praticar xadrez.
+                </p>
+
+                <p>
+                    Simultâneas, encontros, parcerias e novas formas
+                    de viver o jogo fazem parte do futuro do CXFJ.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         FOTOS
+         ============================== -->
+
+    <section class="photos" id="fotos">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Fotos</h2>
+
+                <span></span>
+
+                <p>
+                    Registros dos eventos do CXFJ.
+                </p>
+
+            </div>
+
+
+            <p class="photo-intro">
+
+                Alguns registros podem aparecer aqui no site.
+                Os álbuns completos de cada evento serão
+                disponibilizados em pastas compartilhadas.
+
+            </p>
+
+
+            <div class="photo-links">
+
+
+                <a
+                    href="#"
+                    class="photo-link"
+                >
+
+                    <strong>
+                        Caíssa
+                    </strong>
+
+                    <span>
+                        Álbum de fotos do evento — em breve.
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="photo-link"
+                >
+
+                    <strong>
+                        Mandacaru
+                    </strong>
+
+                    <span>
+                        Álbum de fotos do evento — em breve.
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="photo-link"
+                >
+
+                    <strong>
+                        Damas do Cariri
+                    </strong>
+
+                    <span>
+                        Álbum de fotos do evento — em breve.
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="photo-link"
+                >
+
+                    <strong>
+                        III Festival do Colégio Pequeno Príncipe
+                    </strong>
+
+                    <span>
+                        Álbum de fotos do evento — em breve.
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="photo-link"
+                >
+
+                    <strong>
+                        Liga CXFJ de Xadrez Feminino
+                    </strong>
+
+                    <span>
+                        Álbum de fotos do evento — em breve.
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CONTATO
+         ============================== -->
+
+    <section class="contact" id="contato">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Entre em contato</h2>
+
+                <span></span>
+
+                <p>
+                    Vamos conversar sobre xadrez e projetos.
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <p>
+                    Acompanhe os eventos, torneios e novidades
+                    do Clube de Xadrez Francisco Junio.
+                </p>
+
+                <a
+                    href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
+                    target="_blank"
+                    class="button"
+                >
+                    INSTAGRAM DO CXFJ
                 </a>
 
             </div>
 
-        </section>
+        </div>
 
+    </section>
 
-        <!-- ==============================
-             SOBRE O CXFJ
-             ============================== -->
 
-        <section class="about" id="sobre">
+</main>
 
-            <div class="section-container">
 
-                <div class="section-title">
+<!-- ==============================
+     RODAPÉ
+     ============================== -->
 
-                    <h2>Clube de Xadrez Francisco Junio</h2>
+<footer>
 
-                    <span></span>
+    <strong>FRANCISCO JUNIO</strong>
 
-                    <p>
-                        Nosso mundo é aqui.
-                    </p>
+    <p>
+        Clube de Xadrez Francisco Junio · Nosso mundo é aqui.
+    </p>
 
-                </div>
-
-
-                <div class="about-content">
-
-                    <p>
-                        O Clube de Xadrez Francisco Junio nasceu de uma
-                        ideia simples: criar, aqui, experiências de xadrez
-                        que muitas vezes parecem existir apenas longe daqui.
-                    </p>
-
-                    <br>
-
-                    <p>
-                        O CXFJ busca oferecer aos jogadores um ambiente
-                        cada vez mais profissional, com seus torneios
-                        trazendo equipamentos escolhidos com cuidado.
-                    </p>
-
-                    <br>
-
-                    <p>
-                        Ainda estamos construindo esse mundo. Cada evento,
-                        cada projeto e cada novo equipamento é parte desse caminho.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             TORNEIOS
-             ============================== -->
-
-        <section class="tournaments" id="torneios">
-
-            <div class="section-container">
-
-                <div class="section-title">
-
-                    <h2>Torneios</h2>
-
-                    <span></span>
-
-                    <p>
-                        Competições para reunir pessoas e praticar xadrez.
-                    </p>
-
-                </div>
-
-
-                <div class="cards">
-
-
-                    <!-- MANDACARU -->
-
-                    <article class="card">
-
-                        <img
-                            src="../imagens/mandacaru.png"
-                            alt="Mandacaru Xadrez"
-                            class="card-image"
-                        >
-
-                        <div class="card-content">
-
-                            <h3>Mandacaru Xadrez</h3>
-
-                            <div class="card-date">
-                                15 de agosto de 2026
-                            </div>
-
-                            <p>
-                                Torneio do Clube de Xadrez Francisco Junio.
-                                Uma nova edição da história dos eventos do CXFJ.
-                            </p>
-
-                            <div class="card-links">
-
-                                <a
-                                    href="https://chess-ratings.com/torneio.php?id=1534"
-                                    target="_blank"
-                                    class="card-link"
-                                >
-                                    REGULAMENTO / INSCRIÇÃO
-                                </a>
-
-                                <a
-                                    href="https://chess-ratings.com/torneio_inscritos.php?id=1534&return=torneios.php%3Fpage%3D1"
-                                    target="_blank"
-                                    class="card-link"
-                                >
-                                    VER INSCRITOS
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- DAMAS DO CARIRI -->
-
-                    <article class="card">
-
-                        <img
-                            src="../imagens/damas-do-cariri.png"
-                            alt="Damas do Cariri"
-                            class="card-image"
-                        >
-
-                        <div class="card-content">
-
-                            <h3>Damas do Cariri</h3>
-
-                            <div class="card-date">
-                                19 de setembro de 2026
-                            </div>
-
-                            <p>
-                                Um torneio dedicado às jogadoras e à
-                                valorização da presença feminina no xadrez.
-                            </p>
-
-                            <div class="card-links">
-
-                                <a
-                                    href="https://chess-ratings.com/torneio.php?id=1557"
-                                    target="_blank"
-                                    class="card-link"
-                                >
-                                    REGULAMENTO / INSCRIÇÃO
-                                </a>
-
-                                <a
-                                    href="https://chess-ratings.com/torneio_inscritos.php?id=1557&return=torneios.php%3Fpage%3D2"
-                                    target="_blank"
-                                    class="card-link"
-                                >
-                                    VER INSCRITOS
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- III FESTIVAL CPP -->
-
-                    <article class="card">
-
-                        <img
-                            src="../imagens/iiifestivalcpp.png"
-                            alt="III Festival do Colégio Pequeno Príncipe"
-                            class="card-image"
-                        >
-
-                        <div class="card-content">
-
-                            <h3>III Festival do Colégio Pequeno Príncipe</h3>
-
-                            <div class="card-date">
-                                19 de setembro de 2026 — manhã
-                            </div>
-
-                            <p>
-                                Evento realizado em parceria com o Colégio
-                                Pequeno Príncipe, levando o xadrez para novos
-                                espaços e novos jogadores.
-                            </p>
-
-                            <div class="card-links">
-
-                                <a
-                                    href="https://chess-ratings.com/torneio.php?id=1591"
-                                    target="_blank"
-                                    class="card-link"
-                                >
-                                    REGULAMENTO / INSCRIÇÃO
-                                </a>
-
-                                <a
-                                    href="https://chess-ratings.com/torneio_inscritos.php?id=1591&return=torneios.php%3Fpage%3D2"
-                                    target="_blank"
-                                    class="card-link"
-                                >
-                                    VER INSCRITOS
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- LIGA CXFJ -->
-
-                    <article class="card">
-
-                        <img
-                            src="../imagens/liga-cxfj-feminino.png"
-                            alt="Liga CXFJ de Xadrez Feminino"
-                            class="card-image"
-                        >
-
-                        </div>
-
-                        <div class="card-content">
-
-                            <h3>Liga CXFJ - Cearense Feminino por Equipes</h3>
-
-                            <div class="card-date">
-                                3 de outubro de 2026
-                            </div>
-
-                            <p>
-                                Liga feminina online organizada pelo CXFJ,
-                                criada para reunir jogadoras e fortalecer
-                                a prática do xadrez feminino.
-                            </p>
-
-                            <div class="card-links">
-
-                                <a
-                                    href="#contato"
-                                    class="card-link"
-                                >
-                                    EM BREVE
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             EVENTOS
-             ============================== -->
-
-        <section class="events" id="eventos">
-
-            <div class="section-container">
-
-                <div class="section-title">
-
-                    <h2>Eventos</h2>
-
-                    <span></span>
-
-                    <p>
-                        O xadrez também pode ocupar novos espaços.
-                    </p>
-
-                </div>
-
-
-                <div class="event-box">
-
-                    <h3>Eventos do CXFJ</h3>
-
-                    <p>
-                        Além dos torneios, o Clube de Xadrez Francisco Junio
-                        pode receber diferentes formatos de eventos,
-                        presenciais e online, sempre com o objetivo de
-                        reunir pessoas para praticar xadrez.
-                    </p>
-
-                    <p>
-                        Simultâneas, encontros, parcerias e novas formas
-                        de viver o jogo fazem parte do futuro do CXFJ.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             FOTOS
-             ============================== -->
-
-        <section class="photos" id="fotos">
-
-            <div class="section-container">
-
-                <div class="section-title">
-
-                    <h2>Fotos</h2>
-
-                    <span></span>
-
-                    <p>
-                        Registros dos eventos do CXFJ.
-                    </p>
-
-                </div>
-
-
-                <p class="photo-intro">
-
-                    Alguns registros podem aparecer aqui no site.
-                    Os álbuns completos de cada evento serão
-                    disponibilizados em pastas compartilhadas.
-
-                </p>
-
-
-                <div class="photo-links">
-
-
-                    <a
-                        href="#"
-                        class="photo-link"
-                    >
-
-                        <strong>
-                            Mandacaru
-                        </strong>
-
-                        <span>
-                            Álbum de fotos do evento — em breve.
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        class="photo-link"
-                    >
-
-                        <strong>
-                            Damas do Cariri
-                        </strong>
-
-                        <span>
-                            Álbum de fotos do evento — em breve.
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        class="photo-link"
-                    >
-
-                        <strong>
-                            III Festival do Colégio Pequeno Príncipe
-                        </strong>
-
-                        <span>
-                            Álbum de fotos do evento — em breve.
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        class="photo-link"
-                    >
-
-                        <strong>
-                            Liga CXFJ de Xadrez Feminino
-                        </strong>
-
-                        <span>
-                            Álbum de fotos do evento — em breve.
-                        </span>
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             CONTATO
-             ============================== -->
-
-        <section class="contact" id="contato">
-
-            <div class="section-container">
-
-                <div class="section-title">
-
-                    <h2>Entre em contato</h2>
-
-                    <span></span>
-
-                    <p>
-                        Vamos conversar sobre xadrez e projetos.
-                    </p>
-
-                </div>
-
-
-                <div class="contact-box">
-
-                    <p>
-                        Acompanhe os eventos, torneios e novidades
-                        do Clube de Xadrez Francisco Junio.
-                    </p>
-
-                    <a
-                        href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
-                        target="_blank"
-                        class="button"
-                    >
-                        INSTAGRAM DO CXFJ
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ==============================
-         RODAPÉ
-         ============================== -->
-
-    <footer>
-
-        <strong>FRANCISCO JUNIO</strong>
-
-        <p>
-            Clube de Xadrez Francisco Junio · Nosso mundo é aqui.
-        </p>
-
-    </footer>
-
+</footer>
+```
 
 </body>
 
 </html>
-```
