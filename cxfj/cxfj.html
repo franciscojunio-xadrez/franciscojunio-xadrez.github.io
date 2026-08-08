@@ -26,7 +26,6 @@
         --creme: #f4efe4;
         --branco: #ffffff;
         --cinza: #b8b8b8;
-        --verde: #8fbf9f;
     }
 
     * {
@@ -431,7 +430,7 @@
     }
 
     .calendar-list {
-        max-width: 900px;
+        max-width: 950px;
 
         margin: auto;
 
@@ -445,7 +444,7 @@
     .calendar-item {
         display: grid;
 
-        grid-template-columns: 150px 1fr auto;
+        grid-template-columns: 140px 1fr;
 
         gap: 25px;
 
@@ -506,6 +505,42 @@
         font-family: Arial, sans-serif;
 
         font-size: 0.9rem;
+
+        margin-bottom: 15px;
+    }
+
+    .calendar-links {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .calendar-link {
+        display: inline-block;
+
+        padding: 8px 12px;
+
+        border: 1px solid rgba(201, 164, 92, 0.7);
+
+        color: #8c6d2f;
+
+        text-decoration: none;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.72rem;
+
+        letter-spacing: 0.5px;
+
+        transition: 0.3s;
+    }
+
+    .calendar-link:hover {
+        background: var(--dourado);
+
+        color: var(--azul-profundo);
     }
 
     .calendar-status {
@@ -522,8 +557,6 @@
         font-size: 0.72rem;
 
         letter-spacing: 0.7px;
-
-        white-space: nowrap;
     }
 
     .calendar-status.open {
@@ -571,28 +604,6 @@
         color: var(--cinza);
 
         margin-bottom: 20px;
-    }
-
-    .event-button {
-        display: inline-block;
-
-        padding: 11px 22px;
-
-        border: 1px solid var(--dourado);
-
-        color: var(--dourado-claro);
-
-        text-decoration: none;
-
-        font-family: Arial, sans-serif;
-
-        transition: 0.3s;
-    }
-
-    .event-button:hover {
-        background: var(--dourado);
-
-        color: var(--azul-profundo);
     }
 
 
@@ -729,18 +740,14 @@
 
     @media (max-width: 900px) {
 
-        .menu {
-            gap: 16px;
-        }
-
         .calendar-item {
             grid-template-columns: 1fr;
 
             text-align: center;
         }
 
-        .calendar-status {
-            justify-self: center;
+        .calendar-links {
+            justify-content: center;
         }
 
     }
@@ -1049,16 +1056,28 @@
                             Uma nova edição da história dos eventos do CXFJ.
                         </p>
 
+
+                        <div class="calendar-links">
+
+                            <a
+                                href="https://chess-ratings.com/torneio.php?id=1534"
+                                target="_blank"
+                                class="calendar-link"
+                            >
+                                REGULAMENTO / INSCRIÇÃO
+                            </a>
+
+                            <a
+                                href="https://chess-ratings.com/torneio_inscritos.php?id=1534&return=torneios.php%3Fpage%3D1"
+                                target="_blank"
+                                class="calendar-link"
+                            >
+                                VER INSCRITOS
+                            </a>
+
+                        </div>
+
                     </div>
-
-
-                    <a
-                        href="https://chess-ratings.com/torneio.php?id=1534"
-                        target="_blank"
-                        class="calendar-status open"
-                    >
-                        INSCRIÇÕES ABERTAS
-                    </a>
 
                 </article>
 
@@ -1085,12 +1104,28 @@
                             valorização da presença feminina no xadrez.
                         </p>
 
+
+                        <div class="calendar-links">
+
+                            <a
+                                href="https://chess-ratings.com/torneio.php?id=1557"
+                                target="_blank"
+                                class="calendar-link"
+                            >
+                                REGULAMENTO / INSCRIÇÃO
+                            </a>
+
+                            <a
+                                href="https://chess-ratings.com/torneio_inscritos.php?id=1557&return=torneios.php%3Fpage%3D2"
+                                target="_blank"
+                                class="calendar-link"
+                            >
+                                VER INSCRITOS
+                            </a>
+
+                        </div>
+
                     </div>
-
-
-                    <span class="calendar-status">
-                        EM BREVE
-                    </span>
 
                 </article>
 
@@ -1118,12 +1153,28 @@
                             espaços e novos jogadores.
                         </p>
 
+
+                        <div class="calendar-links">
+
+                            <a
+                                href="https://chess-ratings.com/torneio.php?id=1591"
+                                target="_blank"
+                                class="calendar-link"
+                            >
+                                REGULAMENTO / INSCRIÇÃO
+                            </a>
+
+                            <a
+                                href="https://chess-ratings.com/torneio_inscritos.php?id=1591&return=torneios.php%3Fpage%3D2"
+                                target="_blank"
+                                class="calendar-link"
+                            >
+                                VER INSCRITOS
+                            </a>
+
+                        </div>
+
                     </div>
-
-
-                    <span class="calendar-status">
-                        EM BREVE
-                    </span>
 
                 </article>
 
@@ -1151,12 +1202,16 @@
                             a prática do xadrez feminino.
                         </p>
 
+
+                        <div class="calendar-links">
+
+                            <span class="calendar-status">
+                                EM BREVE
+                            </span>
+
+                        </div>
+
                     </div>
-
-
-                    <span class="calendar-status">
-                        EM BREVE
-                    </span>
 
                 </article>
 
