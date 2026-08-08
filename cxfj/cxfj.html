@@ -26,6 +26,7 @@
         --creme: #f4efe4;
         --branco: #ffffff;
         --cinza: #b8b8b8;
+        --verde: #8fbf9f;
     }
 
     * {
@@ -279,11 +280,23 @@
 
 
     /* ==============================
-       TORNEIOS
+       TORNEIOS — HISTÓRICO
        ============================== */
 
     .tournaments {
         background: var(--azul);
+    }
+
+    .tournaments-intro {
+        max-width: 750px;
+
+        margin: -20px auto 45px;
+
+        text-align: center;
+
+        color: var(--cinza);
+
+        font-family: Arial, sans-serif;
     }
 
     .cards {
@@ -388,21 +401,146 @@
 
 
     /* ==============================
-       EVENTOS
+       CALENDÁRIO
        ============================== */
 
-    .events {
+    .calendar {
         background: var(--creme);
 
         color: var(--azul-profundo);
     }
 
-    .events .section-title h2 {
+    .calendar .section-title h2 {
         color: var(--azul-profundo);
     }
 
-    .events .section-title p {
+    .calendar .section-title p {
         color: #555;
+    }
+
+    .calendar-intro {
+        max-width: 750px;
+
+        margin: -20px auto 45px;
+
+        text-align: center;
+
+        color: #555;
+
+        font-family: Arial, sans-serif;
+    }
+
+    .calendar-list {
+        max-width: 900px;
+
+        margin: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .calendar-item {
+        display: grid;
+
+        grid-template-columns: 150px 1fr auto;
+
+        gap: 25px;
+
+        align-items: center;
+
+        padding: 25px 28px;
+
+        border: 1px solid rgba(16, 24, 39, 0.18);
+
+        background: rgba(255, 255, 255, 0.4);
+
+        transition: 0.3s;
+    }
+
+    .calendar-item:hover {
+        border-color: var(--dourado);
+
+        transform: translateY(-3px);
+    }
+
+    .calendar-date {
+        text-align: center;
+
+        color: var(--azul-profundo);
+
+        font-family: Arial, sans-serif;
+    }
+
+    .calendar-date strong {
+        display: block;
+
+        color: var(--dourado);
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 1.15rem;
+
+        margin-bottom: 4px;
+    }
+
+    .calendar-date span {
+        font-size: 0.8rem;
+
+        color: #666;
+    }
+
+    .calendar-info h3 {
+        font-size: 1.35rem;
+
+        margin-bottom: 5px;
+
+        color: var(--azul-profundo);
+    }
+
+    .calendar-info p {
+        color: #555;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.9rem;
+    }
+
+    .calendar-status {
+        display: inline-block;
+
+        padding: 7px 11px;
+
+        border: 1px solid rgba(201, 164, 92, 0.7);
+
+        color: #8c6d2f;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 0.72rem;
+
+        letter-spacing: 0.7px;
+
+        white-space: nowrap;
+    }
+
+    .calendar-status.open {
+        border-color: #769f80;
+
+        color: #52705a;
+    }
+
+
+    /* ==============================
+       EVENTOS
+       ============================== */
+
+    .events {
+        background: var(--azul);
+
+        color: var(--creme);
     }
 
     .event-box {
@@ -412,23 +550,25 @@
 
         padding: 35px;
 
-        border: 1px solid rgba(16, 24, 39, 0.2);
+        border: 1px solid rgba(201, 164, 92, 0.35);
 
         text-align: center;
 
-        background: rgba(255, 255, 255, 0.35);
+        background: rgba(16, 24, 39, 0.55);
     }
 
     .event-box h3 {
         font-size: 1.6rem;
 
         margin-bottom: 12px;
+
+        color: var(--branco);
     }
 
     .event-box p {
         font-family: Arial, sans-serif;
 
-        color: #555;
+        color: var(--cinza);
 
         margin-bottom: 20px;
     }
@@ -440,7 +580,7 @@
 
         border: 1px solid var(--dourado);
 
-        color: var(--azul-profundo);
+        color: var(--dourado-claro);
 
         text-decoration: none;
 
@@ -587,6 +727,25 @@
        CELULAR
        ============================== */
 
+    @media (max-width: 900px) {
+
+        .menu {
+            gap: 16px;
+        }
+
+        .calendar-item {
+            grid-template-columns: 1fr;
+
+            text-align: center;
+        }
+
+        .calendar-status {
+            justify-self: center;
+        }
+
+    }
+
+
     @media (max-width: 800px) {
 
         .menu {
@@ -650,6 +809,10 @@
             </li>
 
             <li>
+                <a href="#calendario">Calendário</a>
+            </li>
+
+            <li>
                 <a href="#eventos">Eventos</a>
             </li>
 
@@ -691,8 +854,8 @@
                 Nosso mundo é aqui.
             </p>
 
-            <a href="#torneios" class="button">
-                CONHEÇA OS TORNEIOS
+            <a href="#calendario" class="button">
+                VEJA O CALENDÁRIO
             </a>
 
         </div>
@@ -752,7 +915,7 @@
 
 
     <!-- ==============================
-         TORNEIOS
+         TORNEIOS — HISTÓRICO
          ============================== -->
 
     <section class="tournaments" id="torneios">
@@ -766,10 +929,19 @@
                 <span></span>
 
                 <p>
-                    Competições para reunir pessoas e praticar xadrez.
+                    Conheça os torneios que fazem parte da história do CXFJ.
                 </p>
 
             </div>
+
+
+            <p class="tournaments-intro">
+
+                Cada torneio realizado pelo Clube de Xadrez Francisco Junio
+                possui seu próprio espaço. Aqui ficam registrados os eventos
+                que já fizeram parte da nossa história.
+
+            </p>
 
 
             <div class="cards">
@@ -815,119 +987,130 @@
                 </article>
 
 
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CALENDÁRIO
+         ============================== -->
+
+    <section class="calendar" id="calendario">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <h2>Calendário</h2>
+
+                <span></span>
+
+                <p>
+                    O que está por vir no CXFJ.
+                </p>
+
+            </div>
+
+
+            <p class="calendar-intro">
+
+                Acompanhe os próximos torneios e eventos do Clube de
+                Xadrez Francisco Junio. Quando as inscrições estiverem
+                abertas, o acesso estará disponível aqui.
+
+            </p>
+
+
+            <div class="calendar-list">
+
+
                 <!-- MANDACARU -->
 
-                <article class="card">
+                <article class="calendar-item">
 
-                    <img
-                        src="../imagens/mandacaru.png"
-                        alt="Mandacaru Xadrez"
-                        class="card-image"
-                    >
+                    <div class="calendar-date">
 
-                    <div class="card-content">
+                        <strong>15 AGO</strong>
+
+                        <span>2026</span>
+
+                    </div>
+
+
+                    <div class="calendar-info">
 
                         <h3>Mandacaru Xadrez</h3>
-
-                        <div class="card-date">
-                            15 de agosto de 2026
-                        </div>
 
                         <p>
                             Torneio do Clube de Xadrez Francisco Junio.
                             Uma nova edição da história dos eventos do CXFJ.
                         </p>
 
-                        <div class="card-links">
-
-                            <a
-                                href="https://chess-ratings.com/torneio.php?id=1534"
-                                target="_blank"
-                                class="card-link"
-                            >
-                                REGULAMENTO / INSCRIÇÃO
-                            </a>
-
-                            <a
-                                href="https://chess-ratings.com/torneio_inscritos.php?id=1534&return=torneios.php%3Fpage%3D1"
-                                target="_blank"
-                                class="card-link"
-                            >
-                                VER INSCRITOS
-                            </a>
-
-                        </div>
-
                     </div>
+
+
+                    <a
+                        href="https://chess-ratings.com/torneio.php?id=1534"
+                        target="_blank"
+                        class="calendar-status open"
+                    >
+                        INSCRIÇÕES ABERTAS
+                    </a>
 
                 </article>
 
 
                 <!-- DAMAS DO CARIRI -->
 
-                <article class="card">
+                <article class="calendar-item">
 
-                    <img
-                        src="../imagens/damas-do-cariri.png"
-                        alt="Damas do Cariri"
-                        class="card-image"
-                    >
+                    <div class="calendar-date">
 
-                    <div class="card-content">
+                        <strong>19 SET</strong>
+
+                        <span>2026</span>
+
+                    </div>
+
+
+                    <div class="calendar-info">
 
                         <h3>Damas do Cariri</h3>
-
-                        <div class="card-date">
-                            19 de setembro de 2026
-                        </div>
 
                         <p>
                             Um torneio dedicado às jogadoras e à
                             valorização da presença feminina no xadrez.
                         </p>
 
-                        <div class="card-links">
-
-                            <a
-                                href="https://chess-ratings.com/torneio.php?id=1557"
-                                target="_blank"
-                                class="card-link"
-                            >
-                                REGULAMENTO / INSCRIÇÃO
-                            </a>
-
-                            <a
-                                href="https://chess-ratings.com/torneio_inscritos.php?id=1557&return=torneios.php%3Fpage%3D2"
-                                target="_blank"
-                                class="card-link"
-                            >
-                                VER INSCRITOS
-                            </a>
-
-                        </div>
-
                     </div>
+
+
+                    <span class="calendar-status">
+                        EM BREVE
+                    </span>
 
                 </article>
 
 
                 <!-- III FESTIVAL CPP -->
 
-                <article class="card">
+                <article class="calendar-item">
 
-                    <img
-                        src="../imagens/iiifestivalcpp.png"
-                        alt="III Festival do Colégio Pequeno Príncipe"
-                        class="card-image"
-                    >
+                    <div class="calendar-date">
 
-                    <div class="card-content">
+                        <strong>19 SET</strong>
+
+                        <span>2026</span>
+
+                    </div>
+
+
+                    <div class="calendar-info">
 
                         <h3>III Festival do Colégio Pequeno Príncipe</h3>
-
-                        <div class="card-date">
-                            19 de setembro de 2026 — manhã
-                        </div>
 
                         <p>
                             Evento realizado em parceria com o Colégio
@@ -935,48 +1118,32 @@
                             espaços e novos jogadores.
                         </p>
 
-                        <div class="card-links">
-
-                            <a
-                                href="https://chess-ratings.com/torneio.php?id=1591"
-                                target="_blank"
-                                class="card-link"
-                            >
-                                REGULAMENTO / INSCRIÇÃO
-                            </a>
-
-                            <a
-                                href="https://chess-ratings.com/torneio_inscritos.php?id=1591&return=torneios.php%3Fpage%3D2"
-                                target="_blank"
-                                class="card-link"
-                            >
-                                VER INSCRITOS
-                            </a>
-
-                        </div>
-
                     </div>
+
+
+                    <span class="calendar-status">
+                        EM BREVE
+                    </span>
 
                 </article>
 
 
                 <!-- LIGA CXFJ -->
 
-                <article class="card">
+                <article class="calendar-item">
 
-                    <img
-                        src="../imagens/liga-cxfj-feminino.png"
-                        alt="Liga CXFJ de Xadrez Feminino"
-                        class="card-image"
-                    >
+                    <div class="calendar-date">
 
-                    <div class="card-content">
+                        <strong>03 OUT</strong>
+
+                        <span>2026</span>
+
+                    </div>
+
+
+                    <div class="calendar-info">
 
                         <h3>Liga CXFJ - Cearense Feminino por Equipes</h3>
-
-                        <div class="card-date">
-                            3 de outubro de 2026
-                        </div>
 
                         <p>
                             Liga feminina online organizada pelo CXFJ,
@@ -984,18 +1151,12 @@
                             a prática do xadrez feminino.
                         </p>
 
-                        <div class="card-links">
-
-                            <a
-                                href="#contato"
-                                class="card-link"
-                            >
-                                EM BREVE
-                            </a>
-
-                        </div>
-
                     </div>
+
+
+                    <span class="calendar-status">
+                        EM BREVE
+                    </span>
 
                 </article>
 
