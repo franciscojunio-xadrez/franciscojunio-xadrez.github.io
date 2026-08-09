@@ -589,7 +589,7 @@ section {
 
 
 /* ==============================
-   CARTÃO DO CURSO
+   CARTÃO GERAL DOS CURSOS
    ============================== */
 
 
@@ -604,19 +604,29 @@ section {
     margin:
         0 auto;
 
+    padding: 7px;
+
     text-decoration: none;
 
     border:
-        1px solid
-        rgba(201, 164, 92, 0.35);
+        2px solid
+        var(--dourado);
+
+    border-radius: 10px;
 
     background:
-        rgba(16, 24, 39, 0.55);
+        var(--azul-profundo);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.28);
 
     transition:
         transform 0.3s,
-        border-color 0.3s,
-        box-shadow 0.3s;
+        box-shadow 0.3s,
+        border-color 0.3s;
 
 }
 
@@ -627,11 +637,11 @@ section {
         translateY(-7px);
 
     border-color:
-        var(--dourado);
+        var(--dourado-claro);
 
     box-shadow:
-        0 15px 35px
-        rgba(0, 0, 0, 0.30);
+        0 16px 38px
+        rgba(201, 164, 92, 0.25);
 
 }
 
@@ -643,6 +653,8 @@ section {
     width: 100%;
 
     height: auto;
+
+    border-radius: 4px;
 
 }
 
@@ -905,6 +917,9 @@ footer p {
 
         max-width:
             390px;
+
+        padding:
+            6px;
 
     }
 
