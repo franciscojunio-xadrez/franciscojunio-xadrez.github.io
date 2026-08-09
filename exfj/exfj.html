@@ -1,3 +1,4 @@
+```html
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -509,6 +510,8 @@
         transition:
             transform 0.3s,
             border-color 0.3s;
+
+        text-align: center;
     }
 
 
@@ -551,6 +554,10 @@
         font-family: Arial, sans-serif;
 
         font-size: 0.95rem;
+
+        max-width: 500px;
+
+        margin: auto;
     }
 
 
@@ -562,24 +569,27 @@
         text-align: center;
 
         background: var(--azul);
+
+        overflow: hidden;
     }
 
 
     .quote blockquote {
-        max-width: 800px;
+        max-width: 1000px;
 
         margin: auto;
 
-        font-size:
-            clamp(
-                1.6rem,
-                4vw,
-                2.5rem
-            );
+        font-size: clamp(
+            1.2rem,
+            3vw,
+            2.5rem
+        );
 
         font-style: italic;
 
         color: var(--dourado-claro);
+
+        white-space: nowrap;
     }
 
 
@@ -649,6 +659,11 @@
         }
 
 
+        .quote blockquote {
+            font-size: 1rem;
+        }
+
+
         section {
             padding: 75px 20px;
         }
@@ -661,8 +676,9 @@
     }
 
 </style>
+```
 
-
+```html
 <!-- ==============================
      MENU
      ============================== -->
@@ -724,7 +740,7 @@
         <div class="hero-content">
 
             <div class="hero-symbol">
-                ♟
+                ♝
             </div>
 
             <div class="hero-kicker">
@@ -1064,3 +1080,4 @@
     </p>
 
 </footer>
+```
