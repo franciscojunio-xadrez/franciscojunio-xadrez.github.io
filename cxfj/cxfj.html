@@ -1,3 +1,4 @@
+```html
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,20 +22,26 @@
         --cinza: #b8b8b8;
     }
 
+
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
+
     html {
         scroll-behavior: smooth;
     }
 
+
     body {
         font-family: Georgia, "Times New Roman", serif;
+
         background: var(--azul-profundo);
+
         color: var(--creme);
+
         line-height: 1.6;
     }
 
@@ -45,54 +52,74 @@
 
     header {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 100%;
+
         z-index: 1000;
 
         background: rgba(16, 24, 39, 0.94);
+
         border-bottom: 1px solid rgba(201, 164, 92, 0.35);
 
         backdrop-filter: blur(10px);
     }
 
+
     nav {
         max-width: 1200px;
+
         margin: auto;
+
         padding: 18px 30px;
 
         display: flex;
+
         justify-content: space-between;
+
         align-items: center;
     }
 
+
     .logo-text {
         color: var(--branco);
+
         text-decoration: none;
 
         font-size: 1.25rem;
+
         font-weight: bold;
+
         letter-spacing: 3px;
     }
+
 
     .logo-text span {
         color: var(--dourado);
     }
 
+
     .menu {
         display: flex;
+
         gap: 28px;
+
         list-style: none;
     }
 
+
     .menu a {
         color: var(--creme);
+
         text-decoration: none;
 
         font-size: 0.95rem;
 
         transition: 0.3s;
     }
+
 
     .menu a:hover {
         color: var(--dourado-claro);
@@ -123,35 +150,28 @@
             var(--azul-profundo);
     }
 
+
     .hero-content {
         max-width: 900px;
+
         width: 100%;
 
-        margin: 0 auto;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin: auto;
     }
+
 
     .hero-symbol {
         width: 90px;
+
         height: 90px;
 
         margin: 0 auto 20px;
 
         display: flex;
+
         align-items: center;
+
         justify-content: center;
-    }
-
-    .hero-symbol img {
-        width: 80px;
-        height: 80px;
-
-        object-fit: contain;
-
-        display: block;
 
         filter:
             drop-shadow(
@@ -160,10 +180,23 @@
             );
     }
 
+
+    .hero-symbol img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
+    }
+
+
     .hero h1 {
         font-size: clamp(3rem, 8vw, 6.5rem);
 
         letter-spacing: 5px;
+
         font-weight: 500;
 
         color: var(--branco);
@@ -171,14 +204,17 @@
         line-height: 1;
     }
 
+
     .hero-line {
         width: 100px;
+
         height: 2px;
 
         background: var(--dourado);
 
         margin: 30px auto;
     }
+
 
     .hero h2 {
         font-size: clamp(1.2rem, 3vw, 2rem);
@@ -190,6 +226,7 @@
         letter-spacing: 2px;
     }
 
+
     .hero p {
         margin: 25px auto 35px;
 
@@ -199,6 +236,7 @@
 
         font-family: Arial, sans-serif;
     }
+
 
     .button {
         display: inline-block;
@@ -216,6 +254,7 @@
         transition: 0.3s;
     }
 
+
     .button:hover {
         background: var(--dourado);
 
@@ -231,16 +270,20 @@
         padding: 100px 25px;
     }
 
+
     .section-container {
         max-width: 1100px;
+
         margin: auto;
     }
+
 
     .section-title {
         text-align: center;
 
         margin-bottom: 55px;
     }
+
 
     .section-title h2 {
         font-size: 2.5rem;
@@ -250,16 +293,19 @@
         color: var(--branco);
     }
 
+
     .section-title span {
         display: block;
 
         width: 60px;
+
         height: 2px;
 
         background: var(--dourado);
 
         margin: 18px auto;
     }
+
 
     .section-title p {
         color: var(--cinza);
@@ -278,13 +324,16 @@
         color: var(--azul-profundo);
     }
 
+
     .about .section-title h2 {
         color: var(--azul-profundo);
     }
 
+
     .about .section-title p {
         color: #555;
     }
+
 
     .about-content {
         max-width: 800px;
@@ -305,6 +354,7 @@
         background: var(--azul);
     }
 
+
     .tournaments-intro {
         max-width: 750px;
 
@@ -317,6 +367,7 @@
         font-family: Arial, sans-serif;
     }
 
+
     .cards {
         display: grid;
 
@@ -324,6 +375,7 @@
 
         gap: 25px;
     }
+
 
     .card {
         overflow: hidden;
@@ -337,25 +389,37 @@
             border-color 0.3s;
     }
 
+
     .card:hover {
         transform: translateY(-7px);
 
         border-color: var(--dourado);
     }
 
+
     .card-image {
         width: 100%;
 
-        aspect-ratio: 4 / 5;
+        height: auto;
 
-        object-fit: cover;
+        max-height: 520px;
+
+        object-fit: contain;
+
+        object-position: center;
 
         display: block;
+
+        margin: 0 auto;
+
+        background: var(--azul-profundo);
     }
+
 
     .card-content {
         padding: 28px;
     }
+
 
     .card h3 {
         font-size: 1.5rem;
@@ -364,6 +428,7 @@
 
         color: var(--branco);
     }
+
 
     .card-date {
         color: var(--dourado-claro);
@@ -375,6 +440,7 @@
         margin-bottom: 15px;
     }
 
+
     .card p {
         color: var(--cinza);
 
@@ -385,6 +451,7 @@
         margin-bottom: 22px;
     }
 
+
     .card-links {
         display: flex;
 
@@ -392,6 +459,7 @@
 
         gap: 10px;
     }
+
 
     .card-link {
         display: inline-block;
@@ -411,6 +479,7 @@
         transition: 0.3s;
     }
 
+
     .card-link:hover {
         background: var(--dourado);
 
@@ -428,13 +497,16 @@
         color: var(--azul-profundo);
     }
 
+
     .calendar .section-title h2 {
         color: var(--azul-profundo);
     }
 
+
     .calendar .section-title p {
         color: #555;
     }
+
 
     .calendar-intro {
         max-width: 750px;
@@ -448,6 +520,7 @@
         font-family: Arial, sans-serif;
     }
 
+
     .calendar-list {
         max-width: 950px;
 
@@ -459,6 +532,7 @@
 
         gap: 18px;
     }
+
 
     .calendar-item {
         display: grid;
@@ -478,11 +552,13 @@
         transition: 0.3s;
     }
 
+
     .calendar-item:hover {
         border-color: var(--dourado);
 
         transform: translateY(-3px);
     }
+
 
     .calendar-date {
         text-align: center;
@@ -491,6 +567,7 @@
 
         font-family: Arial, sans-serif;
     }
+
 
     .calendar-date strong {
         display: block;
@@ -504,11 +581,13 @@
         margin-bottom: 4px;
     }
 
+
     .calendar-date span {
         font-size: 0.8rem;
 
         color: #666;
     }
+
 
     .calendar-info h3 {
         font-size: 1.35rem;
@@ -517,6 +596,7 @@
 
         color: var(--azul-profundo);
     }
+
 
     .calendar-info p {
         color: #555;
@@ -528,6 +608,7 @@
         margin-bottom: 15px;
     }
 
+
     .calendar-links {
         display: flex;
 
@@ -535,6 +616,7 @@
 
         gap: 10px;
     }
+
 
     .calendar-link {
         display: inline-block;
@@ -556,11 +638,13 @@
         transition: 0.3s;
     }
 
+
     .calendar-link:hover {
         background: var(--dourado);
 
         color: var(--azul-profundo);
     }
+
 
     .calendar-status {
         display: inline-block;
@@ -577,6 +661,7 @@
 
         letter-spacing: 0.7px;
     }
+
 
     .calendar-status.open {
         border-color: #769f80;
@@ -595,6 +680,7 @@
         color: var(--creme);
     }
 
+
     .event-box {
         max-width: 850px;
 
@@ -609,6 +695,7 @@
         background: rgba(16, 24, 39, 0.55);
     }
 
+
     .event-box h3 {
         font-size: 1.6rem;
 
@@ -616,6 +703,7 @@
 
         color: var(--branco);
     }
+
 
     .event-box p {
         font-family: Arial, sans-serif;
@@ -634,6 +722,7 @@
         background: var(--azul-profundo);
     }
 
+
     .photo-intro {
         max-width: 750px;
 
@@ -646,6 +735,7 @@
         font-family: Arial, sans-serif;
     }
 
+
     .photo-links {
         display: grid;
 
@@ -657,6 +747,7 @@
 
         margin: auto;
     }
+
 
     .photo-link {
         display: block;
@@ -674,11 +765,13 @@
         transition: 0.3s;
     }
 
+
     .photo-link:hover {
         border-color: var(--dourado);
 
         transform: translateY(-4px);
     }
+
 
     .photo-link strong {
         display: block;
@@ -687,6 +780,7 @@
 
         margin-bottom: 5px;
     }
+
 
     .photo-link span {
         color: var(--cinza);
@@ -705,6 +799,7 @@
         background: var(--azul);
     }
 
+
     .contact-box {
         text-align: center;
 
@@ -712,6 +807,7 @@
 
         margin: auto;
     }
+
 
     .contact-box p {
         color: var(--cinza);
@@ -736,11 +832,13 @@
         border-top: 1px solid rgba(201, 164, 92, 0.3);
     }
 
+
     footer strong {
         color: var(--dourado);
 
         letter-spacing: 2px;
     }
+
 
     footer p {
         margin-top: 8px;
@@ -765,6 +863,7 @@
             text-align: center;
         }
 
+
         .calendar-links {
             justify-content: center;
         }
@@ -778,31 +877,33 @@
             display: none;
         }
 
+
         nav {
             justify-content: center;
         }
+
 
         .cards {
             grid-template-columns: 1fr;
         }
 
+
         .photo-links {
             grid-template-columns: 1fr;
         }
+
 
         .hero h1 {
             letter-spacing: 3px;
         }
 
+
         .hero-symbol {
             width: 75px;
+
             height: 75px;
         }
 
-        .hero-symbol img {
-            width: 65px;
-            height: 65px;
-        }
 
         section {
             padding: 75px 20px;
@@ -824,6 +925,7 @@
         <a href="../index.html" class="logo-text">
             FRANCISCO <span>JUNIO</span>
         </a>
+
 
         <ul class="menu">
 
@@ -923,7 +1025,9 @@
 
             <div class="section-title">
 
-                <h2>Clube de Xadrez Francisco Junio</h2>
+                <h2>
+                    Clube de Xadrez Francisco Junio
+                </h2>
 
                 <span></span>
 
@@ -942,7 +1046,9 @@
                     que muitas vezes parecem existir apenas longe daqui.
                 </p>
 
+
                 <br>
+
 
                 <p>
                     O CXFJ busca oferecer aos jogadores um ambiente
@@ -950,7 +1056,9 @@
                     trazendo equipamentos escolhidos com cuidado.
                 </p>
 
+
                 <br>
+
 
                 <p>
                     Ainda estamos construindo esse mundo. Cada evento,
@@ -974,7 +1082,9 @@
 
             <div class="section-title">
 
-                <h2>Torneios</h2>
+                <h2>
+                    Torneios
+                </h2>
 
                 <span></span>
 
@@ -1007,19 +1117,25 @@
                         class="card-image"
                     >
 
+
                     <div class="card-content">
 
-                        <h3>Caíssa</h3>
+                        <h3>
+                            Caíssa
+                        </h3>
+
 
                         <div class="card-date">
                             20 de junho de 2026
                         </div>
+
 
                         <p>
                             Um dos primeiros torneios da história do
                             Clube de Xadrez Francisco Junio, marcando
                             o início de uma nova etapa para o CXFJ.
                         </p>
+
 
                         <div class="card-links">
 
@@ -1054,7 +1170,9 @@
 
             <div class="section-title">
 
-                <h2>Calendário</h2>
+                <h2>
+                    Calendário
+                </h2>
 
                 <span></span>
 
@@ -1083,16 +1201,23 @@
 
                     <div class="calendar-date">
 
-                        <strong>15 AGO</strong>
+                        <strong>
+                            15 AGO
+                        </strong>
 
-                        <span>2026</span>
+                        <span>
+                            2026
+                        </span>
 
                     </div>
 
 
                     <div class="calendar-info">
 
-                        <h3>Mandacaru Xadrez</h3>
+                        <h3>
+                            Mandacaru Xadrez
+                        </h3>
+
 
                         <p>
                             Torneio Amador - Categoria 1
@@ -1105,14 +1230,17 @@
                             <a
                                 href="https://chess-ratings.com/torneio.php?id=1534"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="calendar-link"
                             >
                                 REGULAMENTO / INSCRIÇÃO
                             </a>
 
+
                             <a
                                 href="https://chess-ratings.com/torneio_inscritos.php?id=1534&return=torneios.php%3Fpage%3D1"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="calendar-link"
                             >
                                 VER INSCRITOS
@@ -1131,16 +1259,23 @@
 
                     <div class="calendar-date">
 
-                        <strong>19 SET</strong>
+                        <strong>
+                            19 SET
+                        </strong>
 
-                        <span>2026</span>
+                        <span>
+                            2026
+                        </span>
 
                     </div>
 
 
                     <div class="calendar-info">
 
-                        <h3>Damas do Cariri</h3>
+                        <h3>
+                            Damas do Cariri
+                        </h3>
+
 
                         <p>
                             Torneio Feminino Amador
@@ -1152,14 +1287,17 @@
                             <a
                                 href="https://chess-ratings.com/torneio.php?id=1557"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="calendar-link"
                             >
                                 REGULAMENTO / INSCRIÇÃO
                             </a>
 
+
                             <a
                                 href="https://chess-ratings.com/torneio_inscritos.php?id=1557&return=torneios.php%3Fpage%3D2"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="calendar-link"
                             >
                                 VER INSCRITOS
@@ -1178,16 +1316,23 @@
 
                     <div class="calendar-date">
 
-                        <strong>19 SET</strong>
+                        <strong>
+                            19 SET
+                        </strong>
 
-                        <span>2026</span>
+                        <span>
+                            2026
+                        </span>
 
                     </div>
 
 
                     <div class="calendar-info">
 
-                        <h3>III Festival do Colégio Pequeno Príncipe</h3>
+                        <h3>
+                            III Festival do Colégio Pequeno Príncipe
+                        </h3>
+
 
                         <p>
                             Evento realizado em parceria com o Colégio
@@ -1200,14 +1345,17 @@
                             <a
                                 href="https://chess-ratings.com/torneio.php?id=1591"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="calendar-link"
                             >
                                 REGULAMENTO / INSCRIÇÃO
                             </a>
 
+
                             <a
                                 href="https://chess-ratings.com/torneio_inscritos.php?id=1591&return=torneios.php%3Fpage%3D2"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class="calendar-link"
                             >
                                 VER INSCRITOS
@@ -1226,16 +1374,23 @@
 
                     <div class="calendar-date">
 
-                        <strong>03 OUT</strong>
+                        <strong>
+                            03 OUT
+                        </strong>
 
-                        <span>2026</span>
+                        <span>
+                            2026
+                        </span>
 
                     </div>
 
 
                     <div class="calendar-info">
 
-                        <h3>Liga CXFJ - Cearense Feminino por Equipes</h3>
+                        <h3>
+                            Liga CXFJ - Cearense Feminino por Equipes
+                        </h3>
+
 
                         <p>
                             Liga feminina on-line organizada pelo CXFJ,
@@ -1274,7 +1429,9 @@
 
             <div class="section-title">
 
-                <h2>Eventos</h2>
+                <h2>
+                    Eventos
+                </h2>
 
                 <span></span>
 
@@ -1287,7 +1444,10 @@
 
             <div class="event-box">
 
-                <h3>Eventos do CXFJ</h3>
+                <h3>
+                    Eventos do CXFJ
+                </h3>
+
 
                 <p>
                     Além dos torneios, o Clube de Xadrez Francisco Junio
@@ -1295,6 +1455,7 @@
                     presenciais e online, sempre com o objetivo de
                     reunir pessoas para praticar xadrez.
                 </p>
+
 
                 <p>
                     Simultâneas, encontros, parcerias e novas formas
@@ -1318,7 +1479,9 @@
 
             <div class="section-title">
 
-                <h2>Fotos</h2>
+                <h2>
+                    Fotos
+                </h2>
 
                 <span></span>
 
@@ -1440,7 +1603,9 @@
 
             <div class="section-title">
 
-                <h2>Entre em contato</h2>
+                <h2>
+                    Entre em contato
+                </h2>
 
                 <span></span>
 
@@ -1458,9 +1623,11 @@
                     do Clube de Xadrez Francisco Junio.
                 </p>
 
+
                 <a
                     href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="button"
                 >
                     INSTAGRAM DO CXFJ
@@ -1482,10 +1649,13 @@
 
 <footer>
 
-    <strong>FRANCISCO JUNIO</strong>
+    <strong>
+        FRANCISCO JUNIO
+    </strong>
 
     <p>
         Clube de Xadrez Francisco Junio · Nosso mundo é aqui.
     </p>
 
 </footer>
+```
