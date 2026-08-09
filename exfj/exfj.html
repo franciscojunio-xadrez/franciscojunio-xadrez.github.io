@@ -100,6 +100,8 @@
         font-weight: bold;
 
         letter-spacing: 3px;
+
+        white-space: nowrap;
     }
 
 
@@ -161,18 +163,47 @@
 
 
     .hero-content {
+        width: 100%;
+
         max-width: 900px;
+
+        margin: 0 auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
     }
 
 
+    /* BISPO */
+
     .hero-symbol {
-        font-size: 5rem;
+        width: 90px;
 
-        line-height: 1;
+        height: 90px;
 
-        color: var(--dourado);
+        margin: 0 auto 25px;
 
-        margin-bottom: 25px;
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    .hero-symbol img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
 
         filter:
             drop-shadow(
@@ -196,11 +227,16 @@
 
 
     .hero h1 {
-        font-size: clamp(
-            2.5rem,
-            7vw,
-            6rem
-        );
+        width: 100%;
+
+        text-align: center;
+
+        font-size:
+            clamp(
+                2.5rem,
+                7vw,
+                6rem
+            );
 
         letter-spacing: 6px;
 
@@ -217,6 +253,8 @@
 
         height: 2px;
 
+        flex-shrink: 0;
+
         background: var(--dourado);
 
         margin: 30px auto;
@@ -224,17 +262,20 @@
 
 
     .hero h2 {
-        font-size: clamp(
-            1.2rem,
-            3vw,
-            2rem
-        );
+        font-size:
+            clamp(
+                1.2rem,
+                3vw,
+                2rem
+            );
 
         font-weight: normal;
 
         color: var(--dourado-claro);
 
         letter-spacing: 2px;
+
+        text-align: center;
     }
 
 
@@ -248,6 +289,8 @@
         font-family: Arial, sans-serif;
 
         font-size: 1rem;
+
+        text-align: center;
     }
 
 
@@ -256,7 +299,8 @@
 
         padding: 13px 28px;
 
-        border: 1px solid var(--dourado);
+        border:
+            1px solid var(--dourado);
 
         color: var(--dourado-claro);
 
@@ -510,8 +554,6 @@
         transition:
             transform 0.3s,
             border-color 0.3s;
-
-        text-align: center;
     }
 
 
@@ -554,10 +596,6 @@
         font-family: Arial, sans-serif;
 
         font-size: 0.95rem;
-
-        max-width: 500px;
-
-        margin: auto;
     }
 
 
@@ -575,15 +613,16 @@
 
 
     .quote blockquote {
-        max-width: 1000px;
+        max-width: 1100px;
 
         margin: auto;
 
-        font-size: clamp(
-            1.2rem,
-            3vw,
-            2.5rem
-        );
+        font-size:
+            clamp(
+                1.25rem,
+                3vw,
+                2.5rem
+            );
 
         font-style: italic;
 
@@ -594,7 +633,7 @@
 
 
     /* ==============================
-       CONTATO / RODAPÉ
+       RODAPÉ
        ============================== */
 
     footer {
@@ -655,12 +694,16 @@
 
 
         .hero-symbol {
-            font-size: 4rem;
+            width: 75px;
+
+            height: 75px;
         }
 
 
         .quote blockquote {
-            font-size: 1rem;
+            font-size: 1.15rem;
+
+            white-space: nowrap;
         }
 
 
@@ -687,8 +730,13 @@
 
     <nav>
 
-        <a href="#inicio" class="logo-text">
-            EX<span>FJ</span>
+        <!-- MARCA PRINCIPAL -->
+
+        <a
+            href="../index.html"
+            class="logo-text"
+        >
+            FRANCISCO <span>JUNIO</span>
         </a>
 
 
@@ -696,7 +744,7 @@
 
             <li>
                 <a href="#inicio">
-                    Início
+                    Topo
                 </a>
             </li>
 
@@ -729,7 +777,7 @@
 
 
     <!-- ==============================
-         INÍCIO
+         INÍCIO / TOPO
          ============================== -->
 
     <section
@@ -739,28 +787,42 @@
 
         <div class="hero-content">
 
+
+            <!-- BISPO DA EXFJ -->
+
             <div class="hero-symbol">
-                ♝
+
+                <img
+                    src="../imagens/bispo.png"
+                    alt="Bispo"
+                >
+
             </div>
+
 
             <div class="hero-kicker">
                 Escola de Xadrez Francisco Junio
             </div>
 
+
             <h1>
                 EXFJ
             </h1>
 
+
             <div class="hero-line"></div>
+
 
             <h2>
                 Escola de Xadrez Francisco Junio
             </h2>
 
+
             <p>
                 Fortalecendo o xadrez,
                 peça por peça.
             </p>
+
 
             <a
                 href="#areas"
@@ -768,6 +830,7 @@
             >
                 EXPLORAR ÁREAS DE ESTUDO
             </a>
+
 
         </div>
 
@@ -813,9 +876,10 @@
                     mais simples, acessível e fácil de aprender.
                 </p>
 
+
                 <p>
                     Aqui você encontra aulas de diferentes temas e
-                    níveis, com apoio materiais de apoio para estudar,
+                    níveis, com apoio de materiais de apoio para estudar,
                     praticar e evoluir no seu próprio ritmo.
                 </p>
 
@@ -872,15 +936,18 @@
                     Formação disponível
                 </span>
 
+
                 <h3>
                     Introdução ao Xadrez
                 </h3>
+
 
                 <p>
                     Uma formação introdutória destinada
                     à construção dos fundamentos necessários
                     para compreender e praticar o xadrez.
                 </p>
+
 
                 <a
                     href="introducao-ao-xadrez.html"
@@ -913,11 +980,14 @@
                     Áreas de estudo
                 </small>
 
+
                 <h2>
                     Encontre o que você procura
                 </h2>
 
+
                 <span></span>
+
 
                 <p>
                     Escolha uma área de acordo
@@ -943,9 +1013,11 @@
                             01
                         </span>
 
+
                         <h3>
                             Aberturas e Defesas
                         </h3>
+
 
                         <p>
                             Sistemas de abertura,
@@ -972,9 +1044,11 @@
                             02
                         </span>
 
+
                         <h3>
                             Tática
                         </h3>
+
 
                         <p>
                             Cálculo, combinações e
@@ -999,9 +1073,11 @@
                             03
                         </span>
 
+
                         <h3>
                             Estratégia
                         </h3>
+
 
                         <p>
                             Planos, estruturas de peões,
@@ -1027,9 +1103,11 @@
                             04
                         </span>
 
+
                         <h3>
                             Finais
                         </h3>
+
 
                         <p>
                             Princípios, técnicas e
@@ -1074,6 +1152,7 @@
     <strong>
         EXFJ — ESCOLA DE XADREZ FRANCISCO JUNIO
     </strong>
+
 
     <p>
         Fortalecendo o xadrez, peça por peça.
