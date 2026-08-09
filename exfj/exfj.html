@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EXFJ — Escola de Xadrez Francisco Junio</title>
+
+    <meta
+        name="description"
+        content="EXFJ — Escola de Xadrez Francisco Junio. Formação e estudo do xadrez."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f6f1;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            background: #111111;
+            border-bottom: 3px solid #c9a227;
+            padding: 20px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #c9a227;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 6%;
+
+            background:
+                linear-gradient(
+                    rgba(17, 17, 17, 0.88),
+                    rgba(17, 17, 17, 0.88)
+                ),
+                radial-gradient(
+                    circle at center,
+                    #4b3a14 0%,
+                    #111111 70%
+                );
+
+            color: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-kicker {
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-size: 1.15rem;
+            color: #e8e5dc;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #c9a227;
+            color: #111111;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #d4af37;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            padding: 90px 6%;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            display: block;
+            color: #a27d0c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #171717;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: #555555;
+        }
+
+        /* =========================
+           A ESCOLA
+        ========================= */
+
+        .about {
+            background: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: #444444;
+        }
+
+        .about-highlight {
+            border-left: 4px solid #c9a227;
+            padding: 20px 25px;
+            background: #f8f6f1;
+            font-style: italic;
+        }
+
+        /* =========================
+           FORMAÇÃO
+        ========================= */
+
+        .formation {
+            background: #f0ede5;
+        }
+
+        .formation-card {
+            max-width: 850px;
+            margin: auto;
+            background: #ffffff;
+            border: 1px solid #ddd6c5;
+            padding: 45px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+        }
+
+        .formation-card .label {
+            color: #a27d0c;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .formation-card h3 {
+            font-size: 2rem;
+            margin: 12px 0 15px;
+        }
+
+        .formation-card p {
+            color: #555555;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #111111;
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #c9a227;
+            color: #111111;
+        }
+
+        /* =========================
+           ÁREAS DE ESTUDO
+        ========================= */
+
+        .areas {
+            background: #ffffff;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .area-card {
+            position: relative;
+            min-height: 240px;
+            padding: 30px 25px;
+            border: 1px solid #ddd6c5;
+            background: #faf9f5;
+            text-decoration: none;
+            color: #171717;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: 0.3s;
+        }
+
+        .area-card:hover {
+            transform: translateY(-6px);
+            border-color: #c9a227;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .area-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: #b09335;
+        }
+
+        .area-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .area-card p {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: #111111;
+            color: #ffffff;
+            padding: 45px 6%;
+            text-align: center;
+            border-top: 3px solid #c9a227;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+        footer p {
+            margin-top: 8px;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                position: relative;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding: 60px 5%;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .formation-card {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+        <div class="nav">
+
+            <a href="#inicio" class="logo">
+                EX<span>FJ</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#escola">A Escola</a></li>
+                    <li><a href="#formacao">Formação</a></li>
+                    <li><a href="#areas">Áreas de Estudo</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         INÍCIO
+    ========================== -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <div class="hero-kicker">
+                    Escola de Xadrez Francisco Junio
+                </div>
+
+                <h1>
+                    EX<span>FJ</span>
+                </h1>
+
+                <p>
+                    Um espaço dedicado ao estudo, à formação
+                    e ao desenvolvimento do pensamento no xadrez.
+                </p>
+
+                <a href="#areas" class="hero-button">
+                    Explorar áreas de estudo
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             A ESCOLA
+        ========================== -->
+
+        <section class="about" id="escola">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <small>A Escola</small>
+
+                    <h2>
+                        Xadrez como conhecimento
+                    </h2>
+
+                    <p>
+                        A EXFJ organiza o estudo do xadrez
+                        de maneira clara, progressiva e objetiva.
+                    </p>
+
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="about-text">
+
+                        <h3>
+                            Estudar é compreender.
+                        </h3>
+
+                        <p>
+                            A Escola de Xadrez Francisco Junio
+                            foi criada para oferecer uma estrutura
+                            de estudo que permita ao enxadrista
+                            encontrar exatamente aquilo que deseja
+                            aprender.
+                        </p>
+
+                        <p>
+                            Em vez de apresentar um caminho único,
+                            a EXFJ organiza o conhecimento do xadrez
+                            em diferentes áreas de estudo.
+                        </p>
+
+                    </div>
+
+                    <div class="about-highlight">
+
+                        O objetivo não é apenas ensinar
+                        movimentos, mas desenvolver a capacidade
+                        de compreender as posições, reconhecer
+                        padrões e tomar decisões diante do tabuleiro.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FORMAÇÃO
+        ========================== -->
+
+        <section class="formation" id="formacao">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <small>Formação</small>
+
+                    <h2>
+                        Formação na EXFJ
+                    </h2>
+
+                    <p>
+                        Cursos estruturados para quem deseja
+                        construir uma base sólida no xadrez.
+                    </p>
+
+                </div>
+
+                <div class="formation-card">
+
+                    <span class="label">
+                        Formação disponível
+                    </span>
+
+                    <h3>
+                        Introdução ao Xadrez
+                    </h3>
+
+                    <p>
+                        Um curso introdutório destinado à construção
+                        dos fundamentos necessários para compreender
+                        e praticar o xadrez.
+                    </p>
+
+                    <a href="introducao-ao-xadrez.html" class="button">
+                        Conhecer a formação
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ÁREAS DE ESTUDO
+        ========================== -->
+
+        <section class="areas" id="areas">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <small>Áreas de estudo</small>
+
+                    <h2>
+                        Encontre o que você procura
+                    </h2>
+
+                    <p>
+                        Escolha uma área de acordo com aquilo
+                        que deseja estudar no xadrez.
+                    </p>
+
+                </div>
+
+                <div class="areas-grid">
+
+                    <a href="aberturas-e-defesas.html" class="area-card">
+
+                        <span class="area-number">01</span>
+
+                        <h3>
+                            Aberturas e Defesas
+                        </h3>
+
+                        <p>
+                            Sistemas de abertura,
+                            respostas e ideias fundamentais.
+                        </p>
+
+                    </a>
+
+
+                    <a href="tatica.html" class="area-card">
+
+                        <span class="area-number">02</span>
+
+                        <h3>
+                            Tática
+                        </h3>
+
+                        <p>
+                            Cálculo, combinações e
+                            temas táticos.
+                        </p>
+
+                    </a>
+
+
+                    <a href="estrategia.html" class="area-card">
+
+                        <span class="area-number">03</span>
+
+                        <h3>
+                            Estratégia
+                        </h3>
+
+                        <p>
+                            Planos, estruturas de peões
+                            e compreensão posicional.
+                        </p>
+
+                    </a>
+
+
+                    <a href="finais.html" class="area-card">
+
+                        <span class="area-number">04</span>
+
+                        <h3>
+                            Finais
+                        </h3>
+
+                        <p>
+                            Técnicas e princípios
+                            fundamentais dos finais.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <strong>
+            EXFJ — Escola de Xadrez Francisco Junio
+        </strong>
+
+        <p>
+            Uma iniciativa FRANCISCO JUNIO.
+        </p>
+
+    </footer>
+
+</body>
+</html>
