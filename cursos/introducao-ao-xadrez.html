@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Introdução ao Xadrez | EXFJ</title>
+
+<meta
+    name="description"
+    content="Introdução ao Xadrez — curso da Escola de Xadrez Francisco Junio para quem está começando a jogar e deseja construir seus primeiros fundamentos no xadrez."
+>
+
+
+<style>
+
+    /* ==============================
+       CURSO — INTRODUÇÃO AO XADREZ
+       ESCOLA DE XADREZ FRANCISCO JUNIO
+       ============================== */
+
+
+    :root {
+
+        --azul-profundo: #101827;
+
+        --azul: #18243a;
+
+        --dourado: #c9a45c;
+
+        --dourado-claro: #e3c681;
+
+        --creme: #f4efe4;
+
+        --branco: #ffffff;
+
+        --cinza: #b8b8b8;
+
+        --cinza-escuro: #555555;
+
+    }
+
+
+    * {
+
+        margin: 0;
+
+        padding: 0;
+
+        box-sizing: border-box;
+
+    }
+
+
+    html {
+
+        scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        background:
+            var(--azul-profundo);
+
+        color:
+            var(--creme);
+
+        line-height: 1.6;
+
+    }
+
+
+    /* ==============================
+       MENU
+       ============================== */
+
+
+    header {
+
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        z-index: 1000;
+
+        background:
+            rgba(16, 24, 39, 0.94);
+
+        border-bottom:
+            1px solid
+            rgba(201, 164, 92, 0.35);
+
+        backdrop-filter:
+            blur(10px);
+
+    }
+
+
+    nav {
+
+        max-width: 1200px;
+
+        margin: auto;
+
+        padding: 18px 30px;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+    }
+
+
+    .logo-text {
+
+        color:
+            var(--branco);
+
+        text-decoration: none;
+
+        font-size: 1.15rem;
+
+        font-weight: bold;
+
+        letter-spacing: 3px;
+
+        white-space: nowrap;
+
+    }
+
+
+    .logo-text span {
+
+        color:
+            var(--dourado);
+
+    }
+
+
+    .back-link {
+
+        color:
+            var(--creme);
+
+        text-decoration: none;
+
+        font-size: 0.9rem;
+
+        transition: 0.3s;
+
+    }
+
+
+    .back-link:hover {
+
+        color:
+            var(--dourado-claro);
+
+    }
+
+
+    /* ==============================
+       HERO
+       ============================== */
+
+
+    .hero {
+
+        min-height: 92vh;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding:
+            140px 25px 90px;
+
+        background:
+
+            radial-gradient(
+                circle at center,
+                rgba(201, 164, 92, 0.14),
+                transparent 45%
+            ),
+
+            var(--azul-profundo);
+
+    }
+
+
+    .hero-content {
+
+        width: 100%;
+
+        max-width: 900px;
+
+        margin: auto;
+
+    }
+
+
+    .hero-symbol {
+
+        width: 85px;
+
+        height: 85px;
+
+        margin:
+            0 auto 25px;
+
+    }
+
+
+    .hero-symbol img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
+
+        filter:
+            drop-shadow(
+                0 0 12px
+                rgba(201, 164, 92, 0.2)
+            );
+
+    }
+
+
+    .hero-kicker {
+
+        color:
+            var(--dourado);
+
+        text-transform:
+            uppercase;
+
+        letter-spacing: 4px;
+
+        font-size: 0.78rem;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .hero h1 {
+
+        color:
+            var(--branco);
+
+        font-size:
+            clamp(
+                2.3rem,
+                6vw,
+                5rem
+            );
+
+        font-weight:
+            normal;
+
+        line-height: 1.1;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .hero-line {
+
+        width: 80px;
+
+        height: 2px;
+
+        background:
+            var(--dourado);
+
+        margin:
+            25px auto;
+
+    }
+
+
+    .hero-subtitle {
+
+        color:
+            var(--dourado-claro);
+
+        font-size:
+            clamp(
+                1.15rem,
+                3vw,
+                1.7rem
+            );
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .hero-description {
+
+        max-width: 700px;
+
+        margin:
+            0 auto 35px;
+
+        color:
+            var(--cinza);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        font-size: 1rem;
+
+    }
+
+
+    .button {
+
+        display:
+            inline-block;
+
+        padding:
+            13px 28px;
+
+        border:
+            1px solid
+            var(--dourado);
+
+        color:
+            var(--dourado-claro);
+
+        text-decoration: none;
+
+        letter-spacing: 1px;
+
+        transition: 0.3s;
+
+    }
+
+
+    .button:hover {
+
+        background:
+            var(--dourado);
+
+        color:
+            var(--azul-profundo);
+
+    }
+
+
+    /* ==============================
+       SEÇÕES
+       ============================== */
+
+
+    section {
+
+        padding:
+            90px 25px;
+
+    }
+
+
+    .section-container {
+
+        max-width: 1100px;
+
+        margin: auto;
+
+    }
+
+
+    .section-title {
+
+        text-align: center;
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .section-title small {
+
+        display: block;
+
+        color:
+            var(--dourado);
+
+        text-transform:
+            uppercase;
+
+        letter-spacing: 3px;
+
+        font-size: 0.75rem;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .section-title h2 {
+
+        color:
+            var(--branco);
+
+        font-size: 2.4rem;
+
+        font-weight:
+            normal;
+
+    }
+
+
+    .section-title span {
+
+        display: block;
+
+        width: 60px;
+
+        height: 2px;
+
+        background:
+            var(--dourado);
+
+        margin:
+            18px auto;
+
+    }
+
+
+    .section-title p {
+
+        color:
+            var(--cinza);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+    }
+
+
+    /* ==============================
+       SOBRE O CURSO
+       ============================== */
+
+
+    .about {
+
+        background:
+            var(--creme);
+
+        color:
+            var(--azul-profundo);
+
+    }
+
+
+    .about .section-title h2 {
+
+        color:
+            var(--azul-profundo);
+
+    }
+
+
+    .about .section-title p {
+
+        color:
+            var(--cinza-escuro);
+
+    }
+
+
+    .about-content {
+
+        max-width: 850px;
+
+        margin: auto;
+
+        text-align: center;
+
+        font-size: 1.08rem;
+
+    }
+
+
+    .about-content p {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .about-highlight {
+
+        margin:
+            35px auto 0;
+
+        padding:
+            25px 30px;
+
+        border-left:
+            3px solid
+            var(--dourado);
+
+        background:
+            rgba(16, 24, 39, 0.05);
+
+        text-align: left;
+
+        font-style: italic;
+
+    }
+
+
+    /* ==============================
+       PARA QUEM É
+       ============================== */
+
+
+    .audience {
+
+        background:
+            var(--azul);
+
+    }
+
+
+    .audience-content {
+
+        max-width: 900px;
+
+        margin: auto;
+
+    }
+
+
+    .audience-box {
+
+        padding:
+            35px;
+
+        border:
+            1px solid
+            rgba(201, 164, 92, 0.35);
+
+        background:
+            rgba(16, 24, 39, 0.45);
+
+    }
+
+
+    .audience-box h3 {
+
+        color:
+            var(--dourado-claro);
+
+        font-size:
+            1.5rem;
+
+        font-weight:
+            normal;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .audience-box p {
+
+        color:
+            var(--cinza);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .audience-box p:last-child {
+
+        margin-bottom: 0;
+
+    }
+
+
+    /* ==============================
+       CONTEÚDO
+       ============================== */
+
+
+    .content {
+
+        background:
+            var(--azul-profundo);
+
+    }
+
+
+    .content-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+
+    }
+
+
+    .content-card {
+
+        padding:
+            30px;
+
+        border:
+            1px solid
+            rgba(201, 164, 92, 0.30);
+
+        background:
+            rgba(24, 36, 58, 0.55);
+
+    }
+
+
+    .content-number {
+
+        display: block;
+
+        color:
+            var(--dourado);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        font-size: 0.75rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .content-card h3 {
+
+        color:
+            var(--branco);
+
+        font-size:
+            1.35rem;
+
+        font-weight:
+            normal;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .content-card p {
+
+        color:
+            var(--cinza);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        font-size:
+            0.94rem;
+
+    }
+
+
+    /* ==============================
+       PROGRAMA
+       ============================== */
+
+
+    .program {
+
+        background:
+            var(--creme);
+
+        color:
+            var(--azul-profundo);
+
+    }
+
+
+    .program .section-title h2 {
+
+        color:
+            var(--azul-profundo);
+
+    }
+
+
+    .program .section-title p {
+
+        color:
+            var(--cinza-escuro);
+
+    }
+
+
+    .lessons {
+
+        max-width:
+            900px;
+
+        margin:
+            auto;
+
+    }
+
+
+    .lesson {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            80px 1fr;
+
+        gap: 25px;
+
+        padding:
+            25px 0;
+
+        border-bottom:
+            1px solid
+            rgba(16, 24, 39, 0.15);
+
+    }
+
+
+    .lesson:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .lesson-number {
+
+        color:
+            var(--dourado);
+
+        font-size:
+            1.4rem;
+
+        font-weight:
+            bold;
+
+    }
+
+
+    .lesson h3 {
+
+        color:
+            var(--azul-profundo);
+
+        font-size:
+            1.25rem;
+
+        font-weight:
+            normal;
+
+        margin-bottom: 5px;
+
+    }
+
+
+    .lesson p {
+
+        color:
+            var(--cinza-escuro);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        font-size:
+            0.92rem;
+
+    }
+
+
+    /* ==============================
+       COMO FUNCIONA
+       ============================== */
+
+
+    .details {
+
+        background:
+            var(--azul);
+
+    }
+
+
+    .details-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 18px;
+
+    }
+
+
+    .detail {
+
+        text-align:
+            center;
+
+        padding:
+            30px 18px;
+
+        border:
+            1px solid
+            rgba(201, 164, 92, 0.30);
+
+        background:
+            rgba(16, 24, 39, 0.45);
+
+    }
+
+
+    .detail strong {
+
+        display: block;
+
+        color:
+            var(--dourado-claro);
+
+        font-size:
+            1.35rem;
+
+        font-weight:
+            normal;
+
+        margin-bottom:
+            8px;
+
+    }
+
+
+    .detail span {
+
+        color:
+            var(--cinza);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        font-size:
+            0.85rem;
+
+    }
+
+
+    /* ==============================
+       INSCRIÇÃO
+       ============================== */
+
+
+    .enrollment {
+
+        background:
+            var(--azul-profundo);
+
+        text-align:
+            center;
+
+    }
+
+
+    .enrollment-box {
+
+        max-width:
+            850px;
+
+        margin:
+            auto;
+
+        padding:
+            45px 35px;
+
+        border:
+            1px solid
+            rgba(201, 164, 92, 0.40);
+
+        background:
+            rgba(24, 36, 58, 0.55);
+
+    }
+
+
+    .price {
+
+        color:
+            var(--dourado-claro);
+
+        font-size:
+            2.8rem;
+
+        margin:
+            10px 0 20px;
+
+    }
+
+
+    .enrollment-box p {
+
+        max-width:
+            650px;
+
+        margin:
+            0 auto 25px;
+
+        color:
+            var(--cinza);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+    }
+
+
+    .certificate {
+
+        margin:
+            30px auto;
+
+        padding:
+            18px 22px;
+
+        border-left:
+            3px solid
+            var(--dourado);
+
+        background:
+            rgba(201, 164, 92, 0.07);
+
+        color:
+            var(--creme);
+
+    }
+
+
+    /* ==============================
+       RODAPÉ
+       ============================== */
+
+
+    footer {
+
+        text-align:
+            center;
+
+        padding:
+            35px 20px;
+
+        background:
+            #0b111d;
+
+        border-top:
+            1px solid
+            rgba(201, 164, 92, 0.3);
+
+    }
+
+
+    footer strong {
+
+        color:
+            var(--dourado);
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    footer p {
+
+        margin-top:
+            8px;
+
+        color:
+            var(--cinza);
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        font-size:
+            0.85rem;
+
+    }
+
+
+    /* ==============================
+       CELULAR
+       ============================== */
+
+
+    @media (max-width: 800px) {
+
+        nav {
+
+            justify-content:
+                center;
+
+        }
+
+
+        .back-link {
+
+            display:
+                none;
+
+        }
+
+
+        .hero {
+
+            padding:
+                130px 20px 75px;
+
+        }
+
+
+        section {
+
+            padding:
+                70px 20px;
+
+        }
+
+
+        .content-grid {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .details-grid {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+        }
+
+
+        .lesson {
+
+            grid-template-columns:
+                55px 1fr;
+
+            gap:
+                15px;
+
+        }
+
+
+        .enrollment-box {
+
+            padding:
+                35px 22px;
+
+        }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+        .details-grid {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                2.3rem;
+
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ==============================
+     MENU
+     ============================== -->
+
+<header>
+
+    <nav>
+
+        <a
+            href="../index.html"
+            class="logo-text"
+        >
+            FRANCISCO <span>JUNIO</span>
+        </a>
+
+
+        <a
+            href="../exfj/exfj.html"
+            class="back-link"
+        >
+            ← Voltar para a EXFJ
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+    <!-- ==============================
+         HERO
+         ============================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+
+            <div class="hero-symbol">
+
+                <img
+                    src="../imagens/bispo.png"
+                    alt="Bispo"
+                >
+
+            </div>
+
+
+            <div class="hero-kicker">
+                EXFJ — Formação
+            </div>
+
+
+            <h1>
+                Introdução ao Xadrez
+            </h1>
+
+
+            <div class="hero-line"></div>
+
+
+            <div class="hero-subtitle">
+                Seus primeiros passos no jogo.
+            </div>
+
+
+            <p class="hero-description">
+
+                Uma formação criada para quem está
+                começando no xadrez e deseja compreender
+                melhor o jogo, aprender a pensar antes
+                de jogar e construir uma base sólida
+                para continuar evoluindo.
+
+            </p>
+
+
+            <a
+                href="#inscricao"
+                class="button"
+            >
+                QUERO CONHECER O CURSO
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         O CURSO
+         ============================== -->
+
+    <section class="about">
+
+        <div class="section-container">
+
+
+            <div class="section-title">
+
+                <small>
+                    O Curso
+                </small>
+
+                <h2>
+                    Uma porta de entrada para o xadrez.
+                </h2>
+
+                <span></span>
+
+                <p>
+                    Fundamentos para começar a compreender o jogo.
+                </p>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <p>
+
+                    O curso de Introdução ao Xadrez foi pensado
+                    para quem já conhece o movimento das peças,
+                    mas ainda não sabe exatamente como pensar
+                    durante uma partida.
+
+                </p>
+
+
+                <p>
+
+                    Ao longo da formação, serão apresentados
+                    princípios básicos de pensamento, tática,
+                    estratégia, abertura, padrões de mate e
+                    finais fundamentais.
+
+                </p>
+
+
+                <p>
+
+                    A proposta é ajudar quem está começando
+                    a dar o primeiro passo entre simplesmente
+                    movimentar as peças e realmente começar
+                    a compreender o jogo.
+
+                </p>
+
+
+                <div class="about-highlight">
+
+                    Não é necessário conhecer teoria avançada.
+                    O objetivo é construir os fundamentos que
+                    permitirão compreender melhor cada partida
+                    e continuar evoluindo depois do curso.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         PARA QUEM É
+         ============================== -->
+
+    <section class="audience">
+
+        <div class="section-container">
+
+
+            <div class="section-title">
+
+                <small>
+                    Público
+                </small>
+
+                <h2>
+                    Para quem é este curso?
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="audience-content">
+
+                <div class="audience-box">
+
+                    <h3>
+                        Para quem está começando.
+                    </h3>
+
+
+                    <p>
+
+                        Este curso foi pensado para quem está
+                        dando os primeiros passos no xadrez,
+                        já sabe movimentar as peças e agora
+                        deseja aprender como jogar de maneira
+                        mais consciente.
+
+                    </p>
+
+
+                    <p>
+
+                        A formação apresenta maneiras de pensar
+                        antes de realizar um lance, princípios
+                        básicos de estratégia, temas táticos,
+                        fundamentos de abertura e finais
+                        essenciais.
+
+                    </p>
+
+
+                    <p>
+
+                        É uma formação introdutória. Portanto,
+                        ela não foi pensada para jogadores que
+                        já dominam os fundamentos do xadrez,
+                        mas para quem precisa justamente
+                        construir essa base.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         O QUE SERÁ APRENDIDO
+         ============================== -->
+
+    <section class="content">
+
+        <div class="section-container">
+
+
+            <div class="section-title">
+
+                <small>
+                    Conteúdo
+                </small>
+
+                <h2>
+                    O que será aprendido?
+                </h2>
+
+                <span></span>
+
+                <p>
+                    Os principais fundamentos para começar a jogar melhor.
+                </p>
+
+            </div>
+
+
+            <div class="content-grid">
+
+
+                <article class="content-card">
+
+                    <span class="content-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Como pensar no xadrez
+                    </h3>
+
+                    <p>
+
+                        Primeiros princípios para analisar
+                        uma posição, observar possibilidades
+                        e pensar antes de realizar um lance.
+
+                    </p>
+
+                </article>
+
+
+                <article class="content-card">
+
+                    <span class="content-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Táticas básicas
+                    </h3>
+
+                    <p>
+
+                        Ataque duplo, ataque descoberto,
+                        raio X, garfo, cravada, peça
+                        sobrecarregada, desvio e outros
+                        temas táticos fundamentais.
+
+                    </p>
+
+                </article>
+
+
+                <article class="content-card">
+
+                    <span class="content-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Padrões de mate
+                    </h3>
+
+                    <p>
+
+                        Reconhecimento de padrões de mate
+                        importantes, incluindo exemplos como
+                        Mate do Pastor, Anastácia e Philidor.
+
+                    </p>
+
+                </article>
+
+
+                <article class="content-card">
+
+                    <span class="content-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Princípios da abertura
+                    </h3>
+
+                    <p>
+
+                        Desenvolvimento das peças, domínio
+                        do centro, iniciativa, casas-chave,
+                        segurança do rei e princípios básicos
+                        para começar uma partida.
+
+                    </p>
+
+                </article>
+
+
+                <article class="content-card">
+
+                    <span class="content-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Estratégia básica
+                    </h3>
+
+                    <p>
+
+                        Melhoria das peças, atividade,
+                        segurança do rei, domínio do espaço
+                        e outros conceitos fundamentais
+                        para compreender posições simples.
+
+                    </p>
+
+                </article>
+
+
+                <article class="content-card">
+
+                    <span class="content-number">
+                        06
+                    </span>
+
+                    <h3>
+                        Finais básicos
+                    </h3>
+
+                    <p>
+
+                        Técnicas fundamentais de finais,
+                        incluindo mates com Rei e Dama,
+                        Rei e Torre e Rei e dois Bispos.
+
+                    </p>
+
+                </article>
+
+
+                <article class="content-card">
+
+                    <span class="content-number">
+                        07
+                    </span>
+
+                    <h3>
+                        Finais de peões
+                    </h3>
+
+                    <p>
+
+                        Promoção do peão, regra do quadrado
+                        e princípios básicos para compreender
+                        finais de peões.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         PROGRAMA
+         ============================== -->
+
+    <section class="program">
+
+        <div class="section-container">
+
+
+            <div class="section-title">
+
+                <small>
+                    Estrutura
+                </small>
+
+                <h2>
+                    7 encontros
+                </h2>
+
+                <span></span>
+
+                <p>
+                    Uma jornada introdutória pelos fundamentos do xadrez.
+                </p>
+
+            </div>
+
+
+            <div class="lessons">
+
+
+                <article class="lesson">
+
+                    <div class="lesson-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Princípios do pensamento no xadrez
+                        </h3>
+
+                        <p>
+                            Como observar uma posição e começar
+                            a pensar antes de jogar.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="lesson">
+
+                    <div class="lesson-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Introdução a táticas e combinações
+                        </h3>
+
+                        <p>
+                            Primeiros temas táticos e reconhecimento
+                            de oportunidades durante a partida.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="lesson">
+
+                    <div class="lesson-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Padrões de mate
+                        </h3>
+
+                        <p>
+                            Reconhecimento e aplicação de padrões
+                            de mate frequentes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="lesson">
+
+                    <div class="lesson-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Princípios da abertura
+                        </h3>
+
+                        <p>
+                            Desenvolvimento, centro, iniciativa,
+                            segurança do rei e princípios básicos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="lesson">
+
+                    <div class="lesson-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Introdução à estratégia
+                        </h3>
+
+                        <p>
+                            Atividade das peças, melhoria das peças,
+                            planos e princípios posicionais básicos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="lesson">
+
+                    <div class="lesson-number">
+                        06
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Finais básicos
+                        </h3>
+
+                        <p>
+                            Mates fundamentais e princípios
+                            essenciais dos finais.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="lesson">
+
+                    <div class="lesson-number">
+                        07
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Finais de peão
+                        </h3>
+
+                        <p>
+                            Promoção, regra do quadrado e
+                            fundamentos dos finais de peões.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         COMO FUNCIONA
+         ============================== -->
+
+    <section class="details">
+
+        <div class="section-container">
+
+
+            <div class="section-title">
+
+                <small>
+                    Informações
+                </small>
+
+                <h2>
+                    Como funciona?
+                </h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="details-grid">
+
+
+                <div class="detail">
+
+                    <strong>
+                        7
+                    </strong>
+
+                    <span>
+                        encontros
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        1h
+                    </strong>
+
+                    <span>
+                        por aula
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Online
+                    </strong>
+
+                    <span>
+                        Google Meet
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        7h
+                    </strong>
+
+                    <span>
+                        de formação
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CERTIFICADO E INSCRIÇÃO
+         ============================== -->
+
+    <section
+        class="enrollment"
+        id="inscricao"
+    >
+
+        <div class="section-container">
+
+
+            <div class="section-title">
+
+                <small>
+                    Inscrição
+                </small>
+
+                <h2>
+                    Dê o primeiro passo.
+                </h2>
+
+                <span></span>
+
+                <p>
+                    Inscreva-se e comece sua jornada no xadrez.
+                </p>
+
+            </div>
+
+
+            <div class="enrollment-box">
+
+
+                <div class="price">
+                    R$ 25
+                </div>
+
+
+                <p>
+
+                    O investimento corresponde à participação
+                    na formação completa de 7 encontros.
+
+                </p>
+
+
+                <div class="certificate">
+
+                    <strong>
+                        Certificado
+                    </strong>
+
+                    <br>
+
+                    Ao concluir o curso, o participante receberá
+                    certificado de conclusão da formação.
+
+                </div>
+
+
+                <p>
+
+                    Para realizar sua inscrição, preencha seus
+                    dados através do formulário de inscrição.
+
+                </p>
+
+
+                <!-- SUBSTITUIR O # PELO LINK DO GOOGLE FORMS -->
+
+                <a
+                    href="#"
+                    class="button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    FAZER MINHA INSCRIÇÃO
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ==============================
+     RODAPÉ
+     ============================== -->
+
+<footer>
+
+    <strong>
+        EXFJ — ESCOLA DE XADREZ FRANCISCO JUNIO
+    </strong>
+
+
+    <p>
+        Fortalecendo o xadrez, peça por peça.
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>
