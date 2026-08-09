@@ -1,4 +1,8 @@
-```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,761 +14,1003 @@
     content="EXFJ — Escola de Xadrez Francisco Junio. Formação e estudo do xadrez."
 >
 
+
 <style>
 
-    /* ==============================
-       EXFJ — ESCOLA DE XADREZ
-       FRANCISCO JUNIO
-       IDENTIDADE VISUAL
-       ============================== */
-
-    :root {
-        --azul-profundo: #101827;
-        --azul: #18243a;
-        --dourado: #c9a45c;
-        --dourado-claro: #e3c681;
-        --creme: #f4efe4;
-        --branco: #ffffff;
-        --cinza: #b8b8b8;
-    }
+/* ==============================
+   EXFJ — ESCOLA DE XADREZ
+   FRANCISCO JUNIO
+   IDENTIDADE VISUAL
+   ============================== */
 
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+:root {
+
+    --azul-profundo: #101827;
+
+    --azul: #18243a;
+
+    --dourado: #c9a45c;
+
+    --dourado-claro: #e3c681;
+
+    --creme: #f4efe4;
+
+    --branco: #ffffff;
+
+    --cinza: #b8b8b8;
+
+}
 
 
-    html {
-        scroll-behavior: smooth;
-    }
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
 
 
-    body {
-        font-family: Georgia, "Times New Roman", serif;
+html {
 
-        background: var(--azul-profundo);
+    scroll-behavior: smooth;
 
-        color: var(--creme);
-
-        line-height: 1.6;
-    }
+}
 
 
-    /* ==============================
-       MENU
-       ============================== */
+body {
 
-    header {
-        position: fixed;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-        top: 0;
-        left: 0;
+    background:
+        var(--azul-profundo);
 
-        width: 100%;
+    color:
+        var(--creme);
 
-        z-index: 1000;
+    line-height: 1.6;
 
-        background: rgba(16, 24, 39, 0.94);
+}
 
-        border-bottom:
-            1px solid rgba(201, 164, 92, 0.35);
 
-        backdrop-filter: blur(10px);
+/* ==============================
+   MENU
+   ============================== */
+
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(16, 24, 39, 0.94);
+
+    border-bottom:
+        1px solid
+        rgba(201, 164, 92, 0.35);
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+nav {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.logo-text {
+
+    color:
+        var(--branco);
+
+    text-decoration: none;
+
+    font-size: 1.25rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+
+}
+
+
+.logo-text span {
+
+    color:
+        var(--dourado);
+
+}
+
+
+.menu {
+
+    display: flex;
+
+    gap: 28px;
+
+    list-style: none;
+
+}
+
+
+.menu a {
+
+    color:
+        var(--creme);
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition: 0.3s;
+
+}
+
+
+.menu a:hover {
+
+    color:
+        var(--dourado-claro);
+
+}
+
+
+/* ==============================
+   HERO
+   ============================== */
+
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        130px 25px 90px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(201, 164, 92, 0.12),
+            transparent 45%
+        ),
+
+        var(--azul-profundo);
+
+}
+
+
+.hero-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+/* BISPO */
+
+
+.hero-symbol {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.hero-symbol img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(201, 164, 92, 0.18)
+        );
+
+}
+
+
+.hero-kicker {
+
+    color:
+        var(--dourado);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 18px;
+
+}
+
+
+.hero h1 {
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size:
+        clamp(
+            2.5rem,
+            7vw,
+            6rem
+        );
+
+    letter-spacing: 6px;
+
+    font-weight: 500;
+
+    color:
+        var(--branco);
+
+    line-height: 1;
+
+}
+
+
+.hero-line {
+
+    width: 100px;
+
+    height: 2px;
+
+    flex-shrink: 0;
+
+    background:
+        var(--dourado);
+
+    margin:
+        30px auto;
+
+}
+
+
+.hero h2 {
+
+    font-size:
+        clamp(
+            1.2rem,
+            3vw,
+            2rem
+        );
+
+    font-weight: normal;
+
+    color:
+        var(--dourado-claro);
+
+    letter-spacing: 2px;
+
+    text-align: center;
+
+}
+
+
+.hero p {
+
+    margin:
+        25px auto 35px;
+
+    max-width: 680px;
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+}
+
+
+.button {
+
+    display: inline-block;
+
+    padding:
+        13px 28px;
+
+    border:
+        1px solid
+        var(--dourado);
+
+    color:
+        var(--dourado-claro);
+
+    text-decoration: none;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+}
+
+
+.button:hover {
+
+    background:
+        var(--dourado);
+
+    color:
+        var(--azul-profundo);
+
+}
+
+
+/* ==============================
+   SEÇÕES
+   ============================== */
+
+
+section {
+
+    padding:
+        100px 25px;
+
+}
+
+
+.section-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-title small {
+
+    display: block;
+
+    color:
+        var(--dourado);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 0.75rem;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 2.5rem;
+
+    font-weight: normal;
+
+    color:
+        var(--branco);
+
+}
+
+
+.section-title span {
+
+    display: block;
+
+    width: 60px;
+
+    height: 2px;
+
+    background:
+        var(--dourado);
+
+    margin:
+        18px auto;
+
+}
+
+
+.section-title p {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+/* ==============================
+   A ESCOLA
+   ============================== */
+
+
+.about {
+
+    background:
+        var(--creme);
+
+    color:
+        var(--azul-profundo);
+
+}
+
+
+.about .section-title h2 {
+
+    color:
+        var(--azul-profundo);
+
+}
+
+
+.about .section-title p {
+
+    color: #555;
+
+}
+
+
+.about-content {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+
+}
+
+
+.about-content p {
+
+    margin-bottom: 20px;
+
+}
+
+
+.about-highlight {
+
+    max-width: 800px;
+
+    margin:
+        35px auto 0;
+
+    padding:
+        22px 28px;
+
+    border-left:
+        3px solid
+        var(--dourado);
+
+    background:
+        rgba(16, 24, 39, 0.05);
+
+    font-style: italic;
+
+}
+
+
+/* ==============================
+   FORMAÇÃO
+   ============================== */
+
+
+.formation {
+
+    background:
+        var(--azul);
+
+}
+
+
+/* ==============================
+   CARTÃO DO CURSO
+   ============================== */
+
+
+.course-card {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    margin:
+        0 auto;
+
+    text-decoration: none;
+
+    border:
+        1px solid
+        rgba(201, 164, 92, 0.35);
+
+    background:
+        rgba(16, 24, 39, 0.55);
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+
+}
+
+
+.course-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--dourado);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.30);
+
+}
+
+
+.course-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+/* ==============================
+   ÁREAS DE ESTUDO
+   ============================== */
+
+
+.areas {
+
+    background:
+        var(--azul-profundo);
+
+}
+
+
+.areas-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.area-link {
+
+    display: block;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.area-card {
+
+    min-height: 240px;
+
+    padding:
+        35px 30px;
+
+    border:
+        1px solid
+        rgba(201, 164, 92, 0.35);
+
+    background:
+        rgba(24, 36, 58, 0.55);
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s;
+
+}
+
+
+.area-link:hover .area-card {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--dourado);
+
+}
+
+
+.area-number {
+
+    display: block;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.area-card h3 {
+
+    color:
+        var(--branco);
+
+    font-size: 1.6rem;
+
+    font-weight: normal;
+
+    margin-bottom: 12px;
+
+}
+
+
+.area-card p {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 0.95rem;
+
+}
+
+
+/* ==============================
+   FRASE
+   ============================== */
+
+
+.quote {
+
+    text-align: center;
+
+    background:
+        var(--azul);
+
+    overflow: hidden;
+
+}
+
+
+.quote blockquote {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    font-size:
+        clamp(
+            1.25rem,
+            3vw,
+            2.5rem
+        );
+
+    font-style: italic;
+
+    color:
+        var(--dourado-claro);
+
+    white-space: nowrap;
+
+}
+
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+
+footer {
+
+    text-align: center;
+
+    padding:
+        35px 20px;
+
+    background:
+        #0b111d;
+
+    border-top:
+        1px solid
+        rgba(201, 164, 92, 0.3);
+
+}
+
+
+footer strong {
+
+    color:
+        var(--dourado);
+
+    letter-spacing:
+        2px;
+
+}
+
+
+footer p {
+
+    margin-top:
+        8px;
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 0.85rem;
+
+}
+
+
+/* ==============================
+   CELULAR
+   ============================== */
+
+
+@media (max-width: 800px) {
+
+
+    .menu {
+
+        display: none;
+
     }
 
 
     nav {
-        max-width: 1200px;
 
-        margin: auto;
+        justify-content:
+            center;
 
-        padding: 18px 30px;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-    }
-
-
-    .logo-text {
-        color: var(--branco);
-
-        text-decoration: none;
-
-        font-size: 1.25rem;
-
-        font-weight: bold;
-
-        letter-spacing: 3px;
-
-        white-space: nowrap;
-    }
-
-
-    .logo-text span {
-        color: var(--dourado);
-    }
-
-
-    .menu {
-        display: flex;
-
-        gap: 28px;
-
-        list-style: none;
-    }
-
-
-    .menu a {
-        color: var(--creme);
-
-        text-decoration: none;
-
-        font-size: 0.95rem;
-
-        transition: 0.3s;
-    }
-
-
-    .menu a:hover {
-        color: var(--dourado-claro);
-    }
-
-
-    /* ==============================
-       HERO
-       ============================== */
-
-    .hero {
-        min-height: 100vh;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        text-align: center;
-
-        padding: 130px 25px 90px;
-
-        background:
-            radial-gradient(
-                circle at center,
-                rgba(201, 164, 92, 0.12),
-                transparent 45%
-            ),
-            var(--azul-profundo);
-    }
-
-
-    .hero-content {
-        width: 100%;
-
-        max-width: 900px;
-
-        margin: 0 auto;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        text-align: center;
-    }
-
-
-    /* BISPO */
-
-    .hero-symbol {
-        width: 90px;
-
-        height: 90px;
-
-        margin: 0 auto 25px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-    }
-
-
-    .hero-symbol img {
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: contain;
-
-        display: block;
-
-        filter:
-            drop-shadow(
-                0 0 12px
-                rgba(201, 164, 92, 0.18)
-            );
-    }
-
-
-    .hero-kicker {
-        color: var(--dourado);
-
-        text-transform: uppercase;
-
-        letter-spacing: 4px;
-
-        font-size: 0.8rem;
-
-        margin-bottom: 18px;
-    }
-
-
-    .hero h1 {
-        width: 100%;
-
-        text-align: center;
-
-        font-size:
-            clamp(
-                2.5rem,
-                7vw,
-                6rem
-            );
-
-        letter-spacing: 6px;
-
-        font-weight: 500;
-
-        color: var(--branco);
-
-        line-height: 1;
-    }
-
-
-    .hero-line {
-        width: 100px;
-
-        height: 2px;
-
-        flex-shrink: 0;
-
-        background: var(--dourado);
-
-        margin: 30px auto;
-    }
-
-
-    .hero h2 {
-        font-size:
-            clamp(
-                1.2rem,
-                3vw,
-                2rem
-            );
-
-        font-weight: normal;
-
-        color: var(--dourado-claro);
-
-        letter-spacing: 2px;
-
-        text-align: center;
-    }
-
-
-    .hero p {
-        margin: 25px auto 35px;
-
-        max-width: 680px;
-
-        color: var(--cinza);
-
-        font-family: Arial, sans-serif;
-
-        font-size: 1rem;
-
-        text-align: center;
-    }
-
-
-    .button {
-        display: inline-block;
-
-        padding: 13px 28px;
-
-        border:
-            1px solid var(--dourado);
-
-        color: var(--dourado-claro);
-
-        text-decoration: none;
-
-        letter-spacing: 1px;
-
-        transition: 0.3s;
-    }
-
-
-    .button:hover {
-        background: var(--dourado);
-
-        color: var(--azul-profundo);
-    }
-
-
-    /* ==============================
-       SEÇÕES
-       ============================== */
-
-    section {
-        padding: 100px 25px;
-    }
-
-
-    .section-container {
-        max-width: 1100px;
-
-        margin: auto;
-    }
-
-
-    .section-title {
-        text-align: center;
-
-        margin-bottom: 55px;
-    }
-
-
-    .section-title small {
-        display: block;
-
-        color: var(--dourado);
-
-        text-transform: uppercase;
-
-        letter-spacing: 3px;
-
-        font-size: 0.75rem;
-
-        margin-bottom: 10px;
-    }
-
-
-    .section-title h2 {
-        font-size: 2.5rem;
-
-        font-weight: normal;
-
-        color: var(--branco);
-    }
-
-
-    .section-title span {
-        display: block;
-
-        width: 60px;
-
-        height: 2px;
-
-        background: var(--dourado);
-
-        margin: 18px auto;
-    }
-
-
-    .section-title p {
-        color: var(--cinza);
-
-        font-family: Arial, sans-serif;
-    }
-
-
-    /* ==============================
-       A ESCOLA
-       ============================== */
-
-    .about {
-        background: var(--creme);
-
-        color: var(--azul-profundo);
-    }
-
-
-    .about .section-title h2 {
-        color: var(--azul-profundo);
-    }
-
-
-    .about .section-title p {
-        color: #555;
-    }
-
-
-    .about-content {
-        max-width: 850px;
-
-        margin: auto;
-
-        text-align: center;
-
-        font-size: 1.1rem;
-    }
-
-
-    .about-content p {
-        margin-bottom: 20px;
-    }
-
-
-    .about-highlight {
-        max-width: 800px;
-
-        margin: 35px auto 0;
-
-        padding: 22px 28px;
-
-        border-left:
-            3px solid var(--dourado);
-
-        background:
-            rgba(16, 24, 39, 0.05);
-
-        font-style: italic;
-    }
-
-
-    /* ==============================
-       FORMAÇÃO
-       ============================== */
-
-    .formation {
-        background: var(--azul);
-    }
-
-
-    .formation-card {
-        max-width: 850px;
-
-        margin: auto;
-
-        padding: 40px;
-
-        border:
-            1px solid
-            rgba(201, 164, 92, 0.35);
-
-        background:
-            rgba(16, 24, 39, 0.55);
-
-        transition:
-            transform 0.3s,
-            border-color 0.3s;
-    }
-
-
-    .formation-card:hover {
-        transform: translateY(-5px);
-
-        border-color: var(--dourado);
-    }
-
-
-    .formation-label {
-        display: block;
-
-        color: var(--dourado);
-
-        text-transform: uppercase;
-
-        letter-spacing: 2px;
-
-        font-size: 0.75rem;
-
-        margin-bottom: 12px;
-    }
-
-
-    .formation-card h3 {
-        color: var(--branco);
-
-        font-size: 1.8rem;
-
-        font-weight: normal;
-
-        margin-bottom: 15px;
-    }
-
-
-    .formation-card p {
-        color: var(--cinza);
-
-        font-family: Arial, sans-serif;
-
-        margin-bottom: 25px;
-    }
-
-
-    /* ==============================
-       ÁREAS DE ESTUDO
-       ============================== */
-
-    .areas {
-        background: var(--azul-profundo);
     }
 
 
     .areas-grid {
-        display: grid;
 
         grid-template-columns:
-            repeat(2, 1fr);
+            1fr;
 
-        gap: 25px;
     }
 
 
-    .area-link {
-        display: block;
+    .hero h1 {
 
-        color: inherit;
+        letter-spacing:
+            4px;
 
-        text-decoration: none;
     }
 
 
-    .area-card {
-        min-height: 240px;
+    .hero-symbol {
 
-        padding: 35px 30px;
+        width: 75px;
 
-        border:
-            1px solid
-            rgba(201, 164, 92, 0.35);
+        height: 75px;
 
-        background:
-            rgba(24, 36, 58, 0.55);
-
-        transition:
-            transform 0.3s,
-            border-color 0.3s;
     }
 
 
-    .area-link:hover .area-card {
-        transform: translateY(-7px);
+    .course-card {
 
-        border-color: var(--dourado);
-    }
+        max-width:
+            390px;
 
-
-    .area-number {
-        display: block;
-
-        color: var(--dourado);
-
-        font-family: Arial, sans-serif;
-
-        font-size: 0.8rem;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .area-card h3 {
-        color: var(--branco);
-
-        font-size: 1.6rem;
-
-        font-weight: normal;
-
-        margin-bottom: 12px;
-    }
-
-
-    .area-card p {
-        color: var(--cinza);
-
-        font-family: Arial, sans-serif;
-
-        font-size: 0.95rem;
-    }
-
-
-    /* ==============================
-       FRASE
-       ============================== */
-
-    .quote {
-        text-align: center;
-
-        background: var(--azul);
-
-        overflow: hidden;
     }
 
 
     .quote blockquote {
-        max-width: 1100px;
-
-        margin: auto;
 
         font-size:
-            clamp(
-                1.25rem,
-                3vw,
-                2.5rem
-            );
+            1.15rem;
 
-        font-style: italic;
-
-        color: var(--dourado-claro);
-
-        white-space: nowrap;
-    }
-
-
-    /* ==============================
-       RODAPÉ
-       ============================== */
-
-    footer {
-        text-align: center;
-
-        padding: 35px 20px;
-
-        background: #0b111d;
-
-        border-top:
-            1px solid
-            rgba(201, 164, 92, 0.3);
-    }
-
-
-    footer strong {
-        color: var(--dourado);
-
-        letter-spacing: 2px;
-    }
-
-
-    footer p {
-        margin-top: 8px;
-
-        color: var(--cinza);
-
-        font-family: Arial, sans-serif;
-
-        font-size: 0.85rem;
-    }
-
-
-    /* ==============================
-       CELULAR
-       ============================== */
-
-    @media (max-width: 800px) {
-
-        .menu {
-            display: none;
-        }
-
-
-        nav {
-            justify-content: center;
-        }
-
-
-        .areas-grid {
-            grid-template-columns: 1fr;
-        }
-
-
-        .hero h1 {
-            letter-spacing: 4px;
-        }
-
-
-        .hero-symbol {
-            width: 75px;
-
-            height: 75px;
-        }
-
-
-        .quote blockquote {
-            font-size: 1.15rem;
-
-            white-space: nowrap;
-        }
-
-
-        section {
-            padding: 75px 20px;
-        }
-
-
-        .formation-card {
-            padding: 30px 25px;
-        }
+        white-space:
+            nowrap;
 
     }
+
+
+    section {
+
+        padding:
+            75px 20px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+
+    .course-card {
+
+        max-width:
+            100%;
+
+    }
+
+}
 
 </style>
-```
 
-```html
+</head>
+
+
+<body>
+
+
 <!-- ==============================
      MENU
      ============================== -->
+
 
 <header>
 
     <nav>
 
+
         <!-- MARCA PRINCIPAL -->
+
 
         <a
             href="../index.html"
             class="logo-text"
         >
+
             FRANCISCO <span>JUNIO</span>
+
         </a>
 
 
         <ul class="menu">
 
+
             <li>
+
                 <a href="#inicio">
                     Topo
                 </a>
+
             </li>
 
+
             <li>
+
                 <a href="#escola">
                     A Escola
                 </a>
+
             </li>
 
+
             <li>
+
                 <a href="#formacao">
                     Formação
                 </a>
+
             </li>
 
+
             <li>
+
                 <a href="#areas">
                     Áreas de Estudo
                 </a>
+
             </li>
+
 
         </ul>
 
@@ -776,366 +1022,467 @@
 <main>
 
 
-    <!-- ==============================
-         INÍCIO / TOPO
-         ============================== -->
-
-    <section
-        class="hero"
-        id="inicio"
-    >
-
-        <div class="hero-content">
+<!-- ==============================
+     INÍCIO / TOPO
+     ============================== -->
 
 
-            <!-- BISPO DA EXFJ -->
-
-            <div class="hero-symbol">
-
-                <img
-                    src="../imagens/bispo.png"
-                    alt="Bispo"
-                >
-
-            </div>
-
-            <h1>
-                EXFJ
-            </h1>
+<section
+    class="hero"
+    id="inicio"
+>
 
 
-            <div class="hero-line"></div>
+    <div class="hero-content">
+
+
+        <!-- BISPO DA EXFJ -->
+
+
+        <div class="hero-symbol">
+
+            <img
+                src="../imagens/bispo.png"
+                alt="Bispo"
+            >
+
+        </div>
+
+
+        <div class="hero-kicker">
+
+            Escola de Xadrez
+
+        </div>
+
+
+        <h1>
+
+            EXFJ
+
+        </h1>
+
+
+        <div class="hero-line"></div>
+
+
+        <h2>
+
+            Escola de Xadrez Francisco Junio
+
+        </h2>
+
+
+        <p>
+
+            Fortalecendo o xadrez,
+            peça por peça.
+
+        </p>
+
+
+        <a
+            href="#areas"
+            class="button"
+        >
+
+            EXPLORAR ÁREAS DE ESTUDO
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     A ESCOLA
+     ============================== -->
+
+
+<section
+    class="about"
+    id="escola"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-title">
+
+
+            <small>
+
+                A Escola
+
+            </small>
 
 
             <h2>
-                Escola de Xadrez Francisco Junio
+
+                Aprender xadrez pode ser simples.
+
             </h2>
 
 
+            <span></span>
+
+
             <p>
-                Fortalecendo o xadrez,
-                peça por peça.
+
+                Um espaço para conhecer,
+                praticar e evoluir.
+
             </p>
 
 
-            <a
-                href="#areas"
-                class="button"
+        </div>
+
+
+        <div class="about-content">
+
+
+            <p>
+
+                A Escola de Xadrez Francisco Junio
+                foi feita para tornar o xadrez
+                mais simples, acessível e fácil de aprender.
+
+            </p>
+
+
+            <p>
+
+                Aqui você encontra aulas de diferentes temas e
+                níveis, com materiais de apoio para estudar,
+                praticar e evoluir no seu próprio ritmo.
+
+            </p>
+
+
+            <div class="about-highlight">
+
+                O objetivo é tornar o xadrez mais fácil de entender,
+                ajudando cada aluno a aprender, praticar e descobrir
+                novas possibilidades dentro do jogo.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     FORMAÇÃO
+     ============================== -->
+
+
+<section
+    class="formation"
+    id="formacao"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-title">
+
+
+            <small>
+
+                Formação
+
+            </small>
+
+
+            <h2>
+
+                Formação na EXFJ
+
+            </h2>
+
+
+            <span></span>
+
+
+            <p>
+
+                Conteúdos estruturados para
+                construir uma base sólida.
+
+            </p>
+
+
+        </div>
+
+
+        <!-- ==============================
+             CARTÃO GERAL DO CURSO
+             ============================== -->
+
+
+        <a
+            href="../cursos/introducao-ao-xadrez.html"
+            class="course-card"
+        >
+
+            <img
+                src="../imagens/introducao-ao-xadrez-cartao.png"
+                alt="Curso Introdução ao Xadrez"
             >
-                EXPLORAR ÁREAS DE ESTUDO
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     ÁREAS DE ESTUDO
+     ============================== -->
+
+
+<section
+    class="areas"
+    id="areas"
+>
+
+
+    <div class="section-container">
+
+
+        <div class="section-title">
+
+
+            <small>
+
+                Áreas de estudo
+
+            </small>
+
+
+            <h2>
+
+                Encontre o que você procura
+
+            </h2>
+
+
+            <span></span>
+
+
+            <p>
+
+                Escolha uma área de acordo
+                com aquilo que deseja estudar.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="areas-grid">
+
+
+            <!-- ABERTURAS -->
+
+
+            <a
+                href="aberturas-e-defesas.html"
+                class="area-link"
+            >
+
+
+                <article class="area-card">
+
+
+                    <span class="area-number">
+
+                        01
+
+                    </span>
+
+
+                    <h3>
+
+                        Aberturas e Defesas
+
+                    </h3>
+
+
+                    <p>
+
+                        Sistemas de abertura,
+                        defesas, planos e ideias
+                        fundamentais para o início
+                        da partida.
+
+                    </p>
+
+
+                </article>
+
+
+            </a>
+
+
+            <!-- TÁTICA -->
+
+
+            <a
+                href="tatica.html"
+                class="area-link"
+            >
+
+
+                <article class="area-card">
+
+
+                    <span class="area-number">
+
+                        02
+
+                    </span>
+
+
+                    <h3>
+
+                        Tática
+
+                    </h3>
+
+
+                    <p>
+
+                        Cálculo, combinações e
+                        reconhecimento de padrões táticos.
+
+                    </p>
+
+
+                </article>
+
+
+            </a>
+
+
+            <!-- ESTRATÉGIA -->
+
+
+            <a
+                href="estrategia.html"
+                class="area-link"
+            >
+
+
+                <article class="area-card">
+
+
+                    <span class="area-number">
+
+                        03
+
+                    </span>
+
+
+                    <h3>
+
+                        Estratégia
+
+                    </h3>
+
+
+                    <p>
+
+                        Planos, estruturas de peões,
+                        compreensão posicional e
+                        tomada de decisões.
+
+                    </p>
+
+
+                </article>
+
+
+            </a>
+
+
+            <!-- FINAIS -->
+
+
+            <a
+                href="finais.html"
+                class="area-link"
+            >
+
+
+                <article class="area-card">
+
+
+                    <span class="area-number">
+
+                        04
+
+                    </span>
+
+
+                    <h3>
+
+                        Finais
+
+                    </h3>
+
+
+                    <p>
+
+                        Princípios, técnicas e
+                        conhecimentos fundamentais
+                        para jogar finais.
+
+                    </p>
+
+
+                </article>
+
+
             </a>
 
 
         </div>
 
-    </section>
 
+    </div>
 
-    <!-- ==============================
-         A ESCOLA
-         ============================== -->
+</section>
 
-    <section
-        class="about"
-        id="escola"
-    >
 
-        <div class="section-container">
+<!-- ==============================
+     FRASE
+     ============================== -->
 
-            <div class="section-title">
 
-                <small>
-                    A Escola
-                </small>
+<section class="quote">
 
-                <h2>
-                    Aprender xadrez pode ser simples.
-                </h2>
 
-                <span></span>
+    <blockquote>
 
-                <p>
-                    Um espaço para conhecer,
-                    praticar e evoluir.
-                </p>
+        “Onde cada aspecto do jogo encontra seu lugar.”
 
-            </div>
+    </blockquote>
 
 
-            <div class="about-content">
-
-                <p>
-                    A Escola de Xadrez Francisco Junio
-                    foi feita para tornar o xadrez
-                    mais simples, acessível e fácil de aprender.
-                </p>
-
-
-                <p>
-                    Aqui você encontra aulas de diferentes temas e
-                    níveis, com materiais de apoio para estudar,
-                    praticar e evoluir no seu próprio ritmo.
-                </p>
-
-
-                <div class="about-highlight">
-
-                    O objetivo é tornar o xadrez mais fácil de entender,
-                    ajudando cada aluno a aprender, praticar e descobrir
-                    novas possibilidades dentro do jogo.
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==============================
-         FORMAÇÃO
-         ============================== -->
-
-    <section
-        class="formation"
-        id="formacao"
-    >
-
-        <div class="section-container">
-
-            <div class="section-title">
-
-                <small>
-                    Formação
-                </small>
-
-                <h2>
-                    Formação na EXFJ
-                </h2>
-
-                <span></span>
-
-                <p>
-                    Conteúdos estruturados para
-                    construir uma base sólida.
-                </p>
-
-            </div>
-
-
-            <div class="formation-card">
-
-                <span class="formation-label">
-                    Formação disponível
-                </span>
-
-
-                <h3>
-                    Introdução ao Xadrez
-                </h3>
-
-
-                <p>
-                    Uma formação introdutória destinada
-                    à construção dos fundamentos necessários
-                    para compreender e praticar o xadrez.
-                </p>
-
-
-                <a
-                    href="../cursos/introducao-ao-xadrez.html"
-                    class="course-card"
-                >
-                    <img
-                        src="../imagens/introducao-ao-xadrez-cartao.png"
-                        alt="Curso Introdução ao Xadrez"
-                    >
-                    CONHECER A FORMAÇÃO
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==============================
-         ÁREAS DE ESTUDO
-         ============================== -->
-
-    <section
-        class="areas"
-        id="areas"
-    >
-
-        <div class="section-container">
-
-            <div class="section-title">
-
-                <small>
-                    Áreas de estudo
-                </small>
-
-
-                <h2>
-                    Encontre o que você procura
-                </h2>
-
-
-                <span></span>
-
-
-                <p>
-                    Escolha uma área de acordo
-                    com aquilo que deseja estudar.
-                </p>
-
-            </div>
-
-
-            <div class="areas-grid">
-
-
-                <!-- ABERTURAS -->
-
-                <a
-                    href="aberturas-e-defesas.html"
-                    class="area-link"
-                >
-
-                    <article class="area-card">
-
-                        <span class="area-number">
-                            01
-                        </span>
-
-
-                        <h3>
-                            Aberturas e Defesas
-                        </h3>
-
-
-                        <p>
-                            Sistemas de abertura,
-                            defesas, planos e ideias
-                            fundamentais para o início
-                            da partida.
-                        </p>
-
-                    </article>
-
-                </a>
-
-
-                <!-- TÁTICA -->
-
-                <a
-                    href="tatica.html"
-                    class="area-link"
-                >
-
-                    <article class="area-card">
-
-                        <span class="area-number">
-                            02
-                        </span>
-
-
-                        <h3>
-                            Tática
-                        </h3>
-
-
-                        <p>
-                            Cálculo, combinações e
-                            reconhecimento de padrões táticos.
-                        </p>
-
-                    </article>
-
-                </a>
-
-
-                <!-- ESTRATÉGIA -->
-
-                <a
-                    href="estrategia.html"
-                    class="area-link"
-                >
-
-                    <article class="area-card">
-
-                        <span class="area-number">
-                            03
-                        </span>
-
-
-                        <h3>
-                            Estratégia
-                        </h3>
-
-
-                        <p>
-                            Planos, estruturas de peões,
-                            compreensão posicional e
-                            tomada de decisões.
-                        </p>
-
-                    </article>
-
-                </a>
-
-
-                <!-- FINAIS -->
-
-                <a
-                    href="finais.html"
-                    class="area-link"
-                >
-
-                    <article class="area-card">
-
-                        <span class="area-number">
-                            04
-                        </span>
-
-
-                        <h3>
-                            Finais
-                        </h3>
-
-
-                        <p>
-                            Princípios, técnicas e
-                            conhecimentos fundamentais
-                            para jogar finais.
-                        </p>
-
-                    </article>
-
-                </a>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==============================
-         FRASE
-         ============================== -->
-
-    <section class="quote">
-
-        <blockquote>
-            “Onde cada aspecto do jogo encontra seu lugar.”
-        </blockquote>
-
-    </section>
+</section>
 
 
 </main>
@@ -1145,16 +1492,27 @@
      RODAPÉ
      ============================== -->
 
+
 <footer>
 
+
     <strong>
+
         EXFJ — ESCOLA DE XADREZ FRANCISCO JUNIO
+
     </strong>
 
 
     <p>
+
         Fortalecendo o xadrez, peça por peça.
+
     </p>
 
+
 </footer>
-```
+
+
+</body>
+
+</html>
