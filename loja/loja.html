@@ -1,0 +1,1931 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Loja | Francisco Junio</title>
+
+<meta
+    name="description"
+    content="Loja Francisco Junio — Produtos feitos por quem vive o xadrez."
+>
+
+
+<style>
+
+/* ==============================
+   LOJA FRANCISCO JUNIO
+   IDENTIDADE VISUAL
+   ============================== */
+
+
+:root {
+
+    --azul-profundo: #101827;
+
+    --azul: #18243a;
+
+    --dourado: #c9a45c;
+
+    --dourado-claro: #e3c681;
+
+    --creme: #f4efe4;
+
+    --branco: #ffffff;
+
+    --cinza: #b8b8b8;
+
+}
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        var(--azul-profundo);
+
+    color:
+        var(--creme);
+
+    line-height: 1.6;
+
+}
+
+
+/* ==============================
+   MENU
+   ============================== */
+
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(16, 24, 39, 0.94);
+
+    border-bottom:
+        1px solid
+        rgba(201, 164, 92, 0.35);
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+nav {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        18px 30px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+}
+
+
+.logo-text {
+
+    color:
+        var(--branco);
+
+    text-decoration: none;
+
+    font-size: 1.25rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+
+}
+
+
+.logo-text span {
+
+    color:
+        var(--dourado);
+
+}
+
+
+.menu {
+
+    display: flex;
+
+    gap: 28px;
+
+    list-style: none;
+
+}
+
+
+.menu a {
+
+    color:
+        var(--creme);
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition:
+        0.3s;
+
+}
+
+
+.menu a:hover {
+
+    color:
+        var(--dourado-claro);
+
+}
+
+
+/* ==============================
+   HERO
+   ============================== */
+
+
+.hero {
+
+    min-height:
+        78vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        130px 25px 80px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(201, 164, 92, 0.12),
+            transparent 45%
+        ),
+
+        var(--azul-profundo);
+
+}
+
+
+.hero-content {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto;
+
+}
+
+
+.hero-symbol {
+
+    width:
+        85px;
+
+    height:
+        85px;
+
+    margin:
+        0 auto 25px;
+
+}
+
+
+.hero-symbol img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    display:
+        block;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(201, 164, 92, 0.18)
+        );
+
+}
+
+
+.hero-kicker {
+
+    color:
+        var(--dourado);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        4px;
+
+    font-size:
+        0.8rem;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            2.8rem,
+            7vw,
+            5.5rem
+        );
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        6px;
+
+    color:
+        var(--branco);
+
+    line-height:
+        1;
+
+}
+
+
+.hero-line {
+
+    width:
+        100px;
+
+    height:
+        2px;
+
+    background:
+        var(--dourado);
+
+    margin:
+        30px auto;
+
+}
+
+
+.hero h2 {
+
+    font-size:
+        clamp(
+            1.2rem,
+            3vw,
+            2rem
+        );
+
+    font-weight:
+        normal;
+
+    color:
+        var(--dourado-claro);
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.hero p {
+
+    max-width:
+        650px;
+
+    margin:
+        25px auto 0;
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+/* ==============================
+   INTRODUÇÃO DA LOJA
+   ============================== */
+
+
+.store-intro {
+
+    background:
+        var(--creme);
+
+    color:
+        var(--azul-profundo);
+
+    padding:
+        90px 25px;
+
+}
+
+
+.store-intro-container {
+
+    max-width:
+        850px;
+
+    margin:
+        auto;
+
+    text-align:
+        center;
+
+}
+
+
+.store-intro h2 {
+
+    font-size:
+        2.3rem;
+
+    font-weight:
+        normal;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.store-intro h2 span {
+
+    color:
+        var(--dourado);
+
+}
+
+
+.store-intro p {
+
+    font-size:
+        1.05rem;
+
+    color:
+        #555;
+
+}
+
+
+/* ==============================
+   PRODUTO
+   ============================== */
+
+
+.products {
+
+    padding:
+        100px 25px;
+
+    background:
+        var(--azul);
+
+}
+
+
+.section-container {
+
+    max-width:
+        1150px;
+
+    margin:
+        auto;
+
+}
+
+
+.section-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        55px;
+
+}
+
+
+.section-title small {
+
+    display:
+        block;
+
+    color:
+        var(--dourado);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        3px;
+
+    font-size:
+        0.75rem;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.section-title h2 {
+
+    font-size:
+        2.5rem;
+
+    font-weight:
+        normal;
+
+    color:
+        var(--branco);
+
+}
+
+
+.section-title span {
+
+    display:
+        block;
+
+    width:
+        60px;
+
+    height:
+        2px;
+
+    background:
+        var(--dourado);
+
+    margin:
+        18px auto;
+
+}
+
+
+.section-title p {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+/* ==============================
+   PRODUTO PRINCIPAL
+   ============================== */
+
+
+.product-main {
+
+    max-width:
+        950px;
+
+    margin:
+        0 auto 80px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        55px;
+
+    align-items:
+        center;
+
+}
+
+
+.product-description h3 {
+
+    color:
+        var(--branco);
+
+    font-size:
+        2rem;
+
+    font-weight:
+        normal;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.product-description p {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.product-price {
+
+    margin:
+        30px 0;
+
+}
+
+
+.product-price strong {
+
+    display:
+        block;
+
+    color:
+        var(--dourado-claro);
+
+    font-size:
+        2.2rem;
+
+    font-family:
+        Georgia,
+        serif;
+
+}
+
+
+.product-price span {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        0.9rem;
+
+}
+
+
+/* ==============================
+   BOTÃO INSTAGRAM
+   ============================== */
+
+
+.instagram-button {
+
+    display:
+        inline-block;
+
+    padding:
+        14px 28px;
+
+    border:
+        1px solid
+        var(--dourado);
+
+    color:
+        var(--dourado-claro);
+
+    text-decoration:
+        none;
+
+    letter-spacing:
+        1px;
+
+    transition:
+        0.3s;
+
+}
+
+
+.instagram-button:hover {
+
+    background:
+        var(--dourado);
+
+    color:
+        var(--azul-profundo);
+
+}
+
+
+/* ==============================
+   INFORMAÇÕES DO PRODUTO
+   ============================== */
+
+
+.product-info {
+
+    margin-top:
+        30px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid
+        rgba(201, 164, 92, 0.25);
+
+}
+
+
+.product-info p {
+
+    margin-bottom:
+        6px;
+
+}
+
+
+.product-info strong {
+
+    color:
+        var(--dourado-claro);
+
+}
+
+
+/* ==============================
+   GRADE DOS MODELOS
+   ============================== */
+
+
+.models {
+
+    margin-top:
+        30px;
+
+}
+
+
+.models-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        35px;
+
+}
+
+
+.models-title h3 {
+
+    color:
+        var(--branco);
+
+    font-size:
+        1.8rem;
+
+    font-weight:
+        normal;
+
+}
+
+
+.models-title p {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    margin-top:
+        8px;
+
+}
+
+
+/* ==============================
+   GRADE
+   ============================== */
+
+
+.models-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        25px;
+
+}
+
+
+/* ==============================
+   CARTÃO DO MODELO
+   ============================== */
+
+
+.model-card {
+
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(201, 164, 92, 0.35);
+
+    background:
+        rgba(16, 24, 39, 0.55);
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+
+}
+
+
+.model-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--dourado);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.model-card img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+}
+
+
+.model-card h4 {
+
+    color:
+        var(--dourado-claro);
+
+    font-size:
+        1.05rem;
+
+    font-weight:
+        normal;
+
+    text-align:
+        center;
+
+    margin:
+        14px 5px 4px;
+
+}
+
+
+.model-card p {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        0.8rem;
+
+    text-align:
+        center;
+
+}
+
+
+/* ==============================
+   COMO PEDIR
+   ============================== */
+
+
+.order {
+
+    padding:
+        90px 25px;
+
+    background:
+        var(--azul-profundo);
+
+    text-align:
+        center;
+
+}
+
+
+.order-container {
+
+    max-width:
+        800px;
+
+    margin:
+        auto;
+
+}
+
+
+.order h2 {
+
+    color:
+        var(--branco);
+
+    font-size:
+        2.3rem;
+
+    font-weight:
+        normal;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.order h2 span {
+
+    color:
+        var(--dourado);
+
+}
+
+
+.order p {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.order-note {
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto 30px;
+
+    padding:
+        20px 25px;
+
+    border-left:
+        3px solid
+        var(--dourado);
+
+    background:
+        rgba(24, 36, 58, 0.55);
+
+    color:
+        var(--creme);
+
+}
+
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+
+footer {
+
+    text-align:
+        center;
+
+    padding:
+        35px 20px;
+
+    background:
+        #0b111d;
+
+    border-top:
+        1px solid
+        rgba(201, 164, 92, 0.3);
+
+}
+
+
+footer strong {
+
+    color:
+        var(--dourado);
+
+    letter-spacing:
+        2px;
+
+}
+
+
+footer p {
+
+    margin-top:
+        8px;
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        0.85rem;
+
+}
+
+
+/* ==============================
+   CELULAR
+   ============================== */
+
+
+@media (max-width: 900px) {
+
+
+    .models-grid {
+
+        grid-template-columns:
+            repeat(
+                3,
+                1fr
+            );
+
+    }
+
+
+}
+
+
+@media (max-width: 800px) {
+
+
+    .menu {
+
+        display:
+            none;
+
+    }
+
+
+    nav {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .product-main {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+
+    }
+
+
+    .models-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    section {
+
+        padding:
+            75px 20px;
+
+    }
+
+
+}
+
+
+@media (max-width: 500px) {
+
+
+    .models-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero {
+
+        min-height:
+            70vh;
+
+    }
+
+
+    .hero-symbol {
+
+        width:
+            70px;
+
+        height:
+            70px;
+
+    }
+
+
+    .product-description h3 {
+
+        font-size:
+            1.7rem;
+
+    }
+
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     MENU
+     ============================== -->
+
+
+<header>
+
+<nav>
+
+
+<a
+    href="../index.html"
+    class="logo-text"
+>
+
+    FRANCISCO <span>JUNIO</span>
+
+</a>
+
+
+<ul class="menu">
+
+
+<li>
+
+    <a href="#inicio">
+        Topo
+    </a>
+
+</li>
+
+
+<li>
+
+    <a href="#produto">
+        Produto
+    </a>
+
+</li>
+
+
+<li>
+
+    <a href="#modelos">
+        Modelos
+    </a>
+
+</li>
+
+
+<li>
+
+    <a href="#pedido">
+        Como pedir
+    </a>
+
+</li>
+
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+<main>
+
+
+<!-- ==============================
+     HERO
+     ============================== -->
+
+
+<section
+    class="hero"
+    id="inicio"
+>
+
+
+<div class="hero-content">
+
+
+<div class="hero-symbol">
+
+    <img
+        src="../imagens/bispo.png"
+        alt="Bispo"
+    >
+
+</div>
+
+
+<div class="hero-kicker">
+
+    Loja
+
+</div>
+
+
+<h1>
+
+    FRANCISCO JUNIO
+
+</h1>
+
+
+<div class="hero-line"></div>
+
+
+<h2>
+
+    Produtos feitos por quem vive o xadrez.
+
+</h2>
+
+
+<p>
+
+    Produtos para quem gosta de jogar,
+    estudar e viver o xadrez.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     INTRODUÇÃO
+     ============================== -->
+
+
+<section class="store-intro">
+
+
+<div class="store-intro-container">
+
+
+<h2>
+
+    Produtos para o seu <span>jogo.</span>
+
+</h2>
+
+
+<p>
+
+    A Loja Francisco Junio reúne produtos
+    desenvolvidos para quem vive o xadrez.
+    Atualmente, nossa primeira coleção é formada
+    por tabuleiros de xadrez em lona.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+     PRODUTOS
+     ============================== -->
+
+
+<section
+    class="products"
+    id="produto"
+>
+
+
+<div class="section-container">
+
+
+<div class="section-title">
+
+
+<small>
+
+    Produto
+
+</small>
+
+
+<h2>
+
+    Tabuleiro de Xadrez em Lona
+
+</h2>
+
+
+<span></span>
+
+
+<p>
+
+    Simples, prático e feito para acompanhar
+    suas partidas.
+
+</p>
+
+
+</div>
+
+
+<div class="product-main">
+
+
+<div class="product-description">
+
+
+<h3>
+
+    Tabuleiro de Xadrez em Lona
+
+</h3>
+
+
+<p>
+
+    Tabuleiro produzido em lona,
+    com acabamento fosco e tamanho
+    de 48 × 48 cm.
+
+</p>
+
+
+<p>
+
+    Disponível em diferentes modelos
+    e combinações de cores.
+
+</p>
+
+
+<div class="product-price">
+
+
+<strong>
+
+    R$ 30,00
+
+</strong>
+
+
+<span>
+
+    por unidade
+
+</span>
+
+
+</div>
+
+
+<a
+    href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
+    class="instagram-button"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+
+    PEDIR PELO INSTAGRAM
+
+</a>
+
+
+<div class="product-info">
+
+
+<p>
+
+    <strong>Tamanho:</strong>
+    48 × 48 cm
+
+</p>
+
+
+<p>
+
+    <strong>Material:</strong>
+    Lona
+
+</p>
+
+
+<p>
+
+    <strong>Acabamento:</strong>
+    Fosco
+
+</p>
+
+
+<p>
+
+    <strong>Preço:</strong>
+    R$ 30,00
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- ==============================
+     MODELOS
+     ============================== -->
+
+
+<div
+    class="models"
+    id="modelos"
+>
+
+
+<div class="models-title">
+
+
+<h3>
+
+    Modelos disponíveis
+
+</h3>
+
+
+<p>
+
+    Escolha o modelo que mais combina
+    com o seu jogo.
+
+</p>
+
+
+</div>
+
+
+<div class="models-grid">
+
+
+<!-- VERDE -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/verdeclube.png"
+    alt="Tabuleiro Clube Verde"
+>
+
+
+<h4>
+
+    Clube Verde
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- VERMELHO -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/vermelhoclube.png"
+    alt="Tabuleiro Clube Vermelho"
+>
+
+
+<h4>
+
+    Clube Vermelho
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- ROSA -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/rosaclube.png"
+    alt="Tabuleiro Clube Rosa"
+>
+
+
+<h4>
+
+    Clube Rosa
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- AZUL ESCURO -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/azulescuroclube.png"
+    alt="Tabuleiro Clube Azul Escuro"
+>
+
+
+<h4>
+
+    Clube Azul Escuro
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- AZUL CÉU -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/azulceuclube.png"
+    alt="Tabuleiro Clube Azul Céu"
+>
+
+
+<h4>
+
+    Clube Azul Céu
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- MARROM QUEIMADO -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/marromqueimadoclube.png"
+    alt="Tabuleiro Clube Marrom Queimado"
+>
+
+
+<h4>
+
+    Clube Marrom Queimado
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- ROXO -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/roxoclube.png"
+    alt="Tabuleiro Clube Roxo"
+>
+
+
+<h4>
+
+    Clube Roxo
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- MARROM TERRA -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/marromterraclube.png"
+    alt="Tabuleiro Clube Marrom Terra"
+>
+
+
+<h4>
+
+    Clube Marrom Terra
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- AZUL COM BORDA ESCURA -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/azulbordaclube.png"
+    alt="Tabuleiro Clube Azul com Borda Escura"
+>
+
+
+<h4>
+
+    Clube Azul — Borda Escura
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- MARROM QUEIMADO COM BORDA TERRA -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/marromqueimadobordaterraclube.png"
+    alt="Tabuleiro Clube Marrom Queimado com Borda Terra"
+>
+
+
+<h4>
+
+    Clube Marrom Queimado
+    — Borda Terra
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+<!-- PRETO -->
+
+
+<article class="model-card">
+
+
+<img
+    src="../imagens/pretoclube.png"
+    alt="Tabuleiro Clube Preto"
+>
+
+
+<h4>
+
+    Clube Preto
+
+</h4>
+
+
+<p>
+
+    Tabuleiro em lona
+
+</p>
+
+
+</article>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ==============================
+     COMO PEDIR
+     ============================== -->
+
+
+<section
+    class="order"
+    id="pedido"
+>
+
+
+<div class="order-container">
+
+
+<h2>
+
+    Gostou de algum <span>modelo?</span>
+
+</h2>
+
+
+<p>
+
+    Atualmente, os pedidos são realizados
+    diretamente pelo Instagram.
+
+</p>
+
+
+<div class="order-note">
+
+    Informe o modelo do tabuleiro que você deseja
+    e entre em contato conosco pelo Instagram.
+    Após confirmar a disponibilidade, enviaremos
+    as instruções para pagamento e combinaremos
+    a entrega.
+
+</div>
+
+
+<a
+    href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
+    class="instagram-button"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+
+    FAZER PEDIDO PELO INSTAGRAM
+
+</a>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ==============================
+     RODAPÉ
+     ============================== -->
+
+
+<footer>
+
+
+<strong>
+
+    FRANCISCO JUNIO
+
+</strong>
+
+
+<p>
+
+    Produtos feitos por quem vive o xadrez.
+
+</p>
+
+
+</footer>
+
+
+</body>
+
+</html>
+```
