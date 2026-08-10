@@ -1,664 +1,1624 @@
-<title>Francisco Junio | Um nome. Um jogo. Um mundo.</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<style>
-    /* ==============================
-       FRANCISCO JUNIO
-       IDENTIDADE VISUAL
-       ============================== */
+<head>
 
-    :root {
-        --azul-profundo: #101827;
-        --azul: #18243a;
-        --dourado: #c9a45c;
-        --dourado-claro: #e3c681;
-        --creme: #f4efe4;
-        --branco: #ffffff;
-        --cinza: #b8b8b8;
-    }
+    <meta charset="UTF-8">
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    html {
-        scroll-behavior: smooth;
-    }
+    <meta
+        name="description"
+        content="Francisco Junio — Um nome. Um jogo. Um mundo. Xadrez, projetos, eventos e produtos."
+    >
 
-    body {
-        font-family: Georgia, "Times New Roman", serif;
-        background: var(--azul-profundo);
-        color: var(--creme);
-        line-height: 1.6;
-    }
+    <title>
+        Francisco Junio | Um nome. Um jogo. Um mundo.
+    </title>
 
-    /* ==============================
-       MENU
-       ============================== */
 
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
+    <style>
 
-        background: rgba(16, 24, 39, 0.94);
-        border-bottom: 1px solid rgba(201, 164, 92, 0.35);
-        backdrop-filter: blur(10px);
-    }
+        /* ==================================================
+           FRANCISCO JUNIO
+           IDENTIDADE VISUAL
+           PÁGINA PRINCIPAL
+           ================================================== */
 
-    nav {
-        max-width: 1200px;
-        margin: auto;
-        padding: 18px 30px;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        :root {
 
-    .logo-text {
-        color: var(--branco);
-        text-decoration: none;
-        font-size: 1.25rem;
-        font-weight: bold;
-        letter-spacing: 3px;
-    }
+            --azul-profundo: #101827;
+            --azul: #18243a;
 
-    .logo-text span {
-        color: var(--dourado);
-    }
+            --dourado: #c9a45c;
+            --dourado-claro: #e3c681;
 
-    .menu {
-        display: flex;
-        gap: 28px;
-        list-style: none;
-    }
+            --creme: #f4efe4;
+            --branco: #ffffff;
 
-    .menu a {
-        color: var(--creme);
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: 0.3s;
-    }
+            --cinza: #b8b8b8;
 
-    .menu a:hover {
-        color: var(--dourado-claro);
-    }
-
-    /* ==============================
-       HERO
-       ============================== */
-
-    .hero {
-        min-height: 100vh;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        text-align: center;
-        padding: 120px 25px 80px;
-
-        background:
-            radial-gradient(
-                circle at center,
-                rgba(201, 164, 92, 0.12),
-                transparent 45%
-            ),
-            var(--azul-profundo);
-    }
-
-    .hero-content {
-        max-width: 900px;
-    }
-
-    /* COROA */
-
-    .hero-crown {
-        width: 115px;
-        height: auto;
-        display: block;
-        margin: 0 auto 25px;
-
-        filter:
-            drop-shadow(0 0 12px rgba(201, 164, 92, 0.18));
-    }
-
-    .hero h1 {
-        font-size: clamp(2.2rem, 7vw, 6.5rem);
-        letter-spacing: 6px;
-        font-weight: 500;
-        color: var(--branco);
-        line-height: 1;
-        white-space: nowrap;
-    }
-
-    .hero-line {
-        width: 100px;
-        height: 2px;
-        background: var(--dourado);
-        margin: 30px auto;
-    }
-
-    .hero h2 {
-        font-size: clamp(1.2rem, 3vw, 2rem);
-        font-weight: normal;
-        color: var(--dourado-claro);
-        letter-spacing: 2px;
-    }
-
-    .hero p {
-        margin: 25px auto 35px;
-        max-width: 650px;
-        color: var(--cinza);
-        font-family: Arial, sans-serif;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 13px 28px;
-
-        border: 1px solid var(--dourado);
-        color: var(--dourado-claro);
-
-        text-decoration: none;
-        letter-spacing: 1px;
-
-        transition: 0.3s;
-    }
-
-    .button:hover {
-        background: var(--dourado);
-        color: var(--azul-profundo);
-    }
-
-    /* ==============================
-       SEÇÕES
-       ============================== */
-
-    section {
-        padding: 100px 25px;
-    }
-
-    .section-container {
-        max-width: 1100px;
-        margin: auto;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 55px;
-    }
-
-    .section-title h2 {
-        font-size: 2.5rem;
-        font-weight: normal;
-        color: var(--branco);
-    }
-
-    .section-title span {
-        display: block;
-        width: 60px;
-        height: 2px;
-        background: var(--dourado);
-        margin: 18px auto;
-    }
-
-    .section-title p {
-        color: var(--cinza);
-        font-family: Arial, sans-serif;
-    }
-
-    /* ==============================
-       SOBRE
-       ============================== */
-
-    .about {
-        background: var(--creme);
-        color: var(--azul-profundo);
-    }
-
-    .about .section-title h2 {
-        color: var(--azul-profundo);
-    }
-
-    .about-content {
-        max-width: 800px;
-        margin: auto;
-        text-align: center;
-        font-size: 1.1rem;
-    }
-
-    /* ==============================
-       PROJETOS
-       ============================== */
-
-    .projects {
-        background: var(--azul);
-    }
-
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-
-    /* LINK DOS CARDS */
-
-    .card-link {
-        display: block;
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .card {
-        height: 100%;
-        padding: 35px 28px;
-
-        border: 1px solid rgba(201, 164, 92, 0.35);
-        background: rgba(16, 24, 39, 0.55);
-
-        transition: transform 0.3s, border-color 0.3s;
-    }
-
-    .card:hover {
-        transform: translateY(-7px);
-        border-color: var(--dourado);
-    }
-
-    .card-symbol {
-        font-size: 2.5rem;
-        color: var(--dourado);
-        margin-bottom: 15px;
-    }
-
-    .card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 12px;
-        color: var(--branco);
-    }
-
-    .card p {
-        color: var(--cinza);
-        font-family: Arial, sans-serif;
-        font-size: 0.95rem;
-    }
-
-    /* ==============================
-       FRASE
-       ============================== */
-
-    .quote {
-        text-align: center;
-        background: var(--azul-profundo);
-    }
-
-    .quote blockquote {
-        max-width: 800px;
-        margin: auto;
-
-        font-size: clamp(1.6rem, 4vw, 2.5rem);
-        font-style: italic;
-        color: var(--dourado-claro);
-    }
-
-    /* ==============================
-       CONTATO
-       ============================== */
-
-    .instagram-link {
-        display: inline-block;
-        margin-top: 25px;
-
-        color: var(--dourado);
-        text-decoration: none;
-
-        font-family: Arial, sans-serif;
-        font-size: 1rem;
-
-        transition: 0.3s;
-    }
-
-    .instagram-link:hover {
-        color: var(--dourado-claro);
-    }
-
-    /* ==============================
-       RODAPÉ
-       ============================== */
-
-    footer {
-        text-align: center;
-        padding: 35px 20px;
-
-        background: #0b111d;
-        border-top: 1px solid rgba(201, 164, 92, 0.3);
-    }
-
-    footer strong {
-        color: var(--dourado);
-        letter-spacing: 2px;
-    }
-
-    footer p {
-        margin-top: 8px;
-        color: var(--cinza);
-        font-family: Arial, sans-serif;
-        font-size: 0.85rem;
-    }
-
-    /* ==============================
-       CELULAR
-       ============================== */
-
-    @media (max-width: 800px) {
-
-        .menu {
-            display: none;
         }
+
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background:
+                var(--azul-profundo);
+
+            color:
+                var(--creme);
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* ==================================================
+           MENU
+           ================================================== */
+
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(16, 24, 39, 0.94);
+
+            border-bottom:
+                1px solid rgba(201, 164, 92, 0.35);
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
 
         nav {
-            justify-content: center;
+
+            max-width:
+                1200px;
+
+            margin:
+                auto;
+
+            padding:
+                18px 30px;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
         }
 
-        .cards {
-            grid-template-columns: 1fr;
+
+        .logo-text {
+
+            color:
+                var(--branco);
+
+            text-decoration:
+                none;
+
+            font-size:
+                1.25rem;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                3px;
+
         }
 
-        .hero h1 {
-            letter-spacing: 4px;
+
+        .logo-text span {
+
+            color:
+                var(--dourado);
+
         }
+
+
+        .menu {
+
+            display:
+                flex;
+
+            gap:
+                28px;
+
+            list-style:
+                none;
+
+        }
+
+
+        .menu a {
+
+            color:
+                var(--creme);
+
+            text-decoration:
+                none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.95rem;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .menu a:hover {
+
+            color:
+                var(--dourado-claro);
+
+        }
+
+
+        /* ==================================================
+           HERO
+           ================================================== */
+
+
+        .hero {
+
+            min-height:
+                100vh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            text-align:
+                center;
+
+            padding:
+                120px 25px 80px;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(201, 164, 92, 0.12),
+                    transparent 45%
+                ),
+
+                var(--azul-profundo);
+
+        }
+
+
+        .hero-content {
+
+            max-width:
+                900px;
+
+            margin:
+                auto;
+
+        }
+
+
+        /*
+         * COROA
+         *
+         * O tamanho original foi preservado.
+         */
 
         .hero-crown {
-            width: 85px;
-            margin-bottom: 22px;
+
+            display:
+                block;
+
+            width:
+                150px;
+
+            height:
+                auto;
+
+            margin:
+                0 auto 20px;
+
         }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(3rem, 8vw, 6.5rem);
+
+            letter-spacing:
+                8px;
+
+            font-weight:
+                500;
+
+            color:
+                var(--branco);
+
+            line-height:
+                1;
+
+        }
+
+
+        .hero-line {
+
+            width:
+                100px;
+
+            height:
+                2px;
+
+            background:
+                var(--dourado);
+
+            margin:
+                30px auto;
+
+        }
+
+
+        .hero h2 {
+
+            font-size:
+                clamp(1.2rem, 3vw, 2rem);
+
+            font-weight:
+                normal;
+
+            color:
+                var(--dourado-claro);
+
+            letter-spacing:
+                2px;
+
+        }
+
+
+        .hero p {
+
+            margin:
+                25px auto 35px;
+
+            max-width:
+                650px;
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+        }
+
+
+        .button {
+
+            display:
+                inline-block;
+
+            padding:
+                13px 28px;
+
+            border:
+                1px solid var(--dourado);
+
+            color:
+                var(--dourado-claro);
+
+            text-decoration:
+                none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            letter-spacing:
+                1px;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .button:hover {
+
+            background:
+                var(--dourado);
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        /* ==================================================
+           SEÇÕES
+           ================================================== */
+
 
         section {
-            padding: 75px 20px;
+
+            padding:
+                100px 25px;
+
         }
-    }
-</style>
 
 
-<!-- MENU -->
+        .section-container {
 
-<header>
+            max-width:
+                1100px;
 
-    <nav>
+            margin:
+                auto;
 
-        <a href="#inicio" class="logo-text">
-            FRANCISCO <span>JUNIO</span>
-        </a>
-
-        <ul class="menu">
-
-            <li>
-                <a href="#inicio">Início</a>
-            </li>
-
-            <li>
-                <a href="#sobre">Sobre</a>
-            </li>
-
-            <li>
-                <a href="#xadrez">Xadrez</a>
-            </li>
-
-            <li>
-                <a href="#projetos">Projetos</a>
-            </li>
-
-            <li>
-                <a href="#contato">Contato</a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-</header>
+        }
 
 
-<!-- HERO -->
+        .section-title {
 
-<main>
+            text-align:
+                center;
 
-    <section class="hero" id="inicio">
+            margin-bottom:
+                55px;
 
-        <div class="hero-content">
+        }
 
-            <img
-                src="imagens/coroa.png"
-                alt="Coroa Francisco Junio"
-                class="hero-crown"
-            >
 
-            <h1>FRANCISCO JUNIO</h1>
+        .section-title h2 {
 
-            <div class="hero-line"></div>
+            font-size:
+                2.5rem;
 
-            <h2>Um nome. Um jogo. Um mundo.</h2>
+            font-weight:
+                normal;
 
-            <p>
-                Feito por quem vive o xadrez.
-            </p>
+            color:
+                var(--branco);
 
-            <a href="#xadrez" class="button">
-                CONHEÇA A MARCA
+        }
+
+
+        .section-title span {
+
+            display:
+                block;
+
+            width:
+                60px;
+
+            height:
+                2px;
+
+            background:
+                var(--dourado);
+
+            margin:
+                18px auto;
+
+        }
+
+
+        .section-title p {
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+        }
+
+
+        /* ==================================================
+           SOBRE
+           ================================================== */
+
+
+        .about {
+
+            background:
+                var(--creme);
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .about .section-title h2 {
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .about .section-title p {
+
+            color:
+                #555;
+
+        }
+
+
+        .about-content {
+
+            max-width:
+                800px;
+
+            margin:
+                auto;
+
+            text-align:
+                center;
+
+            font-size:
+                1.1rem;
+
+        }
+
+
+        /* ==================================================
+           O TABULEIRO
+           ================================================== */
+
+
+        .projects {
+
+            background:
+                var(--azul);
+
+        }
+
+
+        .cards {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                25px;
+
+        }
+
+
+        .card-link {
+
+            color:
+                inherit;
+
+            text-decoration:
+                none;
+
+            display:
+                block;
+
+        }
+
+
+        .card {
+
+            padding:
+                35px 28px;
+
+            border:
+                1px solid rgba(201, 164, 92, 0.35);
+
+            background:
+                rgba(16, 24, 39, 0.55);
+
+            transition:
+                transform 0.3s,
+                border-color 0.3s;
+
+            text-align:
+                center;
+
+            height:
+                100%;
+
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                var(--dourado);
+
+        }
+
+
+        .card-symbol {
+
+            font-size:
+                2.5rem;
+
+            color:
+                var(--dourado);
+
+            margin-bottom:
+                15px;
+
+            line-height:
+                1;
+
+        }
+
+
+        .card h3 {
+
+            font-size:
+                1.5rem;
+
+            margin-bottom:
+                12px;
+
+            color:
+                var(--branco);
+
+        }
+
+
+        .card p {
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.95rem;
+
+        }
+
+
+        /* ==================================================
+           VITRINE
+           ================================================== */
+
+
+        .showcase {
+
+            background:
+                var(--creme);
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .showcase .section-title h2 {
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .showcase .section-title p {
+
+            color:
+                #555;
+
+        }
+
+
+        .showcase-content {
+
+            max-width:
+                950px;
+
+            margin:
+                auto;
+
+        }
+
+
+        .showcase-item {
+
+            margin-bottom:
+                60px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .showcase-item:last-child {
+
+            margin-bottom:
+                0;
+
+        }
+
+
+        .showcase-label {
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .showcase-label h3 {
+
+            font-size:
+                1.7rem;
+
+            font-weight:
+                normal;
+
+            color:
+                var(--azul-profundo);
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .showcase-label p {
+
+            max-width:
+                700px;
+
+            margin:
+                auto;
+
+            color:
+                #555;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+        }
+
+
+        .showcase-image {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            aspect-ratio:
+                16 / 9;
+
+            object-fit:
+                cover;
+
+            margin:
+                auto;
+
+            border:
+                1px solid rgba(16, 24, 39, 0.18);
+
+            box-shadow:
+                0 12px 30px rgba(16, 24, 39, 0.12);
+
+        }
+
+
+        /* ==================================================
+           FRASE
+           ================================================== */
+
+
+        .quote {
+
+            text-align:
+                center;
+
+            background:
+                var(--azul-profundo);
+
+        }
+
+
+        .quote blockquote {
+
+            max-width:
+                800px;
+
+            margin:
+                auto;
+
+            font-size:
+                clamp(1.6rem, 4vw, 2.5rem);
+
+            font-style:
+                italic;
+
+            color:
+                var(--dourado-claro);
+
+        }
+
+
+        /* ==================================================
+           PROJETOS
+           ================================================== */
+
+
+        .projects-section {
+
+            background:
+                var(--creme);
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .projects-section .section-title h2 {
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .projects-section .section-title p {
+
+            color:
+                #555;
+
+        }
+
+
+        .projects-section .about-content {
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        /* ==================================================
+           CONTATO
+           ================================================== */
+
+
+        .contact {
+
+            background:
+                var(--azul);
+
+            text-align:
+                center;
+
+        }
+
+
+        .contact-links {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap:
+                18px;
+
+            flex-wrap:
+                wrap;
+
+            margin-top:
+                25px;
+
+        }
+
+
+        .social-link {
+
+            display:
+                inline-block;
+
+            padding:
+                12px 22px;
+
+            border:
+                1px solid rgba(201, 164, 92, 0.55);
+
+            color:
+                var(--dourado-claro);
+
+            text-decoration:
+                none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .social-link:hover {
+
+            background:
+                var(--dourado);
+
+            color:
+                var(--azul-profundo);
+
+            border-color:
+                var(--dourado);
+
+        }
+
+
+        /* ==================================================
+           RODAPÉ
+           ================================================== */
+
+
+        footer {
+
+            text-align:
+                center;
+
+            padding:
+                35px 20px;
+
+            background:
+                #0b111d;
+
+            border-top:
+                1px solid rgba(201, 164, 92, 0.3);
+
+        }
+
+
+        footer strong {
+
+            color:
+                var(--dourado);
+
+            letter-spacing:
+                2px;
+
+        }
+
+
+        footer p {
+
+            margin-top:
+                8px;
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.85rem;
+
+        }
+
+
+        .footer-links {
+
+            margin-top:
+                18px;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            gap:
+                20px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .footer-links a {
+
+            color:
+                var(--dourado-claro);
+
+            text-decoration:
+                none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.85rem;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .footer-links a:hover {
+
+            color:
+                var(--branco);
+
+        }
+
+
+        /* ==================================================
+           CELULAR
+           ================================================== */
+
+
+        @media (max-width: 800px) {
+
+
+            .menu {
+
+                display:
+                    none;
+
+            }
+
+
+            nav {
+
+                justify-content:
+                    center;
+
+            }
+
+
+            .cards {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    4px;
+
+            }
+
+
+            section {
+
+                padding:
+                    75px 20px;
+
+            }
+
+
+            .showcase-image {
+
+                width:
+                    100%;
+
+            }
+
+
+            .showcase-item {
+
+                margin-bottom:
+                    45px;
+
+            }
+
+
+            .showcase-label h3 {
+
+                font-size:
+                    1.4rem;
+
+            }
+
+
+            .contact-links {
+
+                flex-direction:
+                    column;
+
+            }
+
+
+            .social-link {
+
+                width:
+                    100%;
+
+                max-width:
+                    320px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         MENU
+         ================================================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#inicio" class="logo-text">
+                FRANCISCO <span>JUNIO</span>
             </a>
 
-        </div>
 
-    </section>
+            <ul class="menu">
+
+                <li>
+                    <a href="#inicio">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#xadrez">
+                        Xadrez
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projetos">
+                        Projetos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contato">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
 
 
-    <!-- SOBRE -->
+    <!-- ==================================================
+         CONTEÚDO PRINCIPAL
+         ================================================== -->
 
-    <section class="about" id="sobre">
+    <main>
 
-        <div class="section-container">
 
-            <div class="section-title">
+        <!-- ==================================================
+             HERO
+             ================================================== -->
 
-                <h2>Francisco Junio</h2>
+        <section class="hero" id="inicio">
 
-                <span></span>
+            <div class="hero-content">
+
+
+                <img
+                    src="imagens/coroa.png"
+                    alt="Coroa Francisco Junio"
+                    class="hero-crown"
+                >
+
+
+                <h1>
+                    FRANCISCO JUNIO
+                </h1>
+
+
+                <div class="hero-line"></div>
+
+
+                <h2>
+                    Um nome. Um jogo. Um mundo.
+                </h2>
+
 
                 <p>
-                    Uma marca construída em torno do xadrez.
+                    Feito por quem vive o xadrez.
                 </p>
+
+
+                <a href="#xadrez" class="button">
+                    CONHEÇA A MARCA
+                </a>
+
 
             </div>
 
-            <div class="about-content">
+        </section>
 
-                <p>
-                    Francisco Junio reúne projetos, eventos,
-                    produtos e iniciativas que têm o xadrez
-                    como ponto de encontro entre criatividade,
-                    aprendizado e comunidade.
-                </p>
+
+        <!-- ==================================================
+             SOBRE
+             ================================================== -->
+
+        <section class="about" id="sobre">
+
+            <div class="section-container">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        Francisco Junio
+                    </h2>
+
+                    <span></span>
+
+                    <p>
+                        Uma marca construída em torno do xadrez.
+                    </p>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <p>
+                        Francisco Junio reúne projetos, eventos,
+                        produtos e iniciativas que têm o xadrez
+                        como ponto de encontro entre criatividade,
+                        aprendizado e comunidade.
+                    </p>
+
+                </div>
+
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- XADREZ -->
+        <!-- ==================================================
+             O TABULEIRO
+             ================================================== -->
 
-    <section class="projects" id="xadrez">
+        <section class="projects" id="xadrez">
 
-        <div class="section-container">
-
-            <div class="section-title">
-
-                <h2>O Tabuleiro</h2>
-
-                <span></span>
-
-                <p>
-                    Conheça os projetos que fazem parte dessa história.
-                </p>
-
-            </div>
+            <div class="section-container">
 
 
-            <div class="cards">
+                <div class="section-title">
+
+                    <h2>
+                        O Tabuleiro
+                    </h2>
+
+                    <span></span>
+
+                    <p>
+                        Conheça os projetos que fazem parte dessa história.
+                    </p>
+
+                </div>
 
 
-                <!-- CXFJ -->
+                <div class="cards">
 
-                <a href="cxfj.html" class="card-link">
+
+                    <!-- CXFJ -->
+
+                    <a
+                        href="cxfj/cxfj.html"
+                        class="card-link"
+                    >
+
+                        <article class="card">
+
+                            <div class="card-symbol">
+                                ♞
+                            </div>
+
+                            <h3>
+                                CXFJ
+                            </h3>
+
+                            <p>
+                                Clube de Xadrez Francisco Junio.
+                                Eventos, torneios e iniciativas
+                                para aproximar pessoas do jogo.
+                            </p>
+
+                        </article>
+
+                    </a>
+
+
+                    <!-- EXFJ -->
 
                     <article class="card">
 
-                        <div class="card-symbol">♞</div>
+                        <div class="card-symbol">
+                            ♝
+                        </div>
 
-                        <h3>CXFJ</h3>
+                        <h3>
+                            EXFJ
+                        </h3>
 
                         <p>
-                            Clube de Xadrez Francisco Junio.
-                            Eventos, torneios e iniciativas
-                            para aproximar pessoas do jogo.
+                            Escola de Xadrez Francisco Junio.
+                            O xadrez como ferramenta de
+                            aprendizado e desenvolvimento.
                         </p>
 
                     </article>
 
-                </a>
+
+                    <!-- LOJA -->
+
+                    <article class="card">
+
+                        <div class="card-symbol">
+                            ♕
+                        </div>
+
+                        <h3>
+                            Loja
+                        </h3>
+
+                        <p>
+                            Peças, tabuleiros e produtos
+                            desenvolvidos por quem realmente
+                            vive o xadrez.
+                        </p>
+
+                    </article>
 
 
-                <!-- EXFJ -->
+                </div>
 
-                <article class="card">
+            </div>
 
-                    <div class="card-symbol">♜</div>
+        </section>
 
-                    <h3>EXFJ</h3>
+
+        <!-- ==================================================
+             VITRINE
+             ================================================== -->
+
+        <section class="showcase" id="vitrine">
+
+            <div class="section-container">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        Uma história em construção
+                    </h2>
+
+                    <span></span>
 
                     <p>
-                        Escola de Xadrez Francisco Junio.
-                        O xadrez como ferramenta de
-                        aprendizado e desenvolvimento.
+                        Antes e depois da criação do Clube de Xadrez Francisco Junio.
                     </p>
 
-                </article>
+                </div>
 
 
-                <!-- PRODUTOS -->
+                <div class="showcase-content">
 
-                <article class="card">
 
-                    <div class="card-symbol">♕</div>
+                    <!-- ANTES -->
 
-                    <h3>Produtos</h3>
+                    <div class="showcase-item">
+
+
+                        <div class="showcase-label">
+
+                            <h3>
+                                Antes do CXFJ
+                            </h3>
+
+                            <p>
+                                Registros de torneios organizados
+                                por Francisco Junio antes da criação
+                                do Clube.
+                            </p>
+
+                        </div>
+
+
+                        <img
+                            src="imagens/vitrinepre.png"
+                            alt="Registros de torneios antes da criação do CXFJ"
+                            class="showcase-image"
+                        >
+
+
+                    </div>
+
+
+                    <!-- DEPOIS -->
+
+                    <div class="showcase-item">
+
+
+                        <div class="showcase-label">
+
+                            <h3>
+                                O que estamos construindo
+                            </h3>
+
+                            <p>
+                                Registros dos projetos, eventos,
+                                encontros e experiências que fazem
+                                parte da história atual da Francisco Junio.
+                            </p>
+
+                        </div>
+
+
+                        <img
+                            src="imagens/vitrinepos.png"
+                            alt="Projetos, eventos e experiências atuais da Francisco Junio"
+                            class="showcase-image"
+                        >
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FRASE
+             ================================================== -->
+
+        <section class="quote">
+
+            <blockquote>
+                “Diferentes caminhos, um mesmo jogo.”
+            </blockquote>
+
+        </section>
+
+
+        <!-- ==================================================
+             PROJETOS
+             ================================================== -->
+
+        <section class="projects-section" id="projetos">
+
+            <div class="section-container">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        Projetos
+                    </h2>
+
+                    <span></span>
 
                     <p>
-                        Peças, tabuleiros e produtos
-                        desenvolvidos por quem realmente
-                        vive o xadrez.
+                        Ideias que vão além do tabuleiro.
                     </p>
 
-                </article>
+                </div>
+
+
+                <div class="about-content">
+
+                    <p>
+                        Eventos, ensino, produtos e novas formas
+                        de viver o xadrez.
+                    </p>
+
+                </div>
 
 
             </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CONTATO
+             ================================================== -->
+
+        <section class="contact" id="contato">
+
+            <div class="section-container">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        Entre em contato
+                    </h2>
+
+                    <span></span>
+
+                    <p>
+                        Parceria, dúvidas e sugestões.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-links">
+
+
+                    <a
+                        href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link"
+                    >
+                        Instagram
+                    </a>
+
+
+                    <a
+                        href="https://www.youtube.com/@franciscojunioxadrez"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link"
+                    >
+                        YouTube
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+         RODAPÉ
+         ================================================== -->
+
+    <footer>
+
+
+        <strong>
+            FRANCISCO JUNIO
+        </strong>
+
+
+        <p>
+            Um nome. Um jogo. Um mundo.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a
+                href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+
+            <a
+                href="https://www.youtube.com/@franciscojunioxadrez"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                YouTube
+            </a>
 
         </div>
 
-    </section>
+
+    </footer>
 
 
-    <!-- FRASE -->
+</body>
 
-    <section class="quote">
-
-        <blockquote>
-            “Diferentes caminhos, um mesmo jogo.”
-        </blockquote>
-
-    </section>
-
-
-    <!-- PROJETOS -->
-
-    <section class="about" id="projetos">
-
-        <div class="section-container">
-
-            <div class="section-title">
-
-                <h2>Projetos</h2>
-
-                <span></span>
-
-                <p>
-                    Ideias que vão além do tabuleiro.
-                </p>
-
-            </div>
-
-            <div class="about-content">
-
-                <p>
-                    Eventos, ensino, produtos e novas formas
-                    de viver o xadrez.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTATO -->
-
-    <section class="projects" id="contato">
-
-        <div class="section-container">
-
-            <div class="section-title">
-
-                <h2>Entre em contato</h2>
-
-                <span></span>
-
-                <p>
-                    Parceria, dúvidas e sugestões.
-                </p>
-
-                <a
-                    href="https://www.instagram.com/CXFJ_Eventos_de_Xadrez/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="instagram-link"
-                >
-                    @CXFJ_Eventos_de_Xadrez
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- RODAPÉ -->
-
-<footer>
-
-    <strong>FRANCISCO JUNIO</strong>
-
-    <p>
-        Um nome. Um jogo. Um mundo.
-    </p>
-
-</footer>
+</html>
