@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EXFJ — Aberturas e Defesas. Cursos e estudos de xadrez."
+    >
+
+    <title>
+        Aberturas e Defesas | EXFJ
+    </title>
+
+
+    <style>
+
+        /* ==================================================
+           EXFJ — ABERTURAS E DEFESAS
+           ESCOLA DE XADREZ FRANCISCO JUNIO
+           ================================================== */
+
+        :root {
+
+            --azul-profundo: #101827;
+            --azul: #18243a;
+
+            --dourado: #c9a45c;
+            --dourado-claro: #e3c681;
+
+            --creme: #f4efe4;
+            --branco: #ffffff;
+
+            --cinza: #b8b8b8;
+
+        }
+
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background:
+                var(--azul-profundo);
+
+            color:
+                var(--creme);
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* ==================================================
+           MENU
+           ================================================== */
+
+        header {
+
+            position:
+                fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(16, 24, 39, 0.95);
+
+            border-bottom:
+                1px solid
+                rgba(201, 164, 92, 0.35);
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        nav {
+
+            max-width:
+                1150px;
+
+            margin:
+                auto;
+
+            padding:
+                18px 25px;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+        }
+
+
+        .logo-text {
+
+            color:
+                var(--branco);
+
+            text-decoration:
+                none;
+
+            font-size:
+                1.15rem;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                3px;
+
+        }
+
+
+        .logo-text span {
+
+            color:
+                var(--dourado);
+
+        }
+
+
+        .menu {
+
+            display:
+                flex;
+
+            gap:
+                25px;
+
+            list-style:
+                none;
+
+        }
+
+
+        .menu a {
+
+            color:
+                var(--creme);
+
+            text-decoration:
+                none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.9rem;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .menu a:hover {
+
+            color:
+                var(--dourado-claro);
+
+        }
+
+
+        /* ==================================================
+           HERO
+           ================================================== */
+
+        .hero {
+
+            min-height:
+                75vh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            text-align:
+                center;
+
+            padding:
+                130px 25px 80px;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(201, 164, 92, 0.14),
+                    transparent 48%
+                ),
+
+                var(--azul-profundo);
+
+        }
+
+
+        .hero-content {
+
+            max-width:
+                900px;
+
+        }
+
+
+        .hero-symbol {
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .hero-symbol img {
+
+            display:
+                block;
+
+            width:
+                90px;
+
+            height:
+                auto;
+
+            margin:
+                0 auto;
+
+        }
+
+
+        .hero-kicker {
+
+            color:
+                var(--dourado-claro);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.9rem;
+
+            letter-spacing:
+                4px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(2.5rem, 7vw, 5rem);
+
+            line-height:
+                1;
+
+            font-weight:
+                normal;
+
+            letter-spacing:
+                4px;
+
+            color:
+                var(--branco);
+
+        }
+
+
+        .hero-line {
+
+            width:
+                90px;
+
+            height:
+                2px;
+
+            background:
+                var(--dourado);
+
+            margin:
+                30px auto;
+
+        }
+
+
+        .hero h2 {
+
+            font-size:
+                clamp(1.2rem, 3vw, 1.8rem);
+
+            font-weight:
+                normal;
+
+            color:
+                var(--dourado-claro);
+
+            letter-spacing:
+                2px;
+
+        }
+
+
+        .hero p {
+
+            max-width:
+                650px;
+
+            margin:
+                25px auto 0;
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+        }
+
+
+        /* ==================================================
+           SEÇÕES
+           ================================================== */
+
+        section {
+
+            padding:
+                100px 25px;
+
+        }
+
+
+        .section-container {
+
+            max-width:
+                1100px;
+
+            margin:
+                auto;
+
+        }
+
+
+        .section-title {
+
+            text-align:
+                center;
+
+            margin-bottom:
+                55px;
+
+        }
+
+
+        .section-title small {
+
+            display:
+                block;
+
+            color:
+                var(--dourado);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.8rem;
+
+            letter-spacing:
+                3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .section-title h2 {
+
+            font-size:
+                2.5rem;
+
+            font-weight:
+                normal;
+
+            color:
+                var(--branco);
+
+        }
+
+
+        .section-title span {
+
+            display:
+                block;
+
+            width:
+                60px;
+
+            height:
+                2px;
+
+            background:
+                var(--dourado);
+
+            margin:
+                18px auto;
+
+        }
+
+
+        .section-title p {
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+        }
+
+
+        /* ==================================================
+           CURSOS
+           ================================================== */
+
+        .courses {
+
+            background:
+                var(--azul);
+
+        }
+
+
+        .courses-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                30px;
+
+        }
+
+
+        .course-card {
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            border:
+                1px solid
+                rgba(201, 164, 92, 0.35);
+
+            background:
+                rgba(16, 24, 39, 0.55);
+
+            transition:
+                transform 0.3s,
+                border-color 0.3s;
+
+        }
+
+
+        .course-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                var(--dourado);
+
+        }
+
+
+        .course-image {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            height:
+                auto;
+
+        }
+
+
+        .course-info {
+
+            padding:
+                25px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .course-status {
+
+            display:
+                inline-block;
+
+            margin-bottom:
+                12px;
+
+            padding:
+                5px 12px;
+
+            border:
+                1px solid
+                var(--dourado);
+
+            color:
+                var(--dourado-claro);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.72rem;
+
+            letter-spacing:
+                2px;
+
+        }
+
+
+        .course-info h3 {
+
+            color:
+                var(--branco);
+
+            font-size:
+                1.45rem;
+
+            font-weight:
+                normal;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .course-info p {
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.92rem;
+
+        }
+
+
+        /* ==================================================
+           RETORNO
+           ================================================== */
+
+        .back {
+
+            text-align:
+                center;
+
+            background:
+                var(--azul-profundo);
+
+        }
+
+
+        .button {
+
+            display:
+                inline-block;
+
+            padding:
+                13px 28px;
+
+            border:
+                1px solid
+                var(--dourado);
+
+            color:
+                var(--dourado-claro);
+
+            text-decoration:
+                none;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            letter-spacing:
+                1px;
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .button:hover {
+
+            background:
+                var(--dourado);
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        /* ==================================================
+           RODAPÉ
+           ================================================== */
+
+        footer {
+
+            text-align:
+                center;
+
+            padding:
+                35px 20px;
+
+            background:
+                #0b111d;
+
+            border-top:
+                1px solid
+                rgba(201, 164, 92, 0.3);
+
+        }
+
+
+        footer strong {
+
+            color:
+                var(--dourado);
+
+            letter-spacing:
+                2px;
+
+        }
+
+
+        footer p {
+
+            margin-top:
+                8px;
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.85rem;
+
+        }
+
+
+        /* ==================================================
+           CELULAR
+           ================================================== */
+
+        @media (max-width: 800px) {
+
+            .menu {
+
+                display:
+                    none;
+
+            }
+
+
+            nav {
+
+                justify-content:
+                    center;
+
+            }
+
+
+            .courses-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            section {
+
+                padding:
+                    75px 20px;
+
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    2px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     MENU
+     ================================================== -->
+
+<header>
+
+    <nav>
+
+        <a
+            href="../index.html"
+            class="logo-text"
+        >
+
+            FRANCISCO <span>JUNIO</span>
+
+        </a>
+
+
+        <ul class="menu">
+
+            <li>
+                <a href="#inicio">
+                    Topo
+                </a>
+            </li>
+
+            <li>
+                <a href="#cursos">
+                    Cursos
+                </a>
+            </li>
+
+            <li>
+                <a href="../exfj.html">
+                    EXFJ
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- ==================================================
+     HERO
+     ================================================== -->
+
+<section
+    class="hero"
+    id="inicio"
+>
+
+    <div class="hero-content">
+
+
+        <div class="hero-symbol">
+
+            <img
+                src="../imagens/bispo.png"
+                alt="Bispo"
+            >
+
+        </div>
+
+
+        <div class="hero-kicker">
+
+            Escola de Xadrez
+
+        </div>
+
+
+        <h1>
+
+            Aberturas e Defesas
+
+        </h1>
+
+
+        <div class="hero-line"></div>
+
+
+        <h2>
+
+            O começo da partida
+
+        </h2>
+
+
+        <p>
+
+            Conheça cursos voltados para
+            aberturas, defesas, planos e ideias
+            fundamentais para o início da partida.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     CURSOS
+     ================================================== -->
+
+<section
+    class="courses"
+    id="cursos"
+>
+
+    <div class="section-container">
+
+
+        <div class="section-title">
+
+            <small>
+                Cursos
+            </small>
+
+
+            <h2>
+                Aberturas e Defesas
+            </h2>
+
+
+            <span></span>
+
+
+            <p>
+
+                Cursos que serão lançados
+                pela EXFJ.
+
+            </p>
+
+        </div>
+
+
+        <div class="courses-grid">
+
+
+            <!-- =========================================
+                 ABERTURA ITALIANA
+                 ========================================= -->
+
+            <article class="course-card">
+
+
+                <img
+                    src="../imagens/italiana.png"
+                    alt="Curso de Abertura Italiana"
+                    class="course-image"
+                >
+
+
+                <div class="course-info">
+
+
+                    <span class="course-status">
+
+                        EM BREVE
+
+                    </span>
+
+
+                    <h3>
+
+                        Abertura Italiana
+
+                    </h3>
+
+
+                    <p>
+
+                        Estudo dos principais planos,
+                        ideias e conceitos da Abertura
+                        Italiana.
+
+                    </p>
+
+
+                </div>
+
+
+            </article>
+
+
+            <!-- =========================================
+                 DRAGÃO ACELERADO
+                 ========================================= -->
+
+            <article class="course-card">
+
+
+                <img
+                    src="../imagens/dragaoacelerado.png"
+                    alt="Curso de Defesa Siciliana Variante Dragão Acelerado"
+                    class="course-image"
+                >
+
+
+                <div class="course-info">
+
+
+                    <span class="course-status">
+
+                        EM BREVE
+
+                    </span>
+
+
+                    <h3>
+
+                        Defesa Siciliana —
+                        Variante Dragão Acelerado
+
+                    </h3>
+
+
+                    <p>
+
+                        Estudo dos planos, estruturas
+                        e ideias da Variante Dragão
+                        Acelerado da Defesa Siciliana.
+
+                    </p>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     RETORNO
+     ================================================== -->
+
+<section class="back">
+
+    <div class="section-container">
+
+        <a
+            href="../exfj.html"
+            class="button"
+        >
+
+            VOLTAR PARA A EXFJ
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ==================================================
+     RODAPÉ
+     ================================================== -->
+
+<footer>
+
+    <strong>
+
+        EXFJ — ESCOLA DE XADREZ FRANCISCO JUNIO
+
+    </strong>
+
+
+    <p>
+
+        Fortalecendo o xadrez, peça por peça.
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
