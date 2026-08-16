@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mandacaru Xadrez | CXFJ</title>
+
+    <style>
+        :root {
+            --preto: #111111;
+            --preto-suave: #1b1b1b;
+            --branco: #f7f7f7;
+            --cinza: #d8d8d8;
+            --cinza-escuro: #777;
+            --dourado: #d4af37;
+            --dourado-claro: #f0d477;
+            --verde: #3f6b3f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: var(--branco);
+            color: var(--preto);
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            background: var(--preto);
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--dourado);
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--dourado);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--dourado);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 430px;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.72),
+                    rgba(0,0,0,0.72)
+                ),
+                url("../imagens/mandacaru.png") center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--dourado);
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #eee;
+        }
+
+        .hero-data {
+            margin-top: 25px;
+            font-size: 1rem;
+            color: var(--dourado-claro);
+        }
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo-secao h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .titulo-secao .linha {
+            width: 70px;
+            height: 3px;
+            background: var(--dourado);
+            margin: auto;
+        }
+
+        .texto {
+            max-width: 850px;
+            margin: auto;
+            font-size: 1.08rem;
+        }
+
+        .texto p {
+            margin-bottom: 18px;
+        }
+
+        /* =========================
+           CARDS DE INFORMAÇÃO
+        ========================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .info-card .numero {
+            display: block;
+            font-size: 2rem;
+            color: var(--dourado);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .info-card span:last-child {
+            color: #555;
+        }
+
+        /* =========================
+           DESTAQUE DO CAMPEÃO
+        ========================= */
+
+        .campeao {
+            background: var(--preto);
+            color: white;
+            padding: 45px 35px;
+            text-align: center;
+            border-top: 4px solid var(--dourado);
+            border-bottom: 4px solid var(--dourado);
+        }
+
+        .campeao .trofeu {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .campeao h3 {
+            color: var(--dourado);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .campeao p {
+            max-width: 750px;
+            margin: auto;
+            color: #eee;
+        }
+
+        .texto-destaque {
+            color: var(--dourado-claro);
+            font-weight: bold;
+        }
+
+        /* =========================
+           CLASSIFICAÇÃO
+        ========================= */
+
+        .classificacao {
+            max-width: 850px;
+            margin: auto;
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .classificacao th {
+            background: var(--preto);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .classificacao td {
+            padding: 14px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .classificacao tr:hover {
+            background: #f5f5f5;
+        }
+
+        .posicao {
+            font-weight: bold;
+            width: 80px;
+            text-align: center;
+        }
+
+        .primeiro {
+            color: #b58b00;
+            font-weight: bold;
+        }
+
+        /* =========================
+           DESTAQUES INDIVIDUAIS
+        ========================= */
+
+        .destaques {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .destaque-card {
+            background: white;
+            border-left: 4px solid var(--dourado);
+            padding: 25px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+        }
+
+        .destaque-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.35rem;
+        }
+
+        .destaque-card p {
+            color: #444;
+        }
+
+        /* =========================
+           POSIÇÃO EM DESTAQUE
+        ========================= */
+
+        .posicao-destaque {
+            background: #eeeeee;
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .posicao-destaque img {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            margin: 25px auto 15px;
+            border: 3px solid var(--preto);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+        }
+
+        .legenda {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .analise {
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+            background: white;
+            padding: 30px;
+            border-left: 4px solid var(--dourado);
+        }
+
+        .analise h3 {
+            margin-bottom: 15px;
+        }
+
+        .texto-destaque-posicao {
+            font-weight: bold;
+            color: #8c6f00;
+        }
+
+        .lances {
+            background: var(--preto);
+            color: white;
+            padding: 18px;
+            margin-top: 20px;
+            font-family: "Courier New", monospace;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+
+        /* =========================
+           MULHERES NO XADREZ
+        ========================= */
+
+        .feminino {
+            background: #f7f3e6;
+            padding: 45px 30px;
+            border-top: 3px solid var(--dourado);
+            border-bottom: 3px solid var(--dourado);
+        }
+
+        .feminino .texto {
+            text-align: center;
+        }
+
+        .numero-grande {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--dourado);
+        }
+
+        /* =========================
+           ENCERRAMENTO
+        ========================= */
+
+        .encerramento {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .encerramento h2 {
+            margin-bottom: 20px;
+        }
+
+        .encerramento p {
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: var(--preto);
+            color: #ccc;
+            text-align: center;
+            padding: 35px 20px;
+            border-top: 3px solid var(--dourado);
+        }
+
+        footer strong {
+            color: var(--dourado);
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .destaques {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .classificacao {
+                font-size: 0.9rem;
+            }
+
+            .classificacao th,
+            .classificacao td {
+                padding: 10px 7px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        FRANCISCO <span>JUNIO</span>
+    </div>
+
+    <nav>
+        <a href="../index.html">Início</a>
+        <a href="../cxfj/cxfj.html">CXFJ</a>
+        <a href="../exfj/exfj.html">EXFJ</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Mandacaru Xadrez</h1>
+
+        <h2>Torneio Amador de Xadrez</h2>
+
+        <p>
+            Um torneio criado para jogadores que estão construindo
+            sua trajetória competitiva no xadrez.
+        </p>
+
+        <div class="hero-data">
+            15 de agosto de 2026 • CXFJ
+        </div>
+
+    </div>
+
+</section>
+
+
+<main>
+
+
+<!-- =========================
+     SOBRE O TORNEIO
+========================= -->
+
+<section>
+
+    <div class="titulo-secao">
+
+        <h2>Sobre o Mandacaru</h2>
+
+        <div class="linha"></div>
+
+    </div>
+
+    <div class="texto">
+
+        <p>
+            O <strong>Mandacaru Xadrez</strong> foi um torneio amador
+            realizado no dia <strong>15 de agosto de 2026</strong>,
+            criado especialmente para jogadores com rating de até
+            <strong>1880 FCX</strong> que nunca haviam alcançado
+            1900 pontos.
+        </p>
+
+        <p>
+            Mais do que uma competição, o Mandacaru foi pensado como
+            uma porta de entrada para jogadores que estão começando
+            a construir suas experiências em torneios.
+        </p>
+
+        <p>
+            A primeira edição reuniu <strong>24 inscritos</strong>,
+            dos quais <strong>23 participaram efetivamente do evento</strong>.
+            Entre eles, seis jogadores estavam disputando
+            seu primeiro torneio de xadrez.
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <span class="numero">24</span>
+            <span>Inscritos</span>
+        </div>
+
+        <div class="info-card">
+            <span class="numero">23</span>
+            <span>Participantes</span>
+        </div>
+
+        <div class="info-card">
+            <span class="numero">6</span>
+            <span>Primeiro torneio</span>
+        </div>
+
+        <div class="info-card">
+            <span class="numero">1880</span>
+            <span>Rating máximo FCX</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CAMPEÃO
+========================= -->
+
+<section>
+
+    <div class="campeao">
+
+        <div class="trofeu">🏆</div>
+
+        <h3>Luiz Filipy Soares da Silva</h3>
+
+        <p>
+            O campeão da primeira edição do Mandacaru Xadrez
+            protagonizou uma história especial.
+        </p>
+
+        <p style="margin-top: 15px;">
+
+            <span class="texto-destaque">
+                Este foi o primeiro torneio de Luiz Filipy.
+            </span>
+
+            Logo em sua estreia em uma competição,
+            ele conquistou o primeiro lugar e levou a taça
+            do Mandacaru Xadrez para casa.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CLASSIFICAÇÃO
+========================= -->
+
+<section>
+
+    <div class="titulo-secao">
+
+        <h2>Classificação</h2>
+
+        <div class="linha"></div>
+
+    </div>
+
+
+    <table class="classificacao">
+
+        <thead>
+
+            <tr>
+                <th>Pos.</th>
+                <th>Jogador</th>
+                <th>Observação</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td class="posicao primeiro">1º</td>
+                <td class="primeiro">
+                    Luiz Filipy Soares da Silva
+                </td>
+                <td>Campeão</td>
+            </tr>
+
+            <tr>
+                <td class="posicao">2º</td>
+                <td>Francisco de Souza Filho</td>
+                <td>Vice-campeão</td>
+            </tr>
+
+            <tr>
+                <td class="posicao">3º</td>
+                <td>Izaac Lobo</td>
+                <td>—</td>
+            </tr>
+
+            <tr>
+                <td class="posicao">4º</td>
+                <td>Matheus Alves</td>
+                <td>Primeiro torneio</td>
+            </tr>
+
+            <tr>
+                <td class="posicao">5º</td>
+                <td>Maria Heloiza</td>
+                <td>Jogadora</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<!-- =========================
+     FRANCISCO DE SOUZA
+========================= -->
+
+<section>
+
+    <div class="titulo-secao">
+
+        <h2>Um gesto que merece ser lembrado</h2>
+
+        <div class="linha"></div>
+
+    </div>
+
+
+    <div class="texto">
+
+        <p>
+            O segundo lugar também foi marcado por uma história
+            especial. <strong>Francisco de Souza Filho</strong>
+            venceu Luiz Filipy durante o torneio e chegou à última
+            rodada em uma disputa extremamente apertada.
+        </p>
+
+        <p>
+            Na rodada final, quatro jogadores terminaram com
+            <strong>4 pontos</strong>. Como havia mais de dois
+            jogadores empatados na mesma pontuação, o confronto
+            direto não poderia ser utilizado para definir toda
+            a classificação daquele grupo.
+        </p>
+
+        <p>
+            Com isso, entrou em ação o <strong>Buchholz</strong>,
+            que acabou colocando Luiz Filipy na primeira posição.
+        </p>
+
+        <p>
+            Francisco de Souza havia vencido a última rodada,
+            mas terminou em segundo lugar. Mesmo diante de uma
+            situação que poderia facilmente gerar frustração,
+            recebeu o resultado com maturidade e respeito.
+        </p>
+
+        <p>
+            E seu gesto foi ainda maior: <strong>Francisco doou
+            sua premiação em apoio ao projeto de xadrez que está
+            sendo construído pelo CXFJ.</strong>
+        </p>
+
+        <p class="texto-destaque">
+            Mais do que um resultado esportivo, ficou um exemplo
+            de humildade, respeito e apoio ao crescimento do xadrez.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DESTAQUES
+========================= -->
+
+<section>
+
+    <div class="titulo-secao">
+
+        <h2>Outros destaques</h2>
+
+        <div class="linha"></div>
+
+    </div>
+
+
+    <div class="destaques">
+
+
+        <div class="destaque-card">
+
+            <h3>♟️ Matheus Alves</h3>
+
+            <p>
+                O quarto colocado também estava vivendo sua primeira
+                experiência em um torneio de xadrez.
+                Logo em sua estreia competitiva, Matheus conseguiu
+                terminar entre os cinco primeiros colocados.
+            </p>
+
+        </div>
+
+
+        <div class="destaque-card">
+
+            <h3>🌵 Maria Heloiza</h3>
+
+            <p>
+                Na quinta colocação, Maria Heloiza foi uma das
+                jogadoras que marcou a primeira edição do Mandacaru.
+                Sua participação representa mais um passo no
+                crescimento da presença feminina nos torneios
+                promovidos pelo projeto.
+            </p>
+
+        </div>
+
+
+        <div class="destaque-card">
+
+            <h3>🏁 Seis estreantes</h3>
+
+            <p>
+                Seis jogadores disputaram seu primeiro torneio
+                de xadrez durante o Mandacaru.
+                Para um evento voltado justamente à formação
+                de novos competidores, esse número representa
+                uma das grandes conquistas da primeira edição.
+            </p>
+
+        </div>
+
+
+        <div class="destaque-card">
+
+            <h3>♛ Um torneio em crescimento</h3>
+
+            <p>
+                O Mandacaru mostrou que existe espaço para novos
+                jogadores entrarem no cenário competitivo e
+                construírem suas próprias histórias dentro do
+                xadrez do Cariri.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MULHERES NO XADREZ
+========================= -->
+
+<section>
+
+    <div class="feminino">
+
+        <div class="titulo-secao">
+
+            <h2>Mais mulheres no tabuleiro</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <div class="texto">
+
+            <p>
+                O Mandacaru também trouxe um número que merece
+                ser registrado: <span class="numero-grande">5</span>
+                jogadoras foram inscritas no torneio,
+                e <span class="numero-grande">4</span> delas
+                participaram efetivamente da competição.
+            </p>
+
+            <p>
+                Todas as quatro jogadoras que participaram do
+                Mandacaru já haviam participado de torneios
+                femininos promovidos pelo projeto.
+            </p>
+
+            <p>
+                Esse crescimento representa uma das partes mais
+                importantes da trajetória do CXFJ: criar cada vez
+                mais oportunidades para que mulheres conheçam,
+                pratiquem e disputem xadrez competitivo.
+            </p>
+
+            <p>
+                O Mandacaru mostrou que o incentivo ao xadrez
+                feminino não precisa terminar no torneio feminino.
+                As jogadoras podem chegar aos eventos gerais,
+                ocupar seus espaços e competir de igual para igual.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     POSIÇÃO EM DESTAQUE
+========================= -->
+
+<section>
+
+    <div class="titulo-secao">
+
+        <h2>Posição em Destaque</h2>
+
+        <div class="linha"></div>
+
+    </div>
+
+
+    <div class="posicao-destaque">
+
+        <p>
+            Uma posição que chamou a atenção durante o
+            Mandacaru Xadrez.
+        </p>
+
+
+        <!--
+            TROQUE A IMAGEM ABAIXO PELA POSIÇÃO REAL.
+
+            Arquivo esperado:
+            ../imagens/posicao.png
+        -->
+
+        <img
+            src="../imagens/posicao.png"
+            alt="Posição em destaque do Mandacaru Xadrez"
+        >
+
+
+        <p class="legenda">
+
+            Brancas: <strong>NOME DO JOGADOR DE BRANCAS</strong>
+            •
+            Pretas: <strong>NOME DO JOGADOR DE PRETAS</strong>
+
+        </p>
+
+
+        <div class="analise">
+
+            <h3>Você encontra o lance?</h3>
+
+            <p>
+                <strong>
+                    PONHA AQUI A ANÁLISE DA POSIÇÃO.
+                </strong>
+            </p>
+
+            <p style="margin-top: 15px;">
+
+                Explique aqui o que chamou sua atenção na posição,
+                qual era o problema enfrentado pelo jogador,
+                quais possibilidades existiam e por que determinado
+                lance merece destaque.
+
+            </p>
+
+
+            <p class="texto-destaque-posicao"
+               style="margin-top: 20px;">
+
+                TEXTO EM DESTAQUE
+
+            </p>
+
+
+            <div class="lances">
+
+                1. e4 e5 2. Nf3 Nc6 3. Bb5 a6
+                4. Ba4 Nf6 5. O-O Be7
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ENCERRAMENTO
+========================= -->
+
+<section>
+
+    <div class="encerramento">
+
+        <div class="titulo-secao">
+
+            <h2>O começo de muitas histórias</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+
+        <p>
+            O Mandacaru Xadrez terminou com um campeão,
+            uma taça e uma classificação apertada.
+            Mas talvez seus maiores resultados não estejam
+            apenas na tabela final.
+        </p>
+
+        <p>
+            Seis jogadores fizeram sua estreia em torneios.
+            Quatro jogadoras voltaram a competir em um evento
+            aberto depois de participarem dos torneios femininos.
+            Novos jogadores tiveram a oportunidade de disputar,
+            aprender e descobrir o ambiente competitivo.
+        </p>
+
+        <p>
+            E, no tabuleiro e fora dele, histórias como a de
+            Luiz Filipy, Francisco de Souza, Matheus Alves e
+            Maria Heloiza ajudam a construir a história do
+            xadrez que está sendo desenvolvido pelo CXFJ.
+        </p>
+
+        <p class="texto-destaque">
+            O Mandacaru foi apenas a primeira edição.
+            Ainda há muitas partidas, muitos jogadores e muitas
+            histórias para acontecer.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        <strong>FRANCISCO JUNIO</strong>
+    </p>
+
+    <p>
+        CXFJ — Clube de Xadrez Francisco Junio
+    </p>
+
+    <p style="margin-top: 10px;">
+        Um nome. Um jogo. Um mundo.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
