@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Mandacaru Xadrez | Torneio Amador</title>
+    <title>Mandacaru Xadrez | Francisco Junio</title>
 
 
     <style>
@@ -562,7 +562,7 @@
 
 
         /* ==================================================
-           I EDIÇÃO / INFORMAÇÕES
+           EDIÇÃO / INFORMAÇÕES
            ================================================== */
 
         .edition {
@@ -919,6 +919,75 @@
 
 
         /* ==================================================
+           FRANCISCO DE SOUZA
+           ================================================== */
+
+        .sportsmanship {
+
+            background:
+                var(--azul);
+
+        }
+
+
+        .sportsmanship-content {
+
+            max-width:
+                820px;
+
+            margin:
+                auto;
+
+        }
+
+
+        .sportsmanship-content p {
+
+            color:
+                var(--cinza);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            margin-bottom:
+                22px;
+
+        }
+
+
+        .sportsmanship-highlight {
+
+            margin-top:
+                35px;
+
+            padding:
+                30px;
+
+            border-left:
+                3px solid var(--dourado);
+
+            background:
+                rgba(16, 24, 39, 0.45);
+
+            color:
+                var(--dourado-claro);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                1.15rem;
+
+            font-style:
+                italic;
+
+        }
+
+
+        /* ==================================================
            MULHERES NO XADREZ
            ================================================== */
 
@@ -1126,20 +1195,37 @@
         }
 
 
+        /* ==================================================
+           LANCES — REPRESENTAÇÃO VISUAL
+           ================================================== */
+
         .moves {
 
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
             padding:
-                18px;
+                20px;
 
             background:
                 var(--azul-profundo);
 
             color:
-                var(--dourado-claro);
+                var(--creme);
 
             font-family:
-                "Courier New",
-                monospace;
+                Georgia,
+                "Times New Roman",
+                serif;
 
             overflow-x:
                 auto;
@@ -1147,22 +1233,108 @@
         }
 
 
-        /* ==================================================
-           FRANCISCO DE SOUZA
-           ================================================== */
+        .move {
 
-        .sportsmanship {
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                5px;
+
+            padding:
+                7px 11px;
+
+            border:
+                1px solid
+                rgba(201, 164, 92, 0.35);
 
             background:
-                var(--azul);
+                rgba(255, 255, 255, 0.03);
+
+            white-space:
+                nowrap;
 
         }
 
 
-        .sportsmanship-content {
+        .move-number {
+
+            color:
+                var(--dourado);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                0.8rem;
+
+        }
+
+
+        .piece {
+
+            font-size:
+                1.7rem;
+
+            line-height:
+                1;
+
+        }
+
+
+        .move-text {
+
+            color:
+                var(--dourado-claro);
+
+            font-size:
+                0.9rem;
+
+        }
+
+
+        /* ==================================================
+           FOTOS
+           ================================================== */
+
+        .photos {
+
+            background:
+                var(--creme);
+
+            color:
+                var(--azul-profundo);
+
+            text-align:
+                center;
+
+        }
+
+
+        .photos .section-title h2 {
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .photos .section-title p {
+
+            color:
+                #555555;
+
+        }
+
+
+        .photos-content {
 
             max-width:
-                820px;
+                760px;
 
             margin:
                 auto;
@@ -1170,7 +1342,77 @@
         }
 
 
-        .sportsmanship-content p {
+        .photos-content p {
+
+            color:
+                #555555;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        /* ==================================================
+           APOIO E PATROCINADORES
+           ================================================== */
+
+        .support {
+
+            background:
+                var(--azul-profundo);
+
+        }
+
+
+        .support-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                25px;
+
+        }
+
+
+        .support-card {
+
+            padding:
+                30px;
+
+            border:
+                1px solid
+                rgba(201, 164, 92, 0.3);
+
+            background:
+                rgba(24, 36, 58, 0.65);
+
+        }
+
+
+        .support-card h3 {
+
+            color:
+                var(--dourado-claro);
+
+            font-size:
+                1.35rem;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .support-card p {
 
             color:
                 var(--cinza);
@@ -1180,38 +1422,58 @@
                 sans-serif;
 
             margin-bottom:
-                22px;
+                8px;
 
         }
 
 
-        .sportsmanship-highlight {
+        .support-label {
 
-            margin-top:
-                35px;
+            color:
+                var(--dourado);
 
-            padding:
-                30px;
+            font-family:
+                Arial,
+                sans-serif;
 
-            border-left:
-                3px solid var(--dourado);
+            font-size:
+                0.75rem;
 
-            background:
-                rgba(16, 24, 39, 0.45);
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .support-card a {
 
             color:
                 var(--dourado-claro);
 
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
+            text-decoration:
+                none;
 
-            font-size:
-                1.15rem;
+        }
 
-            font-style:
-                italic;
+
+        .support-card a:hover {
+
+            text-decoration:
+                underline;
+
+        }
+
+
+        .sponsors-title {
+
+            margin-top:
+                70px;
 
         }
 
@@ -1223,7 +1485,7 @@
         .future {
 
             background:
-                var(--azul-profundo);
+                var(--azul);
 
         }
 
@@ -1348,7 +1610,8 @@
 
 
             .info-grid,
-            .highlight-grid {
+            .highlight-grid,
+            .support-grid {
 
                 grid-template-columns:
                     1fr;
@@ -1377,6 +1640,14 @@
 
                 padding:
                     11px 8px;
+
+            }
+
+
+            .moves {
+
+                justify-content:
+                    flex-start;
 
             }
 
@@ -1446,6 +1717,18 @@
             <li>
                 <a href="#posicao">
                     Posição
+                </a>
+            </li>
+
+            <li>
+                <a href="#fotos">
+                    Fotos
+                </a>
+            </li>
+
+            <li>
+                <a href="#apoio">
+                    Apoio
                 </a>
             </li>
 
@@ -1540,35 +1823,36 @@
         <div class="history-text">
 
             <p>
-                O <strong>Mandacaru Xadrez</strong> foi um
-                torneio amador realizado no dia
-                <strong>15 de agosto de 2026</strong>,
-                criado especialmente para jogadores com
+                O <strong>Mandacaru Xadrez</strong> é um
+                torneio amador criado pelo Clube de Xadrez
+                Francisco Junio para jogadores que estão
+                construindo suas primeiras experiências
+                no xadrez competitivo.
+            </p>
+
+
+            <p>
+                A competição é destinada a jogadores com
                 rating de até <strong>1880 FCX</strong> que
-                nunca haviam alcançado 1900 pontos.
+                nunca tenham alcançado a marca de
+                <strong>1900 pontos</strong>.
             </p>
 
 
             <p>
-                Mais do que uma competição, o Mandacaru
-                foi pensado como uma porta de entrada para
-                jogadores que estão começando a construir
-                suas experiências em torneios.
+                A primeira edição foi realizada no dia
+                <strong>15 de agosto de 2026</strong> e
+                reuniu <strong>24 inscritos</strong>,
+                dos quais <strong>23 participaram</strong>
+                efetivamente do evento.
             </p>
 
 
             <p>
-                A primeira edição reuniu
-                <strong>24 inscritos</strong>, dos quais
-                <strong>23 participaram efetivamente</strong>
-                do evento.
-            </p>
-
-
-            <p>
-                Entre os participantes, havia
-                <strong>6 jogadores disputando seu primeiro
-                torneio</strong>.
+                O Mandacaru também busca criar espaço para
+                novos jogadores. Na primeira edição,
+                <strong>6 participantes disputaram seu
+                primeiro torneio</strong>.
             </p>
 
 
@@ -1578,6 +1862,11 @@
                 pudessem competir, ganhar experiência e,
                 principalmente, começar a construir suas
                 próprias histórias dentro do xadrez.
+
+                <br><br>
+
+                Esta página reunirá a história das edições
+                do Mandacaru ao longo dos anos.
 
             </div>
 
@@ -1755,6 +2044,10 @@
 
                 <span></span>
 
+                <p>
+                    Os cinco primeiros colocados da I Edição.
+                </p>
+
             </div>
 
 
@@ -1919,7 +2212,7 @@
                 <p>
                     O campeão disputou seu primeiro torneio
                     e, logo em sua estreia, conquistou o
-                    primeiro lugar.
+                    primeiro lugar e levou a taça para casa.
                 </p>
 
             </article>
@@ -1937,8 +2230,8 @@
 
                 <p>
                     Matheus também disputou seu primeiro
-                    torneio e terminou a competição entre
-                    os cinco primeiros colocados.
+                    torneio e terminou a competição na
+                    quarta colocação.
                 </p>
 
             </article>
@@ -2031,7 +2324,7 @@
 
             <p>
                 Como havia quatro jogadores empatados,
-                o confronto direto não poderia ser aplicado
+                o confronto direto não poderia ser utilizado
                 para definir toda a classificação daquele
                 grupo. Com isso, o <strong>Buchholz</strong>
                 entrou em ação como critério de desempate,
@@ -2118,8 +2411,8 @@
 
                 O incentivo ao xadrez feminino começa
                 criando oportunidades. Depois, essas
-                jogadoras também passam a ocupar os
-                torneios abertos.
+                jogadoras também passam a ocupar
+                os torneios abertos.
 
             </div>
 
@@ -2218,13 +2511,370 @@
             </p>
 
 
+            <!--
+                EXEMPLO DE LANCES
+
+                Substitua os exemplos abaixo pelos lances
+                reais da posição.
+
+                As peças são representadas visualmente
+                pelos símbolos Unicode do xadrez.
+
+                ♔ Rei branco
+                ♕ Dama branca
+                ♖ Torre branca
+                ♗ Bispo branco
+                ♘ Cavalo branco
+                ♙ Peão branco
+
+                ♚ Rei preto
+                ♛ Dama preta
+                ♜ Torre preta
+                ♝ Bispo preto
+                ♞ Cavalo preto
+                ♟ Peão preto
+            -->
+
             <div class="moves">
 
-                1. e4 e5 2. Nf3 Nc6
-                3. Bb5 a6 4. Ba4 Nf6
-                5. O-O Be7
+                <div class="move">
+
+                    <span class="move-number">
+                        1.
+                    </span>
+
+                    <span class="piece">
+                        ♘
+                    </span>
+
+                    <span class="move-text">
+                        f3
+                    </span>
+
+                </div>
+
+
+                <div class="move">
+
+                    <span class="move-number">
+                        ...
+                    </span>
+
+                    <span class="piece">
+                        ♞
+                    </span>
+
+                    <span class="move-text">
+                        c6
+                    </span>
+
+                </div>
+
+
+                <div class="move">
+
+                    <span class="move-number">
+                        2.
+                    </span>
+
+                    <span class="piece">
+                        ♗
+                    </span>
+
+                    <span class="move-text">
+                        b5
+                    </span>
+
+                </div>
+
+
+                <div class="move">
+
+                    <span class="move-number">
+                        ...
+                    </span>
+
+                    <span class="piece">
+                        ♟
+                    </span>
+
+                    <span class="move-text">
+                        a6
+                    </span>
+
+                </div>
+
+
+                <div class="move">
+
+                    <span class="move-number">
+                        3.
+                    </span>
+
+                    <span class="piece">
+                        ♗
+                    </span>
+
+                    <span class="move-text">
+                        a4
+                    </span>
+
+                </div>
 
             </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FOTOS
+     ================================================== -->
+
+<section class="photos" id="fotos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Fotos do Mandacaru
+            </h2>
+
+            <span></span>
+
+            <p>
+                Registros das edições e dos jogadores
+                que construíram essa história.
+            </p>
+
+        </div>
+
+
+        <div class="photos-content">
+
+            <p>
+                Confira os registros fotográficos do
+                Mandacaru Xadrez no álbum oficial do evento.
+            </p>
+
+
+            <!--
+                SUBSTITUA O # PELO LINK DO GOOGLE DRIVE
+                QUANDO O ÁLBUM ESTIVER PUBLICADO.
+            -->
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button"
+            >
+                📸 VER ÁLBUM COMPLETO
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     APOIO
+     ================================================== -->
+
+<section class="support" id="apoio">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Apoio
+            </h2>
+
+            <span></span>
+
+            <p>
+                Empresas e instituições que ajudam
+                o Mandacaru a sair do tabuleiro e
+                chegar à comunidade.
+            </p>
+
+        </div>
+
+
+        <div class="support-grid">
+
+
+            <!-- CECAPE -->
+
+            <article class="support-card">
+
+                <div class="support-label">
+                    Apoio
+                </div>
+
+
+                <h3>
+                    CECAPE
+                </h3>
+
+
+                <p>
+                    Av. Padre Cícero, 3917 —
+                    São José, Juazeiro do Norte — CE
+                </p>
+
+
+                <p>
+                    CEP: 63024-015
+                </p>
+
+
+                <p>
+                    Telefone:
+                    <a href="tel:+5588993207226">
+                        (88) 99320-7226
+                    </a>
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+
+        <!-- PATROCINADORES -->
+
+        <div class="section-title sponsors-title">
+
+            <h2>
+                Patrocinadores
+            </h2>
+
+            <span></span>
+
+            <p>
+                Empresas que apoiaram a realização
+                da I Edição do Mandacaru.
+            </p>
+
+        </div>
+
+
+        <div class="support-grid">
+
+
+            <!-- TECNOCAR -->
+
+            <article class="support-card">
+
+                <div class="support-label">
+                    Patrocínio
+                </div>
+
+
+                <h3>
+                    TecnoCar Automotivos
+                </h3>
+
+
+                <p>
+                    Especialistas no ramo automotivo.
+                </p>
+
+
+                <p>
+                    Rua Apolo XI, 743 —
+                    Bairro Santo Antônio,
+                    Juazeiro do Norte — CE
+                </p>
+
+
+                <p>
+                    Contato:
+                    <a href="tel:+5588988114105">
+                        (88) 9 8811-4105
+                    </a>
+                </p>
+
+            </article>
+
+
+
+            <!-- JR SERRALHERIA -->
+
+            <article class="support-card">
+
+                <div class="support-label">
+                    Patrocínio
+                </div>
+
+
+                <h3>
+                    JR Serralheria
+                </h3>
+
+
+                <p>
+                    Portões, Grades e Esquadrias
+                    com Qualidade.
+                </p>
+
+
+                <p>
+                    Rua Senador Pompeu, 21 —
+                    Centro, Crato — CE
+                </p>
+
+
+                <p>
+                    Contato:
+                    <a href="tel:+5588996614910">
+                        (88) 9 9661-4910
+                    </a>
+                </p>
+
+            </article>
+
+
+
+            <!-- RJ INFORMÁTICA -->
+
+            <article class="support-card">
+
+                <div class="support-label">
+                    Patrocínio
+                </div>
+
+
+                <h3>
+                    RJ Informática
+                </h3>
+
+
+                <p>
+                    Seu computador em boas mãos.
+                </p>
+
+
+                <p>
+                    Contato:
+                    <a href="tel:+5588988478245">
+                        (88) 9 8847-8245
+                    </a>
+                </p>
+
+            </article>
+
 
         </div>
 
@@ -2251,7 +2901,7 @@
             <span></span>
 
             <p>
-                O Mandacaru foi apenas a primeira edição.
+                A I Edição terminou. O Mandacaru continua.
             </p>
 
         </div>
@@ -2269,9 +2919,10 @@
 
             <p>
                 Seis jogadores fizeram sua estreia em
-                torneios. Quatro jogadoras voltaram a
-                competir em um evento aberto depois de
-                participarem dos torneios femininos.
+                torneios. Quatro jogadoras participaram
+                de um evento aberto depois de já terem
+                participado dos torneios femininos
+                realizados pelo projeto.
             </p>
 
 
@@ -2291,9 +2942,11 @@
 
 
             <p>
-                O Mandacaru foi apenas o primeiro capítulo
-                de uma história que continuará sendo
-                construída através do xadrez no Cariri.
+                A primeira edição foi apenas o primeiro
+                capítulo. Novas edições do Mandacaru
+                serão acrescentadas a esta história,
+                mantendo neste espaço a memória de
+                cada torneio realizado.
             </p>
 
         </div>
