@@ -869,9 +869,12 @@
         }
 
         .highlight-grid .highlight-card:last-child {
+
             grid-column: 1 / -1;
             justify-self: center;
-            
+            width: calc((100% - 25px) / 2);
+            text-align: center;
+
         }
 
         .highlight-card {
@@ -1114,10 +1117,19 @@
         .position-image img {
 
             width:
+                500px;
+
+            max-width:
                 100%;
+
+            height:
+                auto;
 
             display:
                 block;
+
+            margin:
+                0 auto;
 
             border:
                 1px solid
@@ -1153,16 +1165,16 @@
                 820px;
 
             margin:
-                auto;
+                30px auto 0;
 
             padding:
-                30px;
+                0;
 
             border-left:
-                3px solid var(--dourado);
+                none;
 
             background:
-                rgba(201, 164, 92, 0.08);
+                none;
 
         }
 
@@ -1362,6 +1374,14 @@
         }
 
 
+        .photos-content .button {
+
+            font-weight:
+                700;
+
+        }
+
+
         /* ==================================================
            APOIO E PATROCINADORES
            ================================================== */
@@ -1471,6 +1491,20 @@
 
             text-decoration:
                 underline;
+
+        }
+
+
+        .support-grid .support-card:last-child {
+
+            grid-column:
+                1 / -1;
+
+            justify-self:
+                center;
+
+            width:
+                calc((100% - 25px) / 2);
 
         }
 
@@ -1620,6 +1654,18 @@
 
                 grid-template-columns:
                     1fr;
+
+            }
+
+
+            .highlight-grid .highlight-card:last-child,
+            .support-grid .support-card:last-child {
+
+                grid-column:
+                    auto;
+
+                width:
+                    100%;
 
             }
 
@@ -2086,7 +2132,7 @@
                         </td>
 
                         <td>
-                            Campeão (Primeiro Torneio do Filipy)
+                            Campeão (primeiro torneio do Filipy)
                         </td>
 
                     </tr>
@@ -2103,7 +2149,7 @@
                         </td>
 
                         <td>
-                            Vice-campeão (Após um longo tempo longe do competitivo)
+                            Vice-campeão (após um longo tempo longe do competitivo)
                         </td>
 
                     </tr>
@@ -2120,7 +2166,7 @@
                         </td>
 
                         <td>
-                            3º lugar (Seu terceiro torneio oficial)
+                            3º lugar (seu terceiro torneio oficial)
                         </td>
 
                     </tr>
@@ -2154,7 +2200,7 @@
                         </td>
 
                         <td>
-                            5º lugar (Segundo torneio oficial)
+                            5º lugar (segundo torneio oficial)
                         </td>
 
                     </tr>
@@ -2287,7 +2333,7 @@
                 </div>
 
                 <h3>
-                    Maria destaque
+                    Maria Heloiza
                 </h3>
 
                 <p>
@@ -2359,9 +2405,8 @@
 
 
             <p>
-                Francisco venceu sua última partida e,
-                mesmo terminando em segundo, recebeu o
-                resultado com maturidade e respeito.
+                Mesmo terminando em segundo após a vitória sobre Filipy, 
+                Francisco recebeu o resultado com maturidade e respeito.
             </p>
 
 
@@ -2488,9 +2533,6 @@
 
             <img
                 src="../imagens/posicao.png"
-                
-                style= "width: 500px;" height: auto; display: block; margin: 0 auto;
-                
                 alt="Posição em destaque do Mandacaru Xadrez"
             >
 
